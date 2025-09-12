@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Running a simulation &#8212; IDA-ICE-Plugin for SIMULTAN (Work in Progress)</title>
+    <title>Notizen: &#8212; IDA-ICE-Plugin for SIMULTAN (Work in Progress)</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Results of the simulation" href="Results_of_the_simulation.html" />
-    <link rel="prev" title="Detailed Modeling Guide" href="Detailed_Modeling_Guide.html" />
+    <link rel="prev" title="Plugin Features" href="Plugin_Features.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,16 +176,11 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Getting started with the IDA-ICE Plugin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Setting_up_a_problem.html">Setting up a Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Taxonmien</a></li>
 
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Detailed_Modeling_Guide.html">Detailed Modeling Guide</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running a simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin_Features.html">Plugin Features</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notizen:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Results_of_the_simulation.html">Results of the simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sync_Import.html">Sync Import</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
@@ -376,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Running a simulation</h1>
+    <h1>Notizen:</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,9 +381,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-the-simultan-model-to-ida-ice">Exporting the SIMULTAN-model to IDA-ICE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-into-ida-ice">Importing into IDA-ICE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-simulation-in-ida-ice">Running a simulation in IDA-ICE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonmien">Taxonmien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons-des-plugins">Buttons des Plugins</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-model-button">Download Model Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-button">Workflow Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-and-persist-weather-data-button">Query and Persist Weather Data Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-ida-ice-button">Export to IDA-ICE Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-temperature-files-to-csv">Convert Temperature Files to CSV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-raw-sensor-data">Download raw sensor data</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -400,46 +402,59 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="running-a-simulation">
-<span id="id1"></span><h1>Running a simulation<a class="headerlink" href="#running-a-simulation" title="Link to this heading">#</a></h1>
-<section id="exporting-the-simultan-model-to-ida-ice">
-<h2>Exporting the SIMULTAN-model to IDA-ICE<a class="headerlink" href="#exporting-the-simultan-model-to-ida-ice" title="Link to this heading">#</a></h2>
-<p>When modelling according to the conventions described in chapter <a class="reference internal" href="Setting_up_a_problem.html"><span class="std std-doc">Setting up a problem</span></a> the
-model is ready to be exported. This can be done by clicking the Export Model button when you are inside the IDA-ICE
-Plugin in the SIMULTAN Editor <a class="reference internal" href="#export-model"><span class="std std-numref">Fig. 35</span></a>.</p>
-<figure class="align-default" id="export-model">
-<img alt="img/export_model.png" src="img/export_model.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Export button to create the file structure to import into IDA-ICE.</span><a class="headerlink" href="#export-model" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>After clicking the button you will be prompted with a save dialogue. Please specify the location where you want to
-save the project directory and confirm.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="notizen">
+<span id="id1"></span><h1>Notizen:<a class="headerlink" href="#notizen" title="Link to this heading">#</a></h1>
+<p>Wichtigster TEil des Living Lab Plugin ist das Herunterladen der Sensor-Daten (live) aus dem Labor in der FH Burgenland.</p>
+<section id="taxonmien">
+<h2>Taxonmien<a class="headerlink" href="#taxonmien" title="Link to this heading">#</a></h2>
+<p>1:09:00 Das Living Lab Plugin kommt auch mit eigenen Taxonomien. Wichtig sind die Sensoren, es gibt unterschiedliche Sensoren Arten. Mit den richtigen Komponenten kann man die DAten als graph abbilden! Daten können durch das drücken des richtigen Knopfes auf das aktuellste automatisch AKtualisiert werden.</p>
 </section>
-<section id="importing-into-ida-ice">
-<h2>Importing into IDA-ICE<a class="headerlink" href="#importing-into-ida-ice" title="Link to this heading">#</a></h2>
-<p>To import the project simply open the project in IDA-ICE as you would do usually <a class="reference internal" href="#open-idaice"><span class="std std-numref">Fig. 36</span></a>.</p>
-<figure class="align-default" id="open-idaice">
-<img alt="img/open_idaice.png" src="img/open_idaice.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Open the exported project in IDA-ICE.</span><a class="headerlink" href="#open-idaice" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<section id="buttons-des-plugins">
+<h2>Buttons des Plugins<a class="headerlink" href="#buttons-des-plugins" title="Link to this heading">#</a></h2>
+<section id="download-model-button">
+<h3>Download Model Button<a class="headerlink" href="#download-model-button" title="Link to this heading">#</a></h3>
+<p>veraltet, wird in naher zukunft entfernt</p>
 </section>
-<section id="running-a-simulation-in-ida-ice">
-<h2>Running a simulation in IDA-ICE<a class="headerlink" href="#running-a-simulation-in-ida-ice" title="Link to this heading">#</a></h2>
-<p>Run the simulation via the Simulation tab in IDA-ICE <a class="reference internal" href="#simulation-tab"><span class="std std-numref">Fig. 37</span></a>.</p>
-<figure class="align-default" id="simulation-tab">
-<img alt="img/simulation_tab.png" src="img/simulation_tab.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Simulation tab. Choose the cases you want to run or simply run the whole simulation.</span><a class="headerlink" href="#simulation-tab" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To import the results into SIMULTAN you need to run the Energy Loads simulation. For now only those results will be
-imported into SIMULTAN.</p>
-</div>
+<section id="workflow-button">
+<h3>Workflow Button<a class="headerlink" href="#workflow-button" title="Link to this heading">#</a></h3>
+<p>1:11:00 braucht unbedingt ein .config file. Findet man immer in den Ordnern der Simultan-Dateien (versteckte Ordner). Informationen des .config files: Benutzername für die API, Passwort, DAten IDs, … weitere Infos</p>
+<p>Run Workflow fenster:</p>
+<ol class="arabic simple">
+<li><p>config File wie oben beschrieben</p></li>
+<li><p>Excution Mode: 1:12:00</p>
+<ul class="simple">
+<li><p>specific Range definiert dauer der Simulation in IDA-ICe über die Felder Simulation Start: und Simulation End:</p></li>
+<li><p>Continuous: Simulation wird regelmäßig rückblickend gemacht. Im config File kann man das Intervall definieren, Andreas / Zsombor fragen wo genau das hinterleft ist. (-1 steht für unendlich)</p></li>
+</ul>
+</li>
+<li><p>Number of Runs gibt an wie oft die Simulation wiederholft wird.</p></li>
+</ol>
+<p>Interner Ablauf wenn workflow gestartet wird: Plugin holt sich die WEtterdaten für den Zeitraum, die Sensordaten für den Zeitraum, IDA-ICE-Plugin wird im hintergrund gestartet –&gt; exportiert das Modell. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind und Simuliert anschließend das Modell mit den echten Daten</p>
+<p>´´´{warning}
+Abstände beim Benutzernamen verursachen Probleme, Programm kann nicht erfolgreich simulieren und stürzt ab!
+´´´</p>
+<p>Alle anderen Button sind eigentlich dafür da, dass das was mit dem Workflow Button automatisch passiert einzeln zu machen. DA man manchmal vllt Stichproben artig was kontrollieren will oder eben spezifisch ein Tool braucht.</p>
+</section>
+<section id="query-and-persist-weather-data-button">
+<h3>Query and Persist Weather Data Button<a class="headerlink" href="#query-and-persist-weather-data-button" title="Link to this heading">#</a></h3>
+<p>Holt sich über eine verbundene API, die Live Wetter Daten
+Passwort steht auch im .congig-file (1:18:18) unter API Password
+<strong>Test Connection</strong> zur überprüfung von Fehlern
+Datapoints: Mit dem excakten Key der Sensoren kann man manuell auswählen welcher Sensor Daten wiedergeben soll!</p>
+</section>
+<section id="export-to-ida-ice-button">
+<h3>Export to IDA-ICE Button<a class="headerlink" href="#export-to-ida-ice-button" title="Link to this heading">#</a></h3>
+<p>Exportiert das Modell in .idm Format. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind.</p>
+</section>
+<section id="convert-temperature-files-to-csv">
+<h3>Convert Temperature Files to CSV<a class="headerlink" href="#convert-temperature-files-to-csv" title="Link to this heading">#</a></h3>
+<p>1:23:15 Temperature Files müssten die IDA-ICE resultate sein. Mit der Funktion möglich die Simulierten Wetter Daten aus IDA-ICE direct als CSV abspeichern!</p>
+</section>
+<section id="download-raw-sensor-data">
+<h3>Download raw sensor data<a class="headerlink" href="#download-raw-sensor-data" title="Link to this heading">#</a></h3>
+<p>Daten so wie sie von der API kommen herunterladen
+<strong>Wichtig</strong>: Passwort wieder aus config-File</p>
+</section>
 </section>
 </section>
 
@@ -474,12 +489,12 @@ imported into SIMULTAN.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Detailed_Modeling_Guide.html"
+       href="Plugin_Features.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Detailed Modeling Guide</p>
+        <p class="prev-next-title">Plugin Features</p>
       </div>
     </a>
     <a class="right-next"
@@ -507,9 +522,16 @@ imported into SIMULTAN.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-the-simultan-model-to-ida-ice">Exporting the SIMULTAN-model to IDA-ICE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-into-ida-ice">Importing into IDA-ICE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-simulation-in-ida-ice">Running a simulation in IDA-ICE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonmien">Taxonmien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons-des-plugins">Buttons des Plugins</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-model-button">Download Model Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-button">Workflow Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-and-persist-weather-data-button">Query and Persist Weather Data Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-ida-ice-button">Export to IDA-ICE Button</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-temperature-files-to-csv">Convert Temperature Files to CSV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-raw-sensor-data">Download raw sensor data</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

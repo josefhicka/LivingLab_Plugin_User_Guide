@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Running a simulation" href="Running_a_simulation.html" />
-    <link rel="prev" title="Setting up a Problem" href="Setting_up_a_problem.html" />
+    <link rel="prev" title="Simultan Basics" href="Simultan_Basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,14 +176,9 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Getting started with the IDA-ICE Plugin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Setting_up_a_problem.html">Setting up a Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Taxonmien</a></li>
 
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Detailed Modeling Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Running_a_simulation.html">Running a simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Results_of_the_simulation.html">Results of the simulation</a></li>
@@ -419,16 +414,16 @@ plugin focuses on expanding the already existing information, so it is containin
 information and can be exported to IDA-ICE.</p>
 <section id="opaque-building-components">
 <h3>Opaque Building Components<a class="headerlink" href="#opaque-building-components" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="#fig-opaque-building-components"><span class="std std-numref">Fig. 22</span></a> Opaque elements include walls, slabs, and roofs. To define them:</p>
+<p><a class="reference internal" href="#fig-opaque-building-components"><span class="std std-numref">Fig. 2</span></a> Opaque elements include walls, slabs, and roofs. To define them:</p>
 <figure class="align-center" id="fig-opaque-building-components">
 <a class="reference internal image-reference" href="img/Opaque-building-components.png"><img alt="img/Opaque-building-components.png" src="img/Opaque-building-components.png" style="height: 225px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Overview of all opaque building components</span><a class="headerlink" href="#fig-opaque-building-components" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Overview of all opaque building components</span><a class="headerlink" href="#fig-opaque-building-components" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
-<li><p>Open the <strong>Construction</strong> tab in the plugin UI <a class="reference internal" href="#overview-constructiontab"><span class="std std-numref">Fig. 23</span></a>.</p></li>
+<li><p>Open the <strong>Construction</strong> tab in the plugin UI <a class="reference internal" href="#overview-constructiontab"><span class="std std-numref">Fig. 3</span></a>.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">construction</span></code> to view connected surfaces.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">construction</span></code> to set:</p>
 <ul class="simple">
@@ -446,7 +441,7 @@ information and can be exported to IDA-ICE.</p>
 <figure class="align-default" id="overview-constructiontab">
 <img alt="img/overview-constructiontab.png" src="img/overview-constructiontab.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">User interface for Construction definitions</span><a class="headerlink" href="#overview-constructiontab" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">User interface for Construction definitions</span><a class="headerlink" href="#overview-constructiontab" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -459,12 +454,12 @@ information and can be exported to IDA-ICE.</p>
 <section id="transparent-building-components">
 <h3>Transparent Building Components<a class="headerlink" href="#transparent-building-components" title="Link to this heading">#</a></h3>
 <p>Transparent elements include windows and doors.</p>
-<p><a class="reference internal" href="#transperentbuildingcomponents-ui"><span class="std std-numref">Fig. 24</span></a> The datastructure to export transparent constructions will be shown for a Fenster (window). The procedure is analogues for a
+<p><a class="reference internal" href="#transperentbuildingcomponents-ui"><span class="std std-numref">Fig. 4</span></a> The datastructure to export transparent constructions will be shown for a Fenster (window). The procedure is analogues for a
 door and other <code class="docutils literal notranslate"><span class="pre">glass</span> <span class="pre">constructions</span></code>.</p>
 <figure class="align-default" id="transperentbuildingcomponents-ui">
 <img alt="img/TransperentBuildingComponents-UI.png" src="img/TransperentBuildingComponents-UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">UI for Glass Construction definitions</span><a class="headerlink" href="#transperentbuildingcomponents-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">UI for Glass Construction definitions</span><a class="headerlink" href="#transperentbuildingcomponents-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The parameters in the image relate to the material properties of transparent components (such as windows) in the IDA ICE building simulation software. These values strongly influence the thermal and solar behavior of the glazing. Here is an explanation of the terms and their meaning.</p>
@@ -496,11 +491,11 @@ External Emissivity = efficiency of longwave heat emission/absorption on the out
 <h3>Shading Elements<a class="headerlink" href="#shading-elements" title="Link to this heading">#</a></h3>
 <p>In IDA-ICE, <strong>architectural shading</strong> plays a crucial role in accurately simulating the effects of surrounding structures on daylight availability, cooling and heating loads, and the overall indoor climate.<br />
 This refers specifically to <strong>shading at the building level</strong>—such as protruding roof sections, balconies, overhangs, neighboring buildings, or permanent structural elements.
-The SIMULTAN–IDA-ICE plugin provides a special interface for defining these shading areas (see <a class="reference internal" href="#shades-ui"><span class="std std-numref">Fig. 25</span></a>).</p>
+The SIMULTAN–IDA-ICE plugin provides a special interface for defining these shading areas (see <a class="reference internal" href="#shades-ui"><span class="std std-numref">Fig. 5</span></a>).</p>
 <figure class="align-default" id="shades-ui">
 <img alt="img/Shades-UI.png" src="img/Shades-UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">UI for Shading Surface definitions</span><a class="headerlink" href="#shades-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">UI for Shading Surface definitions</span><a class="headerlink" href="#shades-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Parameters include:</strong></p>
@@ -519,19 +514,19 @@ How much visible light is transmitted through the surface.</p></li>
 <p><strong>Shading settings influence both energy performance and daylight modeling.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For everything you need to know about incorporating shading elements into your IDA-ICE, read the chapter <a class="reference internal" href="Setting_up_a_problem.html#adding-shading-elements-for-the-ida-ice-simulation"><span class="std std-ref">Adding Shading Elements for the IDA-ICE Simulation</span></a>.</p>
+<p>For everything you need to know about incorporating shading elements into your IDA-ICE, read the chapter <a class="reference internal" href="#Setting_up_a_problem.md#adding-shading-elements-for-the-ida-ice-simulation"><span class="xref myst">Adding Shading Elements for the IDA-ICE Simulation</span></a>.</p>
 </div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="hvac-configuration-via-esbo">
 <h2>HVAC Configuration via ESBO<a class="headerlink" href="#hvac-configuration-via-esbo" title="Link to this heading">#</a></h2>
-<p>The HVAC-System is implemented via the <em>ESBO-Plant</em> of IDA-ICE. <a class="reference internal" href="#esbo-simultan"><span class="std std-numref">Fig. 26</span></a> shows all the possible inputs
+<p>The HVAC-System is implemented via the <em>ESBO-Plant</em> of IDA-ICE. <a class="reference internal" href="#esbo-simultan"><span class="std std-numref">Fig. 6</span></a> shows all the possible inputs
 which are exported with the plugin.</p>
 <figure class="align-default" id="esbo-simultan">
 <img alt="img/Esbo-UI.png" src="img/Esbo-UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">User interface for the ESBO-Plant</span><a class="headerlink" href="#esbo-simultan" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">User interface for the ESBO-Plant</span><a class="headerlink" href="#esbo-simultan" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>In the plugin UI:</strong></p>
@@ -541,20 +536,20 @@ which are exported with the plugin.</p>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>Disabling a component unlinks all associated data.</strong> The effects on the components are shown in <a class="reference internal" href="#system-on"><span class="std std-numref">Fig. 27</span></a> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">system-off</span></code>.</p>
+<p><strong>Disabling a component unlinks all associated data.</strong> The effects on the components are shown in <a class="reference internal" href="#system-on"><span class="std std-numref">Fig. 7</span></a> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">system-off</span></code>.</p>
 </div>
 <hr class="docutils" />
 <figure class="align-default" id="system-on">
 <img alt="img/esbo-on.png" src="img/esbo-on.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Effects on the components if Hot storage is enabled</span><a class="headerlink" href="#system-on" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Effects on the components if Hot storage is enabled</span><a class="headerlink" href="#system-on" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- Scrennshot richtig gestellt!-->
 <figure class="align-default" id="system-off">
 <img alt="img/esbo_off.png" src="img/esbo_off.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Effects on the components if Hot storage is disabled</span><a class="headerlink" href="#system-off" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Effects on the components if Hot storage is disabled</span><a class="headerlink" href="#system-off" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -565,49 +560,49 @@ which are exported with the plugin.</p>
 <hr class="docutils" />
 <section id="internal-gains">
 <h2>Internal Gains<a class="headerlink" href="#internal-gains" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="#internal-gains-comp"><span class="std std-numref">Fig. 29</span></a> The modelling of internal gains due to occupant behaviour is also possible. The SIMULTAN representation is stored under
+<p><a class="reference internal" href="#internal-gains-comp"><span class="std std-numref">Fig. 9</span></a> The modelling of internal gains due to occupant behaviour is also possible. The SIMULTAN representation is stored under
 the component <code class="docutils literal notranslate"><span class="pre">Nutzung</span></code>. This component stores sub-components for each simulation-zone and the assigned internal gains.</p>
 <figure class="align-default" id="internal-gains-comp">
 <img alt="img/inernal_gains_comp.png" src="img/inernal_gains_comp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Internal gains definition</span><a class="headerlink" href="#internal-gains-comp" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Internal gains definition</span><a class="headerlink" href="#internal-gains-comp" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Subcomponents include:</p>
 <ul class="simple">
-<li><p><strong>Equipment</strong> <a class="reference internal" href="#equipment-para"><span class="std std-numref">Fig. 30</span></a></p></li>
-<li><p><strong>Occupants</strong> <a class="reference internal" href="#light-para"><span class="std std-numref">Fig. 31</span></a></p></li>
-<li><p><strong>Lighting</strong> <a class="reference internal" href="#occupant-para"><span class="std std-numref">Fig. 32</span></a></p></li>
+<li><p><strong>Equipment</strong> <a class="reference internal" href="#equipment-para"><span class="std std-numref">Fig. 10</span></a></p></li>
+<li><p><strong>Occupants</strong> <a class="reference internal" href="#light-para"><span class="std std-numref">Fig. 11</span></a></p></li>
+<li><p><strong>Lighting</strong> <a class="reference internal" href="#occupant-para"><span class="std std-numref">Fig. 12</span></a></p></li>
 </ul>
 <p>each with the needed parameters to describe the needed information for the simulation.</p>
 <figure class="align-default" id="equipment-para">
 <img alt="img/equipment_para.png" src="img/equipment_para.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Parameters for equipment gains</span><a class="headerlink" href="#equipment-para" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Parameters for equipment gains</span><a class="headerlink" href="#equipment-para" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- konnte nix zu Andreas kommentar in der Überarbeitung PDF finden-->
 <figure class="align-default" id="light-para">
 <img alt="img/light_para.png" src="img/light_para.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Parameters for lighting gains</span><a class="headerlink" href="#light-para" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Parameters for lighting gains</span><a class="headerlink" href="#light-para" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="occupant-para">
 <img alt="img/occupant_para.png" src="img/occupant_para.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Parameters for occupant gains</span><a class="headerlink" href="#occupant-para" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Parameters for occupant gains</span><a class="headerlink" href="#occupant-para" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <hr class="docutils" />
 <section id="material-properties">
 <h2>Material Properties<a class="headerlink" href="#material-properties" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Materials</span></code> have been given their own area in the <strong>IDA-ICE-Plugin</strong> <a class="reference internal" href="#materials-ui"><span class="std std-numref">Fig. 33</span></a>. This once again allows users to keep their materials organized and to proceed in a structured manner.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Materials</span></code> have been given their own area in the <strong>IDA-ICE-Plugin</strong> <a class="reference internal" href="#materials-ui"><span class="std std-numref">Fig. 13</span></a>. This once again allows users to keep their materials organized and to proceed in a structured manner.</p>
 <figure class="align-default" id="materials-ui">
 <img alt="img/materials_UI.png" src="img/materials_UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">User interface for Material definitions</span><a class="headerlink" href="#materials-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">User interface for Material definitions</span><a class="headerlink" href="#materials-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Key properties:</strong></p>
@@ -630,11 +625,11 @@ Indicates how much energy (in joules) is required to heat 1 kg of material by 1 
 <hr class="docutils" />
 <section id="taxonomy-update">
 <h2>Taxonomy Update<a class="headerlink" href="#taxonomy-update" title="Link to this heading">#</a></h2>
-<p>To restore or update all taxonomies for the IDA-ICE Plugin, use the built-in <em>TaxonomyUpdate</em> button <a class="reference internal" href="#taxonomyupdate-button"><span class="std std-numref">Fig. 34</span></a>.</p>
+<p>To restore or update all taxonomies for the IDA-ICE Plugin, use the built-in <em>TaxonomyUpdate</em> button <a class="reference internal" href="#taxonomyupdate-button"><span class="std std-numref">Fig. 14</span></a>.</p>
 <figure class="align-default" id="taxonomyupdate-button">
 <img alt="img/taxonomyupdate_button.png" src="img/taxonomyupdate_button.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">TaxonomyUpdate button</span><a class="headerlink" href="#taxonomyupdate-button" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">TaxonomyUpdate button</span><a class="headerlink" href="#taxonomyupdate-button" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -677,12 +672,12 @@ Indicates how much energy (in joules) is required to heat 1 kg of material by 1 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Setting_up_a_problem.html"
+       href="Simultan_Basics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setting up a Problem</p>
+        <p class="prev-next-title">Simultan Basics</p>
       </div>
     </a>
     <a class="right-next"

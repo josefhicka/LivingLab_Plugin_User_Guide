@@ -2,33 +2,21 @@
 
 # Introduction
 
-Notizen:
+## What is the LivingLab-Plugin?
 
-Wichtigster TEil des Living Lab Plugin ist das Herunterladen der Sensor-Daten (live) aus dem Labor in der FH Burgenland.
+The Living Lab Plugin is designed to integrate real-time data into building simulations. Sensor data is collected from various sources and transferred to Simultan through an API. From there, the Simultan model can be exported to IDA-ICE, enabling comprehensive building simulations based on realistic, continuously updated measurements.
 
-## Taxonmien
+## Functionality covered by the IDA-ICE-Plugin
 
-1:09:00 Das Living Lab Plugin kommt auch mit eigenen Taxonomien. Wichtig sind die Sensoren, es gibt unterschiedliche Sensoren Arten. Mit den richtigen Komponenten kann man die DAten als graph abbilden! Daten können durch das drücken des richtigen Knopfes auf das aktuellste automatisch AKtualisiert werden. 
+In the current state of development the plugin is able to do:
 
-## Buttons des Plugins
+- Live Wetter Daten zu holen
+- Sensor Daten zu verarbeiten
+- Vergleich von Ist- und Sollwerten
+- Konvertieren der Zeit Index
 
-### Download Model Button
+- Einen vollautomatisierten Workflow für das verarbeiten von gemessenen Wetterdaten und dem simulieren des Modells in IDA-ICE
 
-veraltet, wird in naher zukunft entfernt
+## Project
 
-### Workflow Button
-
-1:11:00 braucht unbedingt ein .config file. Findet man immer in den Ordnern der Simultan-Dateien (versteckte Ordner). Informationen des .config files: Benutzername für die API, Passwort, DAten IDs, ... weitere Infos
-
-Run Workflow fenster: 
-1. config File wie oben beschrieben
-2. Excution Mode: 1:12:00
-    - specific Range definiert dauer der Simulation in IDA-ICe über die Felder Simulation Start: und Simulation End:
-    - Continuous: Simulation wird regelmäßig rückblickend gemacht. Im config File kann man das Intervall definieren, Andreas / Zsombor fragen wo genau das hinterleft ist. (-1 steht für unendlich) 
-3. Number of Runs gibt an wie oft die Simulation wiederholft wird.
-
-Interner Ablauf wenn workflow gestartet wird: Plugin holt sich die WEtterdaten für den Zeitraum, die Sensordaten für den Zeitraum, IDA-ICE-Plugin wird im hintergrund gestartet --> exportiert das Modell. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind und Simuliert anschließend das Modell mit den echten Daten
-
-´´´{warning}
-Abstände beim Benutzernamen verursachen Probleme, Programm kann nicht erfolgreich simulieren und stürzt ab!
-´´´ 
+...

@@ -176,16 +176,10 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Getting started with the IDA-ICE Plugin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Setting_up_a_problem.html">Setting up a Problem</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Detailed_Modeling_Guide.html">Detailed Modeling Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Running_a_simulation.html">Running a simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notizen.html">Notizen:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin_Features.html">Plugin Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Results_of_the_simulation.html">Results of the simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sync_Import.html">Sync Import</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
@@ -448,7 +442,7 @@ document.write(`
 <hr class="docutils" />
 <section id="datastructure-for-the-plugin">
 <h2>Datastructure for the plugin<a class="headerlink" href="#datastructure-for-the-plugin" title="Link to this heading">#</a></h2>
-<p>In <a class="reference internal" href="Setting_up_a_problem.html#ida-data"><span class="std std-numref">Fig. 3</span></a> a simplified depiction of the needed datastructure to run the plugin is given. This data structure
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">ida_data</span></code> a simplified depiction of the needed datastructure to run the plugin is given. This data structure
 holds all the necessary information to enable simplified dynamic multizone climate and energy simulations in IDA-ICE</p>
 <figure class="align-default" id="ida-data">
 <a class="reference internal image-reference" href="img/schematic_comp_ida.jpg"><img alt="img/schematic_comp_ida.jpg" src="img/schematic_comp_ida.jpg" style="height: 500px;" />
@@ -499,7 +493,7 @@ To restore the full <code class="docutils literal notranslate"><span class="pre"
 <h3>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
 <p>Components represent the functional building blocks of a simulation model—such as heat pumps, fans, storage tanks, or control valves. They have physical properties and parameters that are used in calculations — for example, power consumption or temperature change. Components can be configured and connected to realistically represent technical systems within a building.</p>
 <figure class="align-default" id="components-beispiel">
-<img alt="img/components_beispiel.png" src="img/components_beispiel.png" />
+<img alt="_images/components_beispiel.png" src="_images/components_beispiel.png" />
 <figcaption>
 <p><span class="caption-text">Components</span><a class="headerlink" href="#components-beispiel" title="Link to this image">#</a></p>
 </figcaption>
@@ -519,7 +513,7 @@ for further information on how to use this Geometry Editor. Or watch our <a clas
 <hr class="docutils" />
 <section id="assign-components-to-the-correct-areas">
 <h4>Assign components to the correct areas<a class="headerlink" href="#assign-components-to-the-correct-areas" title="Link to this heading">#</a></h4>
-<p>The basis of every SIMULTAN file is the assignment of geometries. This means that all surfaces—including walls, ceilings, and floors—must be explicitly assigned. As you can see in the following pictures <a class="reference internal" href="Setting_up_a_problem.html#flachen-zuweisen"><span class="std std-numref">Fig. 10</span></a> and <a class="reference internal" href="Setting_up_a_problem.html#zuordnung-geometrie"><span class="std std-numref">Fig. 11</span></a>!</p>
+<p>The basis of every SIMULTAN file is the assignment of geometries. This means that all surfaces—including walls, ceilings, and floors—must be explicitly assigned. As you can see in the following pictures <code class="xref std std-numref docutils literal notranslate"><span class="pre">flächen_zuweisen</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">zuordnung_geometrie</span></code>!</p>
 <figure class="align-default" id="flachen-zuweisen">
 <img alt="img/flächen_zuweisen.png" src="img/flächen_zuweisen.png" />
 <figcaption>
@@ -532,10 +526,10 @@ for further information on how to use this Geometry Editor. Or watch our <a clas
 <p><span class="caption-text">Data which is connected with the surface</span><a class="headerlink" href="#zuordnung-geometrie" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In <a class="reference internal" href="Setting_up_a_problem.html#flachen-zuweisen"><span class="std std-numref">Fig. 10</span></a> under  <code class="docutils literal notranslate"><span class="pre">Components</span></code> you can see that the selected surface is connected to <strong>6-AW_ZW</strong>. For further Information press the arrow on the right. Once you’ve done that you end up in the component area where this area is noted.</p>
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">flächen_zuweisen</span></code> under  <code class="docutils literal notranslate"><span class="pre">Components</span></code> you can see that the selected surface is connected to <strong>6-AW_ZW</strong>. For further Information press the arrow on the right. Once you’ve done that you end up in the component area where this area is noted.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On the buttom of <a class="reference internal" href="Setting_up_a_problem.html#zuordnung-geometrie"><span class="std std-numref">Fig. 11</span></a> you can see how this surface gets connected to the <strong>IDA-ICE-Plugin</strong>. More on this later in the chapter <a class="reference internal" href="#opaque-building-components-key-parameter-and-layer-parameters"><span class="xref myst">opaque building components</span></a></p>
+<p>On the buttom of <code class="xref std std-numref docutils literal notranslate"><span class="pre">zuordnung_geometrie</span></code> you can see how this surface gets connected to the <strong>IDA-ICE-Plugin</strong>. More on this later in the chapter <a class="reference internal" href="#opaque-building-components-key-parameter-and-layer-parameters"><span class="xref myst">opaque building components</span></a></p>
 </div>
 </section>
 <hr class="docutils" />
@@ -569,7 +563,7 @@ for further information on how to use this Geometry Editor. Or watch our <a clas
 IDA-ICE-plugin will be provided there.</p>
 </div>
 <!-- Direkten Link einfügen -->
-<p>In <a class="reference internal" href="Setting_up_a_problem.html#geo-simultan"><span class="std std-numref">Fig. 13</span></a> it can be seen that the plugin uses a reference geometry (white) for the dynamic simulation.
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">geo_simultan</span></code> it can be seen that the plugin uses a reference geometry (white) for the dynamic simulation.
 The reference geometry, representing the outer building envelope, can for example be an architectural model or a
 designated model used for the building physics simulations.</p>
 <figure class="align-default" id="geo-simultan">
@@ -606,7 +600,7 @@ needed for the simulation has to be linked to this model.</p>
 <hr class="docutils" />
 <section id="propagation">
 <h3>Propagation<a class="headerlink" href="#propagation" title="Link to this heading">#</a></h3>
-<p>Within the property manager under Parameters there is the Propagation area. This includes 3 buttons with different functions. As you can see in <a class="reference internal" href="Setting_up_a_problem.html#propagation"><span class="std std-numref">Fig. 19</span></a></p>
+<p>Within the property manager under Parameters there is the Propagation area. This includes 3 buttons with different functions. As you can see in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Propagation</span></code></p>
 <ul class="simple">
 <li><p>Always propagate</p></li>
 <li><p>Propagate if instance</p></li>
@@ -773,7 +767,7 @@ The opposite of 6. so for the outside of the window</p></li>
 <hr class="docutils" />
 <section id="shading-building-components-key-parameter-and-layer-parameters">
 <h4>Shading building components: Key parameter and layer parameters<a class="headerlink" href="#shading-building-components-key-parameter-and-layer-parameters" title="Link to this heading">#</a></h4>
-<p>A central element in IDA-ICE is the consideration of shading, as it has a considerable influence on daylight, cooling and heating loads and the indoor climate. This is why the plugin has a separate area for this, as you can see in <a class="reference internal" href="Detailed_Modeling_Guide.html#shades-ui"><span class="std std-numref">Fig. 25</span></a>.</p>
+<p>A central element in IDA-ICE is the consideration of shading, as it has a considerable influence on daylight, cooling and heating loads and the indoor climate. This is why the plugin has a separate area for this, as you can see in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Shades-UI</span></code>.</p>
 <figure class="align-default" id="shades-ui">
 <img alt="img/Shades-UI.png" src="img/Shades-UI.png" />
 <figcaption>
@@ -835,7 +829,7 @@ How much visible light is transmitted through the surface.</p></li>
 <hr class="docutils" />
 <section id="hvac-system">
 <h3>HVAC-System<a class="headerlink" href="#hvac-system" title="Link to this heading">#</a></h3>
-<p>The HVAC-System is implemented via the ESBO-Plant of IDA-ICE. <a class="reference internal" href="Detailed_Modeling_Guide.html#esbo-simultan"><span class="std std-numref">Fig. 26</span></a> shows all the possible inputs
+<p>The HVAC-System is implemented via the ESBO-Plant of IDA-ICE. <code class="xref std std-numref docutils literal notranslate"><span class="pre">esbo_simultan</span></code> shows all the possible inputs
 which are exported with the plugin.</p>
 <figure class="align-default" id="esbo-simultan">
 <img alt="img/Esbo-UI.png" src="img/Esbo-UI.png" />
@@ -854,7 +848,7 @@ which are exported with the plugin.</p>
 <p><span class="caption-text">A switched off component</span><a class="headerlink" href="#esbo-off" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Like all other functions in the IDA-ICE-Plugin, changes in the user interface have a direct effect on the data structure. As a result, these functions are powerful and should be used with caution. In the following scrennshots <a class="reference internal" href="Detailed_Modeling_Guide.html#system-on"><span class="std std-numref">Fig. 27</span></a> and <a class="reference internal" href="Detailed_Modeling_Guide.html#system-off"><span class="std std-numref">Fig. 28</span></a> I have shown the effects on Building Services when an <strong>HVAC-System</strong> is switched off in <strong>ESBO-plant</strong>.</p>
+<p>Like all other functions in the IDA-ICE-Plugin, changes in the user interface have a direct effect on the data structure. As a result, these functions are powerful and should be used with caution. In the following scrennshots <code class="xref std std-numref docutils literal notranslate"><span class="pre">system-on</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">system_off</span></code> I have shown the effects on Building Services when an <strong>HVAC-System</strong> is switched off in <strong>ESBO-plant</strong>.</p>
 <!-- Rausgenommen / überflüssig-->
 <figure class="align-default" id="system-on">
 <img alt="img/esbo-on.png" src="img/esbo-on.png" />

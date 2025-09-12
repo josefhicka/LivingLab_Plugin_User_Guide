@@ -1,47 +1,54 @@
-(Running_a_simulation)=
+(Notizen)=
 
-# Running a simulation
+# Notizen:
 
-## Exporting the SIMULTAN-model to IDA-ICE
+Wichtigster TEil des Living Lab Plugin ist das Herunterladen der Sensor-Daten (live) aus dem Labor in der FH Burgenland.
 
-When modelling according to the conventions described in chapter [Setting up a problem](Setting_up_a_problem.md) the
-model is ready to be exported. This can be done by clicking the Export Model button when you are inside the IDA-ICE
-Plugin in the SIMULTAN Editor {numref}`export_model`.
+## Taxonmien
 
-```{figure} img/export_model.png
----
-name: export_model
----
-Export button to create the file structure to import into IDA-ICE.
-```
+1:09:00 Das Living Lab Plugin kommt auch mit eigenen Taxonomien. Wichtig sind die Sensoren, es gibt unterschiedliche Sensoren Arten. Mit den richtigen Komponenten kann man die DAten als graph abbilden! Daten können durch das drücken des richtigen Knopfes auf das aktuellste automatisch AKtualisiert werden. 
 
-After clicking the button you will be prompted with a save dialogue. Please specify the location where you want to
-save the project directory and confirm.
+## Buttons des Plugins
 
-## Importing into IDA-ICE
+### Download Model Button
 
-To import the project simply open the project in IDA-ICE as you would do usually {numref}`open_idaice`.
+veraltet, wird in naher zukunft entfernt
 
-```{figure} img/open_idaice.png
----
-name: open_idaice
----
-Open the exported project in IDA-ICE.
-```
+### Workflow Button
 
+1:11:00 braucht unbedingt ein .config file. Findet man immer in den Ordnern der Simultan-Dateien (versteckte Ordner). Informationen des .config files: Benutzername für die API, Passwort, DAten IDs, ... weitere Infos
 
-## Running a simulation in IDA-ICE
+Run Workflow fenster: 
+1. config File wie oben beschrieben
+2. Excution Mode: 1:12:00
+    - specific Range definiert dauer der Simulation in IDA-ICe über die Felder Simulation Start: und Simulation End:
+    - Continuous: Simulation wird regelmäßig rückblickend gemacht. Im config File kann man das Intervall definieren, Andreas / Zsombor fragen wo genau das hinterleft ist. (-1 steht für unendlich) 
+3. Number of Runs gibt an wie oft die Simulation wiederholft wird.
 
-Run the simulation via the Simulation tab in IDA-ICE {numref}`simulation_tab`. 
+Interner Ablauf wenn workflow gestartet wird: Plugin holt sich die WEtterdaten für den Zeitraum, die Sensordaten für den Zeitraum, IDA-ICE-Plugin wird im hintergrund gestartet --> exportiert das Modell. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind und Simuliert anschließend das Modell mit den echten Daten
 
-```{figure} img/simulation_tab.png
----
-name: simulation_tab
----
-Simulation tab. Choose the cases you want to run or simply run the whole simulation.
-```
+´´´{warning}
+Abstände beim Benutzernamen verursachen Probleme, Programm kann nicht erfolgreich simulieren und stürzt ab!
+´´´ 
 
-```{note}
-To import the results into SIMULTAN you need to run the Energy Loads simulation. For now only those results will be 
-imported into SIMULTAN. 
-```
+Alle anderen Button sind eigentlich dafür da, dass das was mit dem Workflow Button automatisch passiert einzeln zu machen. DA man manchmal vllt Stichproben artig was kontrollieren will oder eben spezifisch ein Tool braucht.
+
+### Query and Persist Weather Data Button
+
+Holt sich über eine verbundene API, die Live Wetter Daten
+Passwort steht auch im .congig-file (1:18:18) unter API Password
+**Test Connection** zur überprüfung von Fehlern
+Datapoints: Mit dem excakten Key der Sensoren kann man manuell auswählen welcher Sensor Daten wiedergeben soll!
+
+### Export to IDA-ICE Button
+
+Exportiert das Modell in .idm Format. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind.
+
+### Convert Temperature Files to CSV
+
+1:23:15 Temperature Files müssten die IDA-ICE resultate sein. Mit der Funktion möglich die Simulierten Wetter Daten aus IDA-ICE direct als CSV abspeichern!
+
+### Download raw sensor data
+
+Daten so wie sie von der API kommen herunterladen
+**Wichtig**: Passwort wieder aus config-File 
