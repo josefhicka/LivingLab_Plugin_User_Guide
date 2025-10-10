@@ -29,22 +29,9 @@ Abstände beim Benutzernamen verursachen Probleme, Programm kann nicht erfolgrei
 
 Alle anderen Button sind eigentlich dafür da, dass das was mit dem Workflow Button automatisch passiert einzeln zu machen. DA man manchmal vllt Stichproben artig was kontrollieren will oder eben spezifisch ein Tool braucht.
 
-### Query and Persist Weather Data Button
-
-Holt sich über eine verbundene API, die Live Wetter Daten
-Passwort steht auch im .congig-file (1:18:18) unter API Password
-**Test Connection** zur überprüfung von Fehlern
-Datapoints: Mit dem excakten Key der Sensoren kann man manuell auswählen welcher Sensor Daten wiedergeben soll!
-
-### Export to IDA-ICE Button
-
-Exportiert das Modell in .idm Format. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind.
 
 ### Convert Temperature Files to CSV
 
 1:23:15 Temperature Files müssten die IDA-ICE resultate sein. Mit der Funktion möglich die Simulierten Wetter Daten aus IDA-ICE direct als CSV abspeichern!
 
-### Download raw sensor data
-
-Daten so wie sie von der API kommen herunterladen
-**Wichtig**: Passwort wieder aus config-File 
+### 1:34:00 IDA-ICE Simulate

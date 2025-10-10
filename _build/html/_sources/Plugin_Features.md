@@ -2,61 +2,72 @@
 
 # Plugin Features
 
-This chapter deals with the functions of the plugin and how to use them. The SIMULTAN *LivingLab-Plugin* offers many possibilities (see {numref}`livinglab_functions`) and a customized UI.
+This chapter describes the plugin’s functions and explains how to use them. The SIMULTAN *LivingLab Plugin* provides a broad set of features and a tailored user interface.  
 
-```{figure} img/LivingLab_Functions.png
----
-name: livinglab_functions
----
-Overview of all functions within the *LivingLab-Plugin*
-```
+To maximise flexibility while keeping the interface user-friendly, each feature is exposed via a dedicated button.
 
-As you can see, the plugin includes a wide range of functions. Since we don't want to set any limits for the user and at the same time want to keep the user-friendliness quite high, there is a separate button for each feature.
 
-```{note}
-In the next revision of the plugin, the `Download Model` button will be removed, as it no longer serves any purpose or adds any value to the Plugin.
+```{warning}
+In the next revision of the plugin, the `Download Model` button will be removed because it no longer provides value.
 ``` 
+
+---
 
 ## Run Workflow 
 
-The workflow button is the heart of the *LivingLab-Plugin*. It combines virtually all of the plugin's tools in a single function.
+The **Workflow** button is the core of the LivingLab Plugin. It combines nearly all plugin tools into a single, automated sequence from data retrieval to running an IDA-ICE simulation.
 
-After opening the workflow button, you should see the following UI {numref}`RunWorkflwo_UI`:
+After opening the Workflow UI you should see the following screen {numref}`RunWorkflwo_UI`:
 
 ```{figure} img/RunWorkflow_UI.png
 ---
 name: RunWorkflwo_UI
 ---
-UI for Running a Worklow in the LivingLab-Plugin
+UI for Running a Worklow in the *LivingLab Plugin*
 ```
 
 ### Config File Path
 
-A .config file is, as the name suggests, a configuration file. It typically contains settings and parameters that control the behavior of programs or systems. In our case, the file contains the API username, API password, and a link to the sensors so that the workflow can function smoothly.
-The file can be found in the folder of the respective SIMULTAN file.
+ The `config` file (configuration file) contains settings that control the plugin behaviour. For this plugin the file typically includes the API username, API password, the sensor endpoint (or sensor mapping), and other parameters required by the workflow. The `config` file has to be stored in the same folder as the corresponding SIMULTAN file.
+
 
 ```{Tip}
-If you cannot find your SIMULTAN file folder, for Windows you must enable the Hidden Objects option in the Explorer.
+If you cannot find your SIMULTAN file folder on Windows, enable "Hidden Objects" in File Explorer.
 ```
 
-### Excution Mode
-Excution Mode offers users two options:  
-- **Continuous:** The interval can be defined in the *.config file* > ...<!-- Information von Zsombor wo Intervall im .config File definiert wurde--> `Number of Runs` specifies how often the simulation should be repeated.  
-**Tip: -1 is the key for permanent repetition of the simulation.**
-- **Specific Range:** Filling in the `Simulation Start` and `Simulation End` fields defines a time span for the simulation.
+---
 
+### Excution Mode
+The Workflow supports two execution modes:
+- **Continuous:**  
+The interval for repeated runs is defined in the `config` file > ...<!-- Information von Zsombor wo Intervall im config File definiert wurde-->   
+`Number of Runs` specifies how many times the simulation should repeat.   
+**Tip:** Setting `Number of Runs = -1` triggers continuous, indefinite repetition.
+- **Specific Range:**  
+Define a concrete time window by filling the `Simulation Start` and `Simulation End` fields; the workflow runs only for this period.
+<!-- ⚠️ Vorschlag: Dokumentieren Sie genau, welcher .config-Schlüssel das Intervall definiert (Name, Einheiten), und geben Sie eine Parameterbeschreibung an (z. B. Millisekunden, Sekunden, Minuten). -->
+
+---
 
 ### Running the Workflow
 
 **Starting the Simulation:**  
-Based on the defined time window, the API can now retrieve the corresponding weather data and the sensor data from the LivingLab. The model is automatically exported to IDA-ICE. Instead of the standard data used in normal IDA-ICE simulations, the actual weather and sensor data measured and downloaded from the API is used as the framework conditions. The data is stored within the SIMULTAN components. Taxonomies enable the data to be uniquely identified by IDA-ICE. Finally, an IDA-ICE simulation is performed fully automatically.
+Given the configured `Execution Mode`, the plugin retrieves the corresponding weather and sensor data from the API.
 
-The simulation results of the workflow function are therefore much more meaningful than those of normal simulations, and with the help of the LivingLab UI, you can be done in just a few minutes.
+**Simulationphase:**
+The model is exported automatically to IDA-ICE. Instead of synthetic or standard boundary conditions, the workflow substitutes the measured weather and sensor data downloaded from the API as the boundary for the IDA-ICE simulation. Data required for clean exports are organised in SIMULTAN components and annotated with taxonomies so that IDA-ICE can uniquely identify them. Finally, the IDA-ICE simulation is started automatically.
+
+**Results:**
+Because the simulation uses measured input data, results from the workflow are typically more representative of real operation than standard simulations. Using the LivingLab UI, a full end-to-end run can be completed quickly.
 
 ## Query and Persist Weather Data
 
-The Query and Persist Weather Data button is used to get real weather data via an API connection into your SIMULTAN data model. The workflow function therefore includes this button. However, if you only want to integrate weather data for a specific period into your SIMULTAN file without directly starting an IDA-ICE simulation, this button is ideal.
+The `Query and Persist Weather Data` feature retrieves weather data from the API and stores it in the SIMULTAN data model. The Workflow includes this step; use this button when you want to import weather data for a specific period without immediately running an IDA-ICE simulation.
 
+**The UI is divided into three parts, which are divided into tabs.**  
+[API Access](#api-access) > connect to the API  
+[Datapoints](#datapoints) > assign sensors  
+[Query](#query) > select the time window  
 
 ### API Access
 
@@ -67,10 +78,9 @@ name: APIAccess_UI
 UI for connecting to the API
 ```
 
-In order to access weather data, you first need to establish a connection to the API (see {numref}`APIAccess_UI`). You can do this by adding the password. This can be found in the .config file > **“ApiPassword”:**.  
-To check whether the connection has been established, press `Test Connection`.  
-If everything has been successful, the message “Connection successful” should appear under the `Test Connection Button`.
+{numref}`APIAccess_UI` To access weather data, establish a connection to the API by adding the API password (stored in the .config file). Use Test Connection to verify connectivity. On success, the UI displays “Connection successful” below the test button.
 
+More about the `config` file [here](#config-file-path)
 
 ### Datapoints
 
@@ -81,7 +91,8 @@ name: Mapping_UI
 UI for assigning sensors to values
 ```
 
-In this area {numref}`Mapping_UI`, you can manually assign any sensor to each value. However, you need the exact key (the name of the sensor) for this, otherwise no corresponding results will be delivered. This allows users to determine for themselves which sensors reflect their data.
+In this area ({numref}`Mapping_UI`) you manually map API sensor keys to the corresponding weather parameters. The mapping requires the exact sensor key (name) returned by the API; incorrect keys will produce no data. This mapping decides which sensor values populate which weather parameters in the SIMULTAN model.
+<!-- verweis darauf wo die excakten sensor namen gefunden werden können!-->
 
 ### Query
 
@@ -92,7 +103,7 @@ name: Weather_Data_UI
 UI for Query and Persist Weather Data
 ```
 
-Before starting the simulation, you can again limit the simulation results to a specific time period. If the check mark is deactivated, the user has the option of specifying the time period in the `Start Date` and `End Date` fields ({numref}`Weather_Data_UI`). <!-- Frage an Andreas, ob die check-box wirklich diese Aufgabe hat?-->
+Use the Start Date and End Date fields to limit the imported weather data to a specific time range. The checkbox `Use Simulation Data Range` in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.
 
 ### Results
 
@@ -103,13 +114,13 @@ name: pos_SensorData
 Positioning of sensor data within the ComponentBuilder
 ```
 
-After starting the simulation, all data is saved within a very short time. This can be found within the *ComponentBuilder* > `Sensors` > `Weather Station` > `Diffusive Radiation` (see {numref}`pos_SensorData`).
-This component consists of two subcomponents named `Sensor Data`.  
-Both have different properties. One displays the data in a **table** and the other in a **graph**. The icons on the left edge of the component indicate the type of data representation involved.  
-To enter on of both views, you must search for the Value section within the *PropertyEditor*. Click on the interactive text there, as shown in {numref}`PropertyEditor_graph`.
+Imported data is stored in dedicated components under *ComponentBuilder* > `Sensors` > `Weather Station` > `Diffusive Radiation` (see {numref}`pos_SensorData`).
+The component contains two subcomponents named `Sensor Data` — one shows a table, the other a graph. Icons to the left of each subcomponent indicate the representation type.
+
+To open either view, locate the Value section in the `PropertyEditor` and click the interactive text (see {numref}`PropertyEditor_graph`).
 
 ```{Tip}
-If *PropertyEditor* is not enabled, you can enable it under the General tab.
+To open the *PropertyEditor*: go to the General tab and click the *PropertyEditor* button — it appears on the right side of the screen.
 ```
 
 ```{figure} img/PropertyEditor_graph.png
@@ -119,10 +130,194 @@ name: PropertyEditor_graph
 Illustration of the PropertyEditor
 ```
 
-## IDA-ICE Export
+---
 
-This button causes the SIMULTAN model to be exported to IDA-ICE. The key difference is that SIMULTAN also automatically exports the measured weather data stored in the LivingLab components.
+## Sensor Data
 
-```{Note}
-If you want to run an IDA-ICE simulation but don't necessarily need the weather data for your simulation, we don't recommend exporting the model via the LivingLab plugin. This is because the simulation with real weather data does not contain smooth functions and is therefore much more complex and slower than the standard simulation.
+ SIMULTAN provides three integrated actions for manual sensor-data handling:
+
+- [Download Raw Sensor Data](#download-sensor-data)
+- [Download Processed Sensor Data](#download-sensor-data)
+- [Extract Sensor Data from SIMULTAN](#extract-sensor-data-from-simultan)
+
+---
+
+```{note}
+To ensure that the sensor data is processed smoothly, please ensure that CSV Importer uses the *English language standard* (**comma as separator** and **period as decimal separator**). Otherwise, problems may arise when when opening the converted data, resulting in an unclean CSV file.
+``` 
+
+---
+
+### Download Sensor Data (raw & processed)
+
+The buttons `Download Raw Sensor Data` and `Download Processed Sensor Data` work with the same user interface and are therefore identical to use.
+
+```{figure} img/sensor_data_ui.png
+---
+name: sensor_data_ui
+---
+UI for downloading Sensor Data
+```
+
+**Input fields explained** ({numref}`sensor_data_ui`)
+- **API Password** — required for authentication.
+- **Start Date / End Date** — define the time window for the download.
+- **DataPoint** — selects the sensor/key to download.
+- **Zone Name** — the destination component/zone in the SIMULTAN data model where data will be stored.
+- **Taxonomy** — a unique identifier assigned to the imported data for later export and mapping.
+
+After filling the fields you can either download the data as a **CSV file** or integrate the data directly into the SIMULTAN data model (the Zone Name and Taxonomy fields are used in that case).
+
+---
+
+#### Raw vs Processed Sensor Data
+
+Processed data differs from raw data primarily by smoothing and cleaning steps. The plugin offers both so users can choose between fidelity to the original measurements and easier-to-handle datasets.
+
+| Attribute             | Raw Sensor Data                     | Processed Sensor Data                  |
+|-----------------------|-------------------------------------|----------------------------------------|
+| Data Size             | Very large                  | Smaller                        |
+| Evaluation Effort     | High                        | Low                            |
+| Error Susceptibility  | Contains outliers/noise     | Mostly cleaned                 |
+| Data Granularity      | Maximum                     | Reduced                |
+
+---
+
+## Extract Sensor Data from SIMULTAN
+
+{numref}`extract_sensordata` This function allows you to download data based on a specific component. This allows you to save the current status of your data from your SIMULTAN data model separately. As a backup or for other purposes.
+
+```{figure} img/extract_sensordata.png
+---
+name: extract_sensordata
+---
+UI for the function Extract Sensor Data from SIMULTAN
+```
+
+### How to use
+
+1. Click *Extract Sensor Data from SIMULTAN*
+2. Enter the taxonomy from which you want to extract the data. (e.g., Temperature_Sensor_Weather | You can find the taxonomy under the following components: `Sensors` > `Weather Station` > `Temperature Air`)
+3. Press *Extract* 
+4. Save the data in your file directory.
+
+---
+
+## Time Format Conversion
+
+`DateTime` and `HourlyIndex` formats are two common ways to represent time in datasets and simulations. `DateTime` includes full date and time information, making it easy to trace, compare, and interpret exact moments or periods. An `HourlyIndex`, on the other hand, simply counts each hourly interval from a defined starting point—this is useful for simulations and calculations that focus on time steps rather than specific dates.
+
+Converting between these formats is important: it lets users switch easily between human-readable times and efficient index-based processing. The ability to convert ensures flexibility when working with data, helping match the needs of both calculations and presentation.
+
+---
+
+```{warning}
+Check that all data records in your `.csv` file are formatted consistently. Just one outlier is enough to prevent a successful conversion.
+``` 
+
+---
+
+### How to use
+
+1. Press one of the two buttons, `Convert DateTime to Hourly Indexed` or `Convert Hourly Indexed to DateTime`, depending on what you want to do.
+2. Specify the year of your data. <!-- WAs ist wenn die daten in mehreren jahren sind?-->
+3. Press `Browse...` to select the file you want to convert.
+4. Click `Convert` to start the process.
+
+> {numref}`Index_Converter` Both functions/UI work exactly the same way, just make sure you use the right method based on your input data.
+
+```{figure} img/Index_Converter.png
+---
+name: Index_Converter
+---
+UI for converting time indices
+```
+
+---
+
+## Process Data Points for Comparison
+
+The **Process Data Points for Comparison** button converts raw CSV sensor data into a cleaned format suitable for direct comparison with simulation result CSV files.  
+
+It processes CSV files containing sensor data in two possible formats:  
+
+- **Timestamps (DateTime)**  
+- **Hour indices**  
+
+### Processing steps
+
+1. Averages multiple readings within the same hour.  
+2. Converts timestamps into hour indices based on the specified year.  
+3. Fills missing hours by estimating values between available data points.  
+
+### Output
+
+The output is a cleaned CSV file with two columns:  
+
+- **Hour index** (0–8759)  
+- **Corresponding sensor value**  
+
+<!-- Beispiel csv anfügen!-->
+
+---
+
+## Add Control Data to Simulated Results
+
+The **Add Control Data to Simulated Results** button merges real-world sensor data with simulation outputs, enabling side-by-side comparison of predicted and actual building performance.  
+
+### How it works
+
+1. Select a **control data CSV file** containing hourly indexed sensor data.  
+2. Specify the **name of the new column** where control values will be stored.  
+3. Choose the **target simulation CSV file with hourly index**.  
+4. The tool matches records by **hour index** and appends the corresponding control sensor values as a new column.  
+
+### Output
+
+The selected simulation CSV file is updated *in place*.  
+- All existing simulation data is preserved.  
+- The real-world control data is integrated as an additional column for direct comparison. 
+
+---
+
+## Simulate and Process Results
+
+The **Simulate and Process Results** button automates the entire building validation workflow. It integrates simulation and measurement data into a single process — from running IDA-ICE simulations to producing a unified CSV file for comparing predicted and actual building performance.  
+
+### Automated pipeline steps
+
+1. Launches **IDA-ICE** and simulates the selected IDA-ICE model (.idm file).  
+2. Extracts **temperature results** from the simulation output files.  
+3. Retrieves the **simulation dates** from the model to define the data query period.  
+4. Downloads **real sensor data** from the LivingLab API for the exact timeframe.  
+5. Processes both datasets into **hourly averages**, including gap-filling where needed.  
+6. Merges simulation and sensor data by matching **hour indices**.  
+7. Outputs a **unified CSV file** containing both predicted and measured values side-by-side.  
+
+### Input fiels
+
+```{figure} img/simandprocessresults.png
+---
+name: simandprocessresults
+---
+Simulate and Process Results UI and Input fields
+```
+
+**Input fields explained** ({numref}`simandprocessresults`)
+- **Model File Path** — IDA-ICE model as the baseline for comparison.
+- **Name Of Simulation Room** — path to the standalone command-line version of the IDA-ICE-Plugin.
+- **Idaice Path** — the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe).
+- **Idaice Exporter Path** — selects the sensor/key to download.
+- **API** — username, password, and URL for linking the API.
+- **Project Id** — <!-- Zsombor fragen-->.
+- **Control DataPoint Id** — selects the sensor/key for comparison.
+
+### Output
+
+The result is a single CSV file in which:  
+- Simulation results (predicted values) and real sensor data (measured values) are aligned by hour index.  
+- The dataset is ready for direct validation, visualization, or further analysis.  
+
+```{note}
+This function replaces multiple manual steps with one automated workflow. Ensure that both the simulation model and API credentials are correctly configured before running the process.
 ```

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Notizen: &#8212; IDA-ICE-Plugin for SIMULTAN (Work in Progress)</title>
+    <title>Running a Simulation &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
   
   
   
@@ -57,10 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Running_a_simulation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Running_a_Simulation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Results of the simulation" href="Results_of_the_simulation.html" />
+    <link rel="next" title="IDAICE Integration" href="IDAICE_Integration.html" />
     <link rel="prev" title="Plugin Features" href="Plugin_Features.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -148,8 +148,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>`);</script>
   
-    <p class="title logo__title">IDA-ICE-Plugin for SIMULTAN (Work in Progress)</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -176,13 +182,11 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Taxonmien</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Plugin_Features.html">Plugin Features</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notizen:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Results_of_the_simulation.html">Results of the simulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Sync_Import.html">Sync Import</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running a Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">Copyright and license agreements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
@@ -257,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/andreass0/IDAICE_Plugin_User_Guide/issues/new?title=Issue%20on%20page%20%2FRunning_a_simulation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/andreass0/IDAICE_Plugin_User_Guide/issues/new?title=Issue%20on%20page%20%2FRunning_a_Simulation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +291,7 @@
       
       
       
-      <li><a href="_sources/Running_a_simulation.md" target="_blank"
+      <li><a href="_sources/Running_a_Simulation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,9 +362,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -371,28 +373,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notizen:</h1>
+    <h1>Running a Simulation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonmien">Taxonmien</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons-des-plugins">Buttons des Plugins</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-model-button">Download Model Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-button">Workflow Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-and-persist-weather-data-button">Query and Persist Weather Data Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-ida-ice-button">Export to IDA-ICE Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-temperature-files-to-csv">Convert Temperature Files to CSV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-raw-sensor-data">Download raw sensor data</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -402,60 +387,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notizen">
-<span id="id1"></span><h1>Notizen:<a class="headerlink" href="#notizen" title="Link to this heading">#</a></h1>
-<p>Wichtigster TEil des Living Lab Plugin ist das Herunterladen der Sensor-Daten (live) aus dem Labor in der FH Burgenland.</p>
-<section id="taxonmien">
-<h2>Taxonmien<a class="headerlink" href="#taxonmien" title="Link to this heading">#</a></h2>
-<p>1:09:00 Das Living Lab Plugin kommt auch mit eigenen Taxonomien. Wichtig sind die Sensoren, es gibt unterschiedliche Sensoren Arten. Mit den richtigen Komponenten kann man die DAten als graph abbilden! Daten können durch das drücken des richtigen Knopfes auf das aktuellste automatisch AKtualisiert werden.</p>
-</section>
-<section id="buttons-des-plugins">
-<h2>Buttons des Plugins<a class="headerlink" href="#buttons-des-plugins" title="Link to this heading">#</a></h2>
-<section id="download-model-button">
-<h3>Download Model Button<a class="headerlink" href="#download-model-button" title="Link to this heading">#</a></h3>
-<p>veraltet, wird in naher zukunft entfernt</p>
-</section>
-<section id="workflow-button">
-<h3>Workflow Button<a class="headerlink" href="#workflow-button" title="Link to this heading">#</a></h3>
-<p>1:11:00 braucht unbedingt ein .config file. Findet man immer in den Ordnern der Simultan-Dateien (versteckte Ordner). Informationen des .config files: Benutzername für die API, Passwort, DAten IDs, … weitere Infos</p>
-<p>Run Workflow fenster:</p>
-<ol class="arabic simple">
-<li><p>config File wie oben beschrieben</p></li>
-<li><p>Excution Mode: 1:12:00</p>
-<ul class="simple">
-<li><p>specific Range definiert dauer der Simulation in IDA-ICe über die Felder Simulation Start: und Simulation End:</p></li>
-<li><p>Continuous: Simulation wird regelmäßig rückblickend gemacht. Im config File kann man das Intervall definieren, Andreas / Zsombor fragen wo genau das hinterleft ist. (-1 steht für unendlich)</p></li>
-</ul>
-</li>
-<li><p>Number of Runs gibt an wie oft die Simulation wiederholft wird.</p></li>
-</ol>
-<p>Interner Ablauf wenn workflow gestartet wird: Plugin holt sich die WEtterdaten für den Zeitraum, die Sensordaten für den Zeitraum, IDA-ICE-Plugin wird im hintergrund gestartet –&gt; exportiert das Modell. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind und Simuliert anschließend das Modell mit den echten Daten</p>
-<p>´´´{warning}
-Abstände beim Benutzernamen verursachen Probleme, Programm kann nicht erfolgreich simulieren und stürzt ab!
-´´´</p>
-<p>Alle anderen Button sind eigentlich dafür da, dass das was mit dem Workflow Button automatisch passiert einzeln zu machen. DA man manchmal vllt Stichproben artig was kontrollieren will oder eben spezifisch ein Tool braucht.</p>
-</section>
-<section id="query-and-persist-weather-data-button">
-<h3>Query and Persist Weather Data Button<a class="headerlink" href="#query-and-persist-weather-data-button" title="Link to this heading">#</a></h3>
-<p>Holt sich über eine verbundene API, die Live Wetter Daten
-Passwort steht auch im .congig-file (1:18:18) unter API Password
-<strong>Test Connection</strong> zur überprüfung von Fehlern
-Datapoints: Mit dem excakten Key der Sensoren kann man manuell auswählen welcher Sensor Daten wiedergeben soll!</p>
-</section>
-<section id="export-to-ida-ice-button">
-<h3>Export to IDA-ICE Button<a class="headerlink" href="#export-to-ida-ice-button" title="Link to this heading">#</a></h3>
-<p>Exportiert das Modell in .idm Format. Nimmt anstatt von Standard werten die heruntergeladenen echt WEtterdaten welche in den Simultans Componenten/Taxonmien hinterlegt sind.</p>
-</section>
-<section id="convert-temperature-files-to-csv">
-<h3>Convert Temperature Files to CSV<a class="headerlink" href="#convert-temperature-files-to-csv" title="Link to this heading">#</a></h3>
-<p>1:23:15 Temperature Files müssten die IDA-ICE resultate sein. Mit der Funktion möglich die Simulierten Wetter Daten aus IDA-ICE direct als CSV abspeichern!</p>
-</section>
-<section id="download-raw-sensor-data">
-<h3>Download raw sensor data<a class="headerlink" href="#download-raw-sensor-data" title="Link to this heading">#</a></h3>
-<p>Daten so wie sie von der API kommen herunterladen
-<strong>Wichtig</strong>: Passwort wieder aus config-File</p>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="running-a-simulation">
+<span id="id1"></span><h1>Running a Simulation<a class="headerlink" href="#running-a-simulation" title="Link to this heading">#</a></h1>
+<!-- Beispiel für eine volldukomentierte Mustersimulation inklusive resultate zum Testen für den User!-->
+<!-- WIchtig da im Kapitel Running the Example auf Running a Simulation verwiesen wurde!-->
 </section>
 
     <script type="text/x-thebe-config">
@@ -498,11 +433,11 @@ Datapoints: Mit dem excakten Key der Sensoren kann man manuell auswählen welche
       </div>
     </a>
     <a class="right-next"
-       href="Results_of_the_simulation.html"
+       href="IDAICE_Integration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Results of the simulation</p>
+        <p class="prev-next-title">IDAICE Integration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -512,30 +447,6 @@ Datapoints: Mit dem excakten Key der Sensoren kann man manuell auswählen welche
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonmien">Taxonmien</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons-des-plugins">Buttons des Plugins</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-model-button">Download Model Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-button">Workflow Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-and-persist-weather-data-button">Query and Persist Weather Data Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-ida-ice-button">Export to IDA-ICE Button</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-temperature-files-to-csv">Convert Temperature Files to CSV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-raw-sensor-data">Download raw sensor data</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

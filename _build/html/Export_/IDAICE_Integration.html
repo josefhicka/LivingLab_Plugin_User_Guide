@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>IDAICE Integration &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Export_/IDAICE_Integration';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Living-Lab-Plugin User Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting_started_with_the_IDAICE_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Simultan_Basics.html">Simultan Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Plugin_Features.html">Plugin Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Running_a_Simulation.html">Running a Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">Copyright and license agreements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/andreass0/IDAICE_Plugin_User_Guide" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/andreass0/IDAICE_Plugin_User_Guide/issues/new?title=Issue%20on%20page%20%2FExport_/IDAICE_Integration.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Export_/IDAICE_Integration.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>IDAICE Integration</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-export">IDA-ICE Export</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idaice-export-ui">IdaIce_Export_UI</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#export-pipeline-six-steps">Export pipeline (six steps)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-common-checks">Tips &amp; common checks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-simulate">IDA-ICE Simulate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idaice-simulate-ui">IdaIce_Simulate_UI</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How to use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#produced-output">Produced output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-failure-modes">Monitoring &amp; failure modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-import-results">IDA-ICE Import Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idaice-import-ui">IdaIce_Import_UI</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works-high-level">How it works (high level)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-result-structure">Expected result structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-taxonomy">Mapping &amp; taxonomy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-common-issues">Troubleshooting common issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actionable-documentation-improvements-suggestions">Actionable Documentation Improvements &amp; Suggestions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="idaice-integration">
+<span id="id1"></span><h1>IDAICE Integration<a class="headerlink" href="#idaice-integration" title="Link to this heading">#</a></h1>
+<p>This chapter documents the three IDA-ICE related features provided by the LivingLab Plugin: <strong>IDA-ICE Export</strong>, <strong>IDA-ICE Simulate</strong>, and <strong>IDA-ICE Import Results</strong>. Each feature is available via its own button in the LivingLab UI and is intended to support an end-to-end workflow: export a SIMULTAN model to an IDA-ICE model file (.idm), run IDA-ICE simulations, and import the resulting time series back into SIMULTAN.</p>
+<hr class="docutils" />
+<section id="ida-ice-export">
+<h2>IDA-ICE Export<a class="headerlink" href="#ida-ice-export" title="Link to this heading">#</a></h2>
+<p>The <strong>IDA-ICE Export</strong> button converts the active SIMULTAN building model into one or more IDA-ICE model files (.idm). The export converts geometry, constructions, material properties, and the ESBO plant (or a simplified plant representation) from the SIMULTAN data model into an IDA-ICE compatible format.</p>
+<hr class="docutils" />
+<section id="idaice-export-ui">
+<h3>IdaIce_Export_UI<a class="headerlink" href="#idaice-export-ui" title="Link to this heading">#</a></h3>
+<p><strong>IDA-ICE Export dialog / Save dialog</strong></p>
+<section id="how-to-use">
+<h4>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Click IDA-ICE Export in the LivingLab toolbar.</p></li>
+<li><p>A save dialog opens — choose the output folder and file name (project_name.idm).</p></li>
+<li><p>Confirm the file name and start the export. A progress indicator or log window shows the export pipeline status.</p></li>
+<li><p>On completion the .idm file(s) are written to the chosen folder; any additional files required by IDA-ICE (support files, plant definitions) are placed in subfolders according to the export log.</p></li>
+</ol>
+</section>
+<section id="export-pipeline-six-steps">
+<h4>Export pipeline (six steps)<a class="headerlink" href="#export-pipeline-six-steps" title="Link to this heading">#</a></h4>
+<p>The export executes a six-step pipeline. Each step includes validation and logging so you can trace issues if they occur:</p>
+<ol class="arabic simple">
+<li><p><strong>Project validation</strong><br />
+Checks that the loaded SIMULTAN project is consistent and that required objects (zones, constructions, plant definitions) are present. Validation warnings and errors appear in the export log.</p></li>
+<li><p><strong>Geometry extraction &amp; processing</strong><br />
+Extracts zones, surfaces, openings and shading elements and transforms them into IDA-ICE geometry. This step resolves zone names and mappings that will be used later to link results back to SIMULTAN.</p></li>
+<li><p><strong>Material &amp; construction export</strong><br />
+Exports material properties and layered constructions. Constructions are written in a form compatible with IDA-ICE material models.</p></li>
+<li><p><strong>Plant model generation</strong><br />
+Generates the heating/cooling plant description. For complex systems, ESBO models are generated; for simpler analyses an Ideal plant representation is used. The chosen plant type is recorded in the export log.</p></li>
+<li><p><strong>Environment &amp; site configuration</strong><br />
+Configures site properties (location, weather references) and any boundary conditions required by IDA-ICE.</p></li>
+<li><p><strong>File save &amp; finalization</strong><br />
+Writes the .idm file(s) and any companion files to disk and closes the export session.</p></li>
+</ol>
+<blockquote>
+<div><p>If the export log contains validation errors, correct the underlying SIMULTAN model (missing constructions, unnamed zones, invalid taxonomies) before re-exporting.</p>
+</div></blockquote>
+</section>
+<section id="tips-common-checks">
+<h4>Tips &amp; common checks<a class="headerlink" href="#tips-common-checks" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Ensure every zone has a unique name — names are used to map IDA-ICE results back to SIMULTAN.</p></li>
+<li><p>Verify that required constructions and material properties are assigned to surfaces.</p></li>
+<li><p>If you require a specific plant representation, confirm the export options or set the plant type in the .config / export preferences (see suggestions below).</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ida-ice-simulate">
+<h2>IDA-ICE Simulate<a class="headerlink" href="#ida-ice-simulate" title="Link to this heading">#</a></h2>
+<p>The <strong>IDA-ICE Simulate</strong> button launches IDA-ICE to run simulations using selected .idm model files. The plugin starts IDA-ICE, monitors the external process, and reports completion and basic status to the user. Typical simulation outputs are text-based result files such as TEMPERATURES.prn, ZONE-ENERGY.prn, and ENERGY.prn.</p>
+<hr class="docutils" />
+<section id="idaice-simulate-ui">
+<h3>IdaIce_Simulate_UI<a class="headerlink" href="#idaice-simulate-ui" title="Link to this heading">#</a></h3>
+<p><strong>IDA-ICE Simulate dialog (select IDA-ICE exe path &amp; .idm file)</strong></p>
+<section id="id2">
+<h4>How to use<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Click IDA-ICE Simulate.</p></li>
+<li><p>In the dialog, specify the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe) if prompted. The plugin stores this path for subsequent runs.</p></li>
+<li><p>Click Simulate, then select the .idm file you want to run.</p></li>
+<li><p>The plugin launches IDA-ICE and polls the ida-ice process every 5 seconds to monitor progress.</p></li>
+<li><p>When the process exits, the plugin reports completion and lists the result files produced.</p></li>
+</ol>
+<blockquote>
+<div><p>Make sure IDA-ICE is installed, licensed and that the selected executable path is correct. Simulations will not run if the executable cannot be launched.</p>
+</div></blockquote>
+</section>
+<section id="produced-output">
+<h4>Produced output<a class="headerlink" href="#produced-output" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>TEMPERATURES.prn — room/zone operative temperatures (time series).</p></li>
+<li><p>ZONE-ENERGY.prn (or ENERGY.prn) — heating / cooling loads and energy results.</p></li>
+<li><p>Other standard IDA-ICE result files depending on simulation settings.</p></li>
+</ul>
+</section>
+<section id="monitoring-failure-modes">
+<h4>Monitoring &amp; failure modes<a class="headerlink" href="#monitoring-failure-modes" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The plugin periodically polls the OS process list to detect when the ida-ice process terminates. If IDA-ICE spawns helper processes, the plugin monitors the main PID only.</p></li>
+<li><p>If the simulation fails to start, check: executable path, user permissions, presence of required input files, and available disk space.</p></li>
+<li><p>If the simulation runs but no result files are generated, inspect the IDA-ICE log files in the simulation output folder for runtime errors.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ida-ice-import-results">
+<h2>IDA-ICE Import Results<a class="headerlink" href="#ida-ice-import-results" title="Link to this heading">#</a></h2>
+<p>The <strong>IDA-ICE Import Results</strong> button reads IDA-ICE simulation output files and transfers the numerical results back into the SIMULTAN data model. The import parses per-room result files and creates or updates components that contain time-series data (tables and graphs) for heating loads, cooling loads and operative temperatures.</p>
+<hr class="docutils" />
+<section id="idaice-import-ui">
+<h3>IdaIce_Import_UI<a class="headerlink" href="#idaice-import-ui" title="Link to this heading">#</a></h3>
+<p><strong>IDA-ICE Import Results dialog (select .idm file and result folder)</strong></p>
+<section id="how-it-works-high-level">
+<h4>How it works (high level)<a class="headerlink" href="#how-it-works-high-level" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Click IDA-ICE Import Results and select the corresponding .idm file (or the simulation output folder).</p></li>
+<li><p>The plugin iterates over all rooms / zones defined in the .idm / SIMULTAN mapping. For each zone it searches the simulation output folder and subfolders for matching result files (e.g., ZONE-ENERGY.prn, TEMPERATURES.prn).</p></li>
+<li><p>For each room found, the plugin parses the relevant files: heating/cooling loads from ZONE-ENERGY.prn, temperatures from TEMPERATURES.prn.</p></li>
+<li><p>The plugin creates or updates SIMULTAN components and assigns taxonomy tags so the imported data can be identified and exported later. Time series are stored as both table and graph parameters where applicable.</p></li>
+</ol>
+</section>
+<section id="expected-result-structure">
+<h4>Expected result structure<a class="headerlink" href="#expected-result-structure" title="Link to this heading">#</a></h4>
+<p>Result files are typically stored in subfolders created per simulation run and per building/zone. The plugin expects a naming structure that allows it to locate room-specific files using zone names or IDs exported during the IDA-ICE export step.</p>
+</section>
+<section id="mapping-taxonomy">
+<h4>Mapping &amp; taxonomy<a class="headerlink" href="#mapping-taxonomy" title="Link to this heading">#</a></h4>
+<p>Successful import depends on the mapping between SIMULTAN zone identifiers and IDA-ICE room identifiers. The export step stores identifiers/taxonomies that are later used by the importer to link result files to SIMULTAN components.</p>
+<p>If zone names were changed after export or if export used non-unique names, the importer may fail to find corresponding result files. Keep zone names stable between export, simulation and import.</p>
+</section>
+<section id="troubleshooting-common-issues">
+<h4>Troubleshooting common issues<a class="headerlink" href="#troubleshooting-common-issues" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Missing result files — verify the simulation completed successfully and that result files exist in the output folder.</p></li>
+<li><p>Name mismatches — ensure zone/room names are identical between SIMULTAN and IDA-ICE export. If you renamed zones after export, re-export before simulating.</p></li>
+<li><p>Parsing errors — check the result file format (decimal separator, header lines) and the importer log for line parsing errors. Different localisations (e.g., comma vs dot as decimal separator) can break parsers.</p></li>
+<li><p>Large datasets — importing long time series for many zones can be memory and time intensive. Consider importing a subset or processed (aggregated) results if performance becomes an issue.</p></li>
+</ul>
+<blockquote>
+<div><p>Keep a copy of the export <code class="docutils literal notranslate"><span class="pre">.idm</span></code> and the simulation output folder for reproducibility. This helps debugging and makes it easier to re-run imports if required.</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="actionable-documentation-improvements-suggestions">
+<h2>Actionable Documentation Improvements &amp; Suggestions<a class="headerlink" href="#actionable-documentation-improvements-suggestions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Include example .idm folder layout and example result files (small sample files for TEMPERATURES.prn and ZONE-ENERGY.prn) so users can test the importer without running full simulations.</p></li>
+<li><p>Add an example export log that shows the six pipeline steps and example warnings/errors, making it easier to interpret real logs.</p></li>
+<li><p>Document the taxonomy pattern used to tag components (exact naming convention). Provide examples: e.g. livinglab:idaice:zone:&lt;zone_name&gt;:temperatures.</p></li>
+<li><p>Specify config keys (if applicable) — for example, IDAExePath and where this is stored; also document file permission requirements.</p></li>
+<li><p>Provide an example of the IDA-ICE executable path for Windows/macOS/Linux and a short checklist for common simulation failures (license, disk space, path with spaces).</p></li>
+<li><p>Clarify localisation and parsing rules for result files (decimal separator, date format, header parsing). Add a small section describing how the importer handles different locales.</p></li>
+<li><p>Add a brief performance note: approximate runtime and disk usage expectations for typical model sizes (small / medium / large) and guidance on importing large result sets (batch import or subset).</p></li>
+<li><p>Security note: recommend storing executable paths and credentials in project .config files with restricted filesystem permissions; document secure alternatives where possible.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Export_"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-export">IDA-ICE Export</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idaice-export-ui">IdaIce_Export_UI</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#export-pipeline-six-steps">Export pipeline (six steps)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-common-checks">Tips &amp; common checks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-simulate">IDA-ICE Simulate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idaice-simulate-ui">IdaIce_Simulate_UI</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How to use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#produced-output">Produced output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-failure-modes">Monitoring &amp; failure modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-import-results">IDA-ICE Import Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idaice-import-ui">IdaIce_Import_UI</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works-high-level">How it works (high level)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-result-structure">Expected result structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-taxonomy">Mapping &amp; taxonomy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-common-issues">Troubleshooting common issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actionable-documentation-improvements-suggestions">Actionable Documentation Improvements &amp; Suggestions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Copyright (c) 2022 RWT Plus ZT GmbH and TU Wien
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

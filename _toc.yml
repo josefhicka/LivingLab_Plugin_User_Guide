@@ -8,13 +8,11 @@ parts:
   - caption: Inhalt
     chapters:
       - file: Introduction
-      - file: Getting_started_with_the_IDAICE_Plugin
+      - file: Getting_started_with_the_LivingLab_Plugin
       - file: Simultan_Basics
-      - file: Notizen
       - file: Plugin_Features
-      - file: Running_a_simulation
-      - file: Results_of_the_simulation
-      - file: Sync_Import
+      - file: Running_a_Simulation
+      - file: IDAICE_Integration
       - file: SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model
       - file: LICENSE
       - file: References

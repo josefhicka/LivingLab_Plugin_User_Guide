@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; IDA-ICE-Plugin for SIMULTAN (Work in Progress)</title>
+    <title>Introduction &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Introduction';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting started with the LivingLab Plugin" href="Getting_started_with_the_IDAICE_Plugin.html" />
+    <link rel="next" title="Getting started with the LivingLab Plugin" href="Getting_started_with_the_LivingLab_Plugin.html" />
     <link rel="prev" title="Living-Lab-Plugin User Guide" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -148,8 +148,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>`);</script>
   
-    <p class="title logo__title">IDA-ICE-Plugin for SIMULTAN (Work in Progress)</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -176,12 +182,11 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notizen.html">Notizen:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Plugin_Features.html">Plugin Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Results_of_the_simulation.html">Results of the simulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Sync_Import.html">Sync Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Running_a_Simulation.html">Running a Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">Copyright and license agreements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
@@ -394,22 +399,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+  <!-- mit aktueller Information ist die Einleitung fertig > warten auf ergänzungsvorschläge von Andreas -->
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="what-is-the-livinglab-plugin">
 <h2>What is the LivingLab-Plugin?<a class="headerlink" href="#what-is-the-livinglab-plugin" title="Link to this heading">#</a></h2>
-<p>The Living Lab Plugin is designed to integrate real-time data into building simulations. Sensor data is collected from various sources and transferred to Simultan through an API. From there, the Simultan model can be exported to IDA-ICE, enabling comprehensive building simulations based on realistic, continuously updated measurements.</p>
+<p>The LivingLab Plugin provides a seamless way to bring real-world data into building simulations. By connecting sensors and external data sources through an API, measurement data can be transferred directly to SIMULTAN. From there, the SIMULTAN model can be exported to IDA-ICE, enabling simulations that are not only precise but also continuously updated with live information. This approach ensures that building models remain closely aligned with actual operating conditions.</p>
 </section>
 <section id="functionality-covered-by-the-ida-ice-plugin">
 <h2>Functionality covered by the IDA-ICE-Plugin<a class="headerlink" href="#functionality-covered-by-the-ida-ice-plugin" title="Link to this heading">#</a></h2>
-<p>In the current state of development the plugin is able to do:</p>
+<p>In its current development phase, the plugin offers the following features:</p>
 <ul class="simple">
-<li><p>Live Wetter Daten zu holen</p></li>
-<li><p>Sensor Daten zu verarbeiten</p></li>
-<li><p>Vergleich von Ist- und Sollwerten</p></li>
-<li><p>Konvertieren der Zeit Index</p></li>
-<li><p>Einen vollautomatisierten Workflow für das verarbeiten von gemessenen Wetterdaten und dem simulieren des Modells in IDA-ICE</p></li>
+<li><p>Fetching live weather- and sensor data</p></li>
+<li><p>Processing sensor data</p></li>
+<li><p>Comparing actual and target values</p></li>
+<li><p>Converting the time index</p></li>
 </ul>
+<p><strong>Workflow</strong><br />
+The core functionality of the plugin is a fully automated workflow that processes measured weather and sensor data all the way through to simulating the model in IDA-ICE.</p>
+<p><strong>Import / Export</strong><br />
+The plugin enables smooth data transfer both within and outside the software. Simulation results can be imported from IDA-ICE, and the data model can be exported with integrated live weather and sensor data.</p>
 </section>
 <section id="project">
 <h2>Project<a class="headerlink" href="#project" title="Link to this heading">#</a></h2>
@@ -457,7 +466,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Getting_started_with_the_IDAICE_Plugin.html"
+       href="Getting_started_with_the_LivingLab_Plugin.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

@@ -1,21 +1,25 @@
 (Introduction)=
-
+<!-- mit aktueller Information ist die Einleitung fertig > warten auf ergänzungsvorschläge von Andreas -->
 # Introduction
 
 ## What is the LivingLab-Plugin?
 
-The Living Lab Plugin is designed to integrate real-time data into building simulations. Sensor data is collected from various sources and transferred to Simultan through an API. From there, the Simultan model can be exported to IDA-ICE, enabling comprehensive building simulations based on realistic, continuously updated measurements.
+The LivingLab Plugin provides a seamless way to bring real-world data into building simulations. By connecting sensors and external data sources through an API, measurement data can be transferred directly to SIMULTAN. From there, the SIMULTAN model can be exported to IDA-ICE, enabling simulations that are not only precise but also continuously updated with live information. This approach ensures that building models remain closely aligned with actual operating conditions.
 
 ## Functionality covered by the IDA-ICE-Plugin
 
-In the current state of development the plugin is able to do:
+In its current development phase, the plugin offers the following features:
 
-- Live Wetter Daten zu holen
-- Sensor Daten zu verarbeiten
-- Vergleich von Ist- und Sollwerten
-- Konvertieren der Zeit Index
+- Fetching live weather- and sensor data
+- Processing sensor data
+- Comparing actual and target values
+- Converting the time index
 
-- Einen vollautomatisierten Workflow für das verarbeiten von gemessenen Wetterdaten und dem simulieren des Modells in IDA-ICE
+**Workflow**  
+The core functionality of the plugin is a fully automated workflow that processes measured weather and sensor data all the way through to simulating the model in IDA-ICE.
+
+**Import / Export**  
+The plugin enables smooth data transfer both within and outside the software. Simulation results can be imported from IDA-ICE, and the data model can be exported with integrated live weather and sensor data.
 
 ## Project
 

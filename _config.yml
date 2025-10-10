@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: IDA-ICE-Plugin for SIMULTAN (Work in Progress)
+title: LivingLab-Plugin for SIMULTAN (Work in Progress)
 author: Copyright (c) 2022 RWT Plus ZT GmbH and TU Wien
 logo: logo.png
 

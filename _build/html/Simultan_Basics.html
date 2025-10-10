@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Simultan Basics &#8212; IDA-ICE-Plugin for SIMULTAN (Work in Progress)</title>
+    <title>Simultan Basics &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Simultan_Basics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notizen:" href="Notizen.html" />
-    <link rel="prev" title="Getting started with the LivingLab Plugin" href="Getting_started_with_the_IDAICE_Plugin.html" />
+    <link rel="next" title="Plugin Features" href="Plugin_Features.html" />
+    <link rel="prev" title="Getting started with the LivingLab Plugin" href="Getting_started_with_the_LivingLab_Plugin.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,8 +148,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="LivingLab-Plugin for SIMULTAN (Work in Progress) - Home"/>`);</script>
   
-    <p class="title logo__title">IDA-ICE-Plugin for SIMULTAN (Work in Progress)</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -176,12 +182,11 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_IDAICE_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Simultan Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notizen.html">Notizen:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Plugin_Features.html">Plugin Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Results_of_the_simulation.html">Results of the simulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Sync_Import.html">Sync Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Running_a_Simulation.html">Running a Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">Copyright and license agreements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
@@ -384,7 +389,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livinglab-relevant-taxonomies">LivingLab Relevant Taxonomies</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-of-taxonomies-and-components">Intersection of Taxonomies and Components</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -404,37 +412,44 @@ document.write(`
 <li><p><a class="reference internal" href="#taxonomies"><span class="xref myst">Taxonomies</span></a></p></li>
 <li><p><a class="reference internal" href="#components"><span class="xref myst">Components</span></a></p></li>
 </ol>
+<hr class="docutils" />
 <section id="taxonomies">
 <h2>Taxonomies<a class="headerlink" href="#taxonomies" title="Link to this heading">#</a></h2>
 <p>Taxonomies are classification systems used to organize elements into hierarchical categories and subcategories. They help structure complex models and define relationships between entities.<br />
 Taxonomies also define the storage locations of data. When new data enters the data model through simulations or queries, it can be stored under the correct taxonomy using algorithms.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Components that are not assigned to a taxonomy are ignored by the plugin.</strong></p>
+<p><strong>Components that are not assigned to a taxonomy are completely ignored by the plugin.</strong></p>
 </div>
+<hr class="docutils" />
 <section id="livinglab-relevant-taxonomies">
 <h3>LivingLab Relevant Taxonomies<a class="headerlink" href="#livinglab-relevant-taxonomies" title="Link to this heading">#</a></h3>
-<p>In <a class="reference internal" href="#livinglabtax"><span class="std std-numref">Fig. 4</span></a>, you can see all possible taxonomies from the plugin. These are designed for sensors and weather data in accordance with the plugin.</p>
+<p>In <a class="reference internal" href="#livinglabtax"><span class="std std-numref">Fig. 4</span></a>, you can see all the new taxonomies which come with the plugin. These are designed for sensors and weather data in accordance with the plugin.</p>
 <figure class="align-default" id="livinglabtax">
 <img alt="_images/LivingLabTax.png" src="_images/LivingLabTax.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Overview of LivingLab taxonomies</span><a class="headerlink" href="#livinglabtax" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>This system ensures accurate data exchange. This enables the subsequent generation of a fully automated workflow. More on this in chapter …<br />
-We recommend starting with the attached file to learn how to use the plugin. It also ensures synchronization and reduces the chance of errors. <!-- ANFÜGEN DER LIVINGLAB DATEI!!!--></p>
+<p>This system ensures accurate data exchange. This enables the subsequent generation of a fully automated workflow. More on this in chapter <a class="reference internal" href="Plugin_Features.html#run-workflow"><span class="std std-ref">Run Workflow</span></a>.
+We recommend starting with the attached <a class="reference download internal" download="" href="_downloads/8e13e63c70b6fa8a187862857942ae13/install_test_model.simultan"><span class="xref download myst">file</span></a> to learn how to use the plugin. It also ensures synchronization and reduces the chance of errors.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="components">
 <h2>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h2>
 <p>The <em>ComponentBuilder</em> represent the functional building blocks of a simulation model as shown in <a class="reference internal" href="#components-beispiel"><span class="std std-numref">Fig. 5</span></a>. Examples include heat pumps, fans. Each component has specific properties and parameters relevant to simulation, such as power consumption.</p>
-<!--Anfügen:  Mit den richtigen Komponenten kann man die DAten als graph abbilden! Daten können durch das drücken des richtigen Knopfes auf das aktuellste automatisch AKtualisiert werden. -->
 <figure class="align-default" id="components-beispiel">
 <img alt="_images/components_beispiel.png" src="_images/components_beispiel.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">Some components of a data model</span><a class="headerlink" href="#components-beispiel" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<hr class="docutils" />
+<section id="intersection-of-taxonomies-and-components">
+<h3>Intersection of Taxonomies and Components<a class="headerlink" href="#intersection-of-taxonomies-and-components" title="Link to this heading">#</a></h3>
+<p>Each component in the data model should be linked to a taxonomy. This is the case if a taxonomy name is linked in the <code class="docutils literal notranslate"><span class="pre">List</span></code> column. However, if this field remains empty, it means that this component is inactive and is ignored by the data model.</p>
+</section>
 </section>
 </section>
 
@@ -469,7 +484,7 @@ We recommend starting with the attached file to learn how to use the plugin. It 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Getting_started_with_the_IDAICE_Plugin.html"
+       href="Getting_started_with_the_LivingLab_Plugin.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -478,11 +493,11 @@ We recommend starting with the attached file to learn how to use the plugin. It 
       </div>
     </a>
     <a class="right-next"
-       href="Notizen.html"
+       href="Plugin_Features.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notizen:</p>
+        <p class="prev-next-title">Plugin Features</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -506,7 +521,10 @@ We recommend starting with the attached file to learn how to use the plugin. It 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livinglab-relevant-taxonomies">LivingLab Relevant Taxonomies</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-of-taxonomies-and-components">Intersection of Taxonomies and Components</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

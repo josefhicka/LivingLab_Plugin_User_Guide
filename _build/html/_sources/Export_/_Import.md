@@ -1,6 +1,8 @@
-(Sync_Import)=
+(Export_/_Import)=
 
-# Sync Import 
+# Export / Import
+
+<!-- Eigene SEite für alle Funktionen / Buttons die für den Export / Import zwischen Simultan und IDA-ICE zuständig sind!-->
 
 The `Sync Import` function enables changes in IDA-ICE to be quickly transferred to SIMULTAN. Once the data model has been imported from IDA-ICE into Simultan, all subsequent changes in IDA-ICE can be updated in Simultan using the *Sync Import* button. This saves time and makes it easy to always have the latest data from IDA-ICE in Simultan. <!-- Logik und Lesbarkeit vebessert! -->
 
