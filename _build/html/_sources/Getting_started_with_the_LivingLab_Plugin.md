@@ -45,7 +45,7 @@ Adding Plugins using the Plugin-Name
 ---
 
 ## Running the Example
-To verify that everything was installed correctly, open [install_test_model.simultan](files/install_test_model.simultan) in your SIMULTAN Editor (username and password: `admin`). Follow the instructions in the chapter *Running a Simulation* to learn about the functions using this file. <!-- Nur falls dieses Kapitel befüllt wird--> <!-- Anderes test_model einfügen, vllt ganzen ZIP ordner damit .config datei dabei ist!-->
+To verify that everything was installed correctly, open [install_test_model.simultan](files/install_test_model.simultan) in your SIMULTAN Editor (username and password: `admin`). Follow the instructions in this [chapter](Interactive_Function_Testing_and_Validation.md#interactive-function-testing-and-validation) to learn about the functions using this file. <!-- Nur falls dieses Kapitel befüllt wird--> 
 
 ---
 

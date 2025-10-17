@@ -8,9 +8,6 @@ This chapter covers all functions of the *LivingLab plugin* that relate to data 
 
 ---
 
-
-
-
 ## IDA-ICE Export
 
 The **IDA-ICE Export** button converts the active SIMULTAN Datamodel into an IDA-ICE model files (.idm). The export converts geometry (including zones and shading elements), constructions, material properties, and the ESBO plant  from the SIMULTAN data model into an IDA-ICE file.
@@ -74,3 +71,34 @@ The **IDA-ICE Import Results** button reads IDA-ICE simulation output files and 
 <!-- Verweis auf ergebnisse, und alles was dabei wichtig ist!-->
 <!-- If there are results, then those get imported under the IDA ICE Analysis/Results component. Also, you can see the new Tables and Graphs added under the Value Fields tab in Simultan. -->
 
+
+## Update Simulation Data
+
+This function updates the simulation and warm-up dates in the current SIMULTAN project.
+The corresponding components are located in the *ComponentBuilder* under `LivingLab` > `IDAICEAnalysis` > `Simulation Data` (see {numref}`simulationdata_components`).
+When executed, these components are exported into the IDA-ICE model file, ensuring that the simulation runs over the correct time interval.
+
+```{figure} img/simulationdata_components.png
+---
+name: simulationdata_components
+---
+Update Simulation Data Components
+```
+
+###  How to use
+
+1. Click on `Update Simulation Data` to open the function ({numref}`updatesimdata_ui`).
+2. The UI includes 3 parameters; `Warmup Start` `Simulation Start` `Simulation End`.
+3. Enter these three parameters in ascending order, using the following format: `yyyy-mm-dd hh:mm:ss` (e.g., `2025-10-17 15:37:00`).
+4. Confirm with `Close`.
+
+```{figure} img/updatesimdata_ui.png
+---
+name: updatesimdata_ui
+---
+Update Simulation Data UI
+```
+
+```{note}
+The `Simulation Start` parameter represents both the **End Date** of the `Warmup Phase` and the **Start Date** of the `Simulation Phase`, as these two phases are directly linked.
+``` 

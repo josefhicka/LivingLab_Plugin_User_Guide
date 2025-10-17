@@ -62,3 +62,4 @@ Because the simulation uses measured input data, results from the workflow are t
 
 ---
 
+*With the workflow execution completed, the next step is to manage and prepare the data retrieved from the API and simulation sources. This is covered in the following Data Handling chapter.*

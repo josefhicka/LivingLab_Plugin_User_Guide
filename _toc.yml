@@ -10,10 +10,17 @@ parts:
       - file: Introduction
       - file: Getting_started_with_the_LivingLab_Plugin
       - file: Simultan_Basics
-      - file: Plugin_Features
-      - file: Running_a_Simulation
+
+  - caption: Plugin Features
+    chapters:
+      - file: Workflow
+      - file: Data_Handling
+      - file: Time_Handling
+      - file: Data_Processing
       - file: IDAICE_Integration
-      - file: SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model
+
+  - caption: References & License
+    chapters:
       - file: LICENSE
       - file: References
 

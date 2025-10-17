@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Copyright and license agreements &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
+    <title>Data Processing &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'LICENSE';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Data_Processing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="References" href="References.html" />
-    <link rel="prev" title="IDAICE Integration" href="IDAICE_Integration.html" />
+    <link rel="next" title="IDAICE Integration" href="IDAICE_Integration.html" />
+    <link rel="prev" title="Time Handling" href="Time_Handling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,16 +186,16 @@
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plugin Features</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Handling.html">Data Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Time_Handling.html">Time Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References &amp; License</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Copyright and license agreements</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="LICENSE.html">Copyright and license agreements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/andreass0/IDAICE_Plugin_User_Guide/issues/new?title=Issue%20on%20page%20%2FLICENSE.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/andreass0/IDAICE_Plugin_User_Guide/issues/new?title=Issue%20on%20page%20%2FData_Processing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="_sources/LICENSE.md" target="_blank"
+      <li><a href="_sources/Data_Processing.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -380,11 +382,34 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Copyright and license agreements</h1>
+    <h1>Data Processing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-data-points-for-comparison">Process Data Points for Comparison</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-control-data-to-simulated-results">Add Control Data to Simulated Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-and-process-results">Simulate and Process Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-pipeline-steps">Automated pipeline steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-fiels">Input fiels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Output</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -394,21 +419,108 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="copyright-and-license-agreements">
-<h1>Copyright and license agreements<a class="headerlink" href="#copyright-and-license-agreements" title="Link to this heading">#</a></h1>
-<p>MIT License</p>
-<p>Copyright (c) 2022 RWT Plus ZT GmbH and TU Wien</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
-documentation files (the “Software”), to deal in the Software without restriction, including without limitation the
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
-persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
-Software.</p>
-<p><strong>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</strong></p>
-<p>Please reference this repo when including information or knowledge provided here in your work.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-processing">
+<span id="id1"></span><h1>Data Processing<a class="headerlink" href="#data-processing" title="Link to this heading">#</a></h1>
+<p>Once data has been retrieved and time formats standardized, it needs to be processed for comparison and analysis. This chapter covers steps to clean, average, and align sensor data with simulation results, allowing for accurate validation and seamless integration of real-world and simulated data.</p>
+<hr class="docutils" />
+<section id="process-data-points-for-comparison">
+<h2>Process Data Points for Comparison<a class="headerlink" href="#process-data-points-for-comparison" title="Link to this heading">#</a></h2>
+<p>The <strong>Process Data Points for Comparison</strong> button converts raw CSV sensor data into a cleaned format suitable for direct comparison with simulation result CSV files.</p>
+<p>It processes CSV files containing sensor data in two possible formats:</p>
+<ul class="simple">
+<li><p><strong>Timestamps (DateTime)</strong></p></li>
+<li><p><strong>Hour indices</strong></p></li>
+</ul>
+<section id="processing-steps">
+<h3>Processing steps<a class="headerlink" href="#processing-steps" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Averages multiple readings within the same hour.</p></li>
+<li><p>Converts timestamps into hour indices based on the specified year.</p></li>
+<li><p>Fills missing hours by estimating values between available data points.</p></li>
+</ol>
+</section>
+<section id="output">
+<h3>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h3>
+<p>The output is a cleaned CSV file with two columns:</p>
+<ul class="simple">
+<li><p><strong>Hour index</strong> (0–8759)</p></li>
+<li><p><strong>Corresponding sensor value</strong></p></li>
+</ul>
+<!-- Beispiel csv anfügen!-->
+</section>
+</section>
+<hr class="docutils" />
+<section id="add-control-data-to-simulated-results">
+<h2>Add Control Data to Simulated Results<a class="headerlink" href="#add-control-data-to-simulated-results" title="Link to this heading">#</a></h2>
+<p>The <strong>Add Control Data to Simulated Results</strong> button merges real-world sensor data with simulation outputs, enabling side-by-side comparison of predicted and actual building performance.</p>
+<section id="how-it-works">
+<h3>How it works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Select a <strong>control data CSV file</strong> containing hourly indexed sensor data.</p></li>
+<li><p>Specify the <strong>name of the new column</strong> where control values will be stored.</p></li>
+<li><p>Choose the <strong>target simulation CSV file with hourly index</strong>.</p></li>
+<li><p>The tool matches records by <strong>hour index</strong> and appends the corresponding control sensor values as a new column.</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3>Output<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>The selected simulation CSV file is updated <em>in place</em>.</p>
+<ul class="simple">
+<li><p>All existing simulation data is preserved.</p></li>
+<li><p>The real-world control data is integrated as an additional column for direct comparison.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="simulate-and-process-results">
+<h2>Simulate and Process Results<a class="headerlink" href="#simulate-and-process-results" title="Link to this heading">#</a></h2>
+<p>The <strong>Simulate and Process Results</strong> button automates the entire building validation workflow. It integrates simulation and measurement data into a single process — from running IDA-ICE simulations to producing a unified CSV file for comparing predicted and actual building performance.</p>
+<section id="automated-pipeline-steps">
+<h3>Automated pipeline steps<a class="headerlink" href="#automated-pipeline-steps" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Launches <strong>IDA-ICE</strong> and simulates the selected IDA-ICE model (.idm file).</p></li>
+<li><p>Extracts <strong>temperature results</strong> from the simulation output files.</p></li>
+<li><p>Retrieves the <strong>simulation dates</strong> from the model to define the data query period.</p></li>
+<li><p>Downloads <strong>real sensor data</strong> from the LivingLab API for the exact timeframe.</p></li>
+<li><p>Processes both datasets into <strong>hourly averages</strong>, including gap-filling where needed.</p></li>
+<li><p>Merges simulation and sensor data by matching <strong>hour indices</strong>.</p></li>
+<li><p>Outputs a <strong>unified CSV file</strong> containing both predicted and measured values side-by-side.</p></li>
+</ol>
+</section>
+<section id="input-fiels">
+<h3>Input fiels<a class="headerlink" href="#input-fiels" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="simandprocessresults">
+<img alt="_images/simandprocessresults.png" src="_images/simandprocessresults.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Simulate and Process Results UI and Input fields</span><a class="headerlink" href="#simandprocessresults" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Input fields explained</strong> (<a class="reference internal" href="#simandprocessresults"><span class="std std-numref">Fig. 15</span></a>)</p>
+<ul class="simple">
+<li><p><strong>Model File Path</strong> — IDA-ICE model as the baseline for comparison.</p></li>
+<li><p><strong>Name Of Simulation Room</strong> — path to the standalone command-line version of the IDA-ICE-Plugin.</p></li>
+<li><p><strong>Idaice Path</strong> — the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe).</p></li>
+<li><p><strong>Idaice Exporter Path</strong> — selects the sensor/key to download.</p></li>
+<li><p><strong>API</strong> — username, password, and URL for linking the API.</p></li>
+<li><p><strong>Project Id</strong> — <!-- Zsombor fragen-->.</p></li>
+<li><p><strong>Control DataPoint Id</strong> — selects the sensor/key for comparison.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Output<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The result is a single CSV file in which:</p>
+<ul class="simple">
+<li><p>Simulation results (predicted values) and real sensor data (measured values) are aligned by hour index.</p></li>
+<li><p>The dataset is ready for direct validation, visualization, or further analysis.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function replaces multiple manual steps with one automated workflow. Ensure that both the simulation model and API credentials are correctly configured before running the process.</p>
+</div>
+<hr class="docutils" />
+<p>After processing and aligning all sensor and simulation data, the next step is to integrate these datasets with IDA-ICE. The following chapter, <strong>IDA-ICE Integration</strong>, guides you through exporting SIMULTAN models to IDA-ICE, running simulations, and importing the results back for further analysis and validation.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,20 +554,20 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="IDAICE_Integration.html"
+       href="Time_Handling.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">IDAICE Integration</p>
+        <p class="prev-next-title">Time Handling</p>
       </div>
     </a>
     <a class="right-next"
-       href="References.html"
+       href="IDAICE_Integration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title">IDAICE Integration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -465,6 +577,36 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-data-points-for-comparison">Process Data Points for Comparison</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-control-data-to-simulated-results">Add Control Data to Simulated Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-and-process-results">Simulate and Process Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-pipeline-steps">Automated pipeline steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-fiels">Input fiels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Output</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

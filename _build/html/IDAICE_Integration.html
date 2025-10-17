@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'IDAICE_Integration';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SIMULTAN Datastructure to incorporate the IDA-ICE Data model" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html" />
-    <link rel="prev" title="Running a Simulation" href="Running_a_Simulation.html" />
+    <link rel="next" title="Copyright and license agreements" href="LICENSE.html" />
+    <link rel="prev" title="Data Processing" href="Data_Processing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,14 +180,21 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Plugin_Features.html">Plugin Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Running_a_Simulation.html">Running a Simulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Plugin Features</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Handling.html">Data Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Time_Handling.html">Time Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">IDAICE Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References &amp; License</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">Copyright and license agreements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
@@ -398,6 +405,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-result-structure">Expected result structure</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-simulation-data">Update Simulation Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">How to use</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -475,6 +486,37 @@ document.write(`
 <!-- If there are results, then those get imported under the IDA ICE Analysis/Results component. Also, you can see the new Tables and Graphs added under the Value Fields tab in Simultan. -->
 </section>
 </section>
+<section id="update-simulation-data">
+<h2>Update Simulation Data<a class="headerlink" href="#update-simulation-data" title="Link to this heading">#</a></h2>
+<p>This function updates the simulation and warm-up dates in the current SIMULTAN project.
+The corresponding components are located in the <em>ComponentBuilder</em> under <code class="docutils literal notranslate"><span class="pre">LivingLab</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">IDAICEAnalysis</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Data</span></code> (see <a class="reference internal" href="#simulationdata-components"><span class="std std-numref">Fig. 17</span></a>).
+When executed, these components are exported into the IDA-ICE model file, ensuring that the simulation runs over the correct time interval.</p>
+<figure class="align-default" id="simulationdata-components">
+<img alt="_images/simulationdata_components.png" src="_images/simulationdata_components.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Update Simulation Data Components</span><a class="headerlink" href="#simulationdata-components" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id3">
+<h3>How to use<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Simulation</span> <span class="pre">Data</span></code> to open the function (<a class="reference internal" href="#updatesimdata-ui"><span class="std std-numref">Fig. 18</span></a>).</p></li>
+<li><p>The UI includes 3 parameters; <code class="docutils literal notranslate"><span class="pre">Warmup</span> <span class="pre">Start</span></code> <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">End</span></code>.</p></li>
+<li><p>Enter these three parameters in ascending order, using the following format: <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span> <span class="pre">hh:mm:ss</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">2025-10-17</span> <span class="pre">15:37:00</span></code>).</p></li>
+<li><p>Confirm with <code class="docutils literal notranslate"><span class="pre">Close</span></code>.</p></li>
+</ol>
+<figure class="align-default" id="updatesimdata-ui">
+<img alt="_images/updatesimdata_ui.png" src="_images/updatesimdata_ui.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Update Simulation Data UI</span><a class="headerlink" href="#updatesimdata-ui" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> parameter represents both the <strong>End Date</strong> of the <code class="docutils literal notranslate"><span class="pre">Warmup</span> <span class="pre">Phase</span></code> and the <strong>Start Date</strong> of the <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Phase</span></code>, as these two phases are directly linked.</p>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -508,20 +550,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Running_a_Simulation.html"
+       href="Data_Processing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Running a Simulation</p>
+        <p class="prev-next-title">Data Processing</p>
       </div>
     </a>
     <a class="right-next"
-       href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html"
+       href="LICENSE.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</p>
+        <p class="prev-next-title">Copyright and license agreements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -552,6 +594,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-import-results">IDA-ICE Import Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-result-structure">Expected result structure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-simulation-data">Update Simulation Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">How to use</a></li>
 </ul>
 </li>
 </ul>

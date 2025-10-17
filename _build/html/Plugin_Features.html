@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Plugin Features &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
+    <title>Workflow &#8212; LivingLab-Plugin for SIMULTAN (Work in Progress)</title>
   
   
   
@@ -60,8 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Plugin_Features';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Running a Simulation" href="Running_a_Simulation.html" />
-    <link rel="prev" title="Simultan Basics" href="Simultan_Basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,14 +180,14 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Plugin Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Running_a_Simulation.html">Running a Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Handling.html">Data Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Time_Handling.html">Time Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIMULTAN_Datastructure_to_incorporate_the_IDAICE_Data_model.html">SIMULTAN Datastructure to incorporate the IDA-ICE Data model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">Copyright and license agreements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Plugin Features</h1>
+    <h1>Workflow</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,44 +391,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-workflow">Running the Workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-and-persist-weather-data">Query and Persist Weather Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-access">API Access</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datapoints">Datapoints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query">Query</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-data">Sensor Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-sensor-data-raw-processed">Download Sensor Data (raw &amp; processed)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-vs-processed-sensor-data">Raw vs Processed Sensor Data</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-sensor-data-from-simultan">Extract Sensor Data from SIMULTAN</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-format-conversion">Time Format Conversion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How to use</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-data-points-for-comparison">Process Data Points for Comparison</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-control-data-to-simulated-results">Add Control Data to Simulated Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Output</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-and-process-results">Simulate and Process Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-pipeline-steps">Automated pipeline steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-fiels">Input fiels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Output</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -440,8 +402,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="plugin-features">
-<span id="id1"></span><h1>Plugin Features<a class="headerlink" href="#plugin-features" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="workflow">
+<span id="id1"></span><h1>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h1>
 <p>This chapter describes the plugin’s functions and explains how to use them. The SIMULTAN <em>LivingLab Plugin</em> provides a broad set of features and a tailored user interface.</p>
 <p>To maximise flexibility while keeping the interface user-friendly, each feature is exposed via a dedicated button.</p>
 <div class="admonition warning">
@@ -452,11 +414,11 @@ document.write(`
 <section id="run-workflow">
 <h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Link to this heading">#</a></h2>
 <p>The <strong>Workflow</strong> button is the core of the LivingLab Plugin. It combines nearly all plugin tools into a single, automated sequence from data retrieval to running an IDA-ICE simulation.</p>
-<p>After opening the Workflow UI you should see the following screen <a class="reference internal" href="#runworkflwo-ui"><span class="std std-numref">Fig. 6</span></a>:</p>
+<p>After opening the Workflow UI you should see the following screen <code class="xref std std-numref docutils literal notranslate"><span class="pre">RunWorkflwo_UI</span></code>:</p>
 <figure class="align-default" id="runworkflwo-ui">
 <img alt="_images/RunWorkflow_UI.png" src="_images/RunWorkflow_UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">UI for Running a Worklow in the <em>LivingLab Plugin</em></span><a class="headerlink" href="#runworkflwo-ui" title="Link to this image">#</a></p>
+<p><span class="caption-text">UI for Running a Worklow in the <em>LivingLab Plugin</em></span><a class="headerlink" href="#runworkflwo-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="config-file-path">
@@ -486,286 +448,11 @@ Define a concrete time window by filling the <code class="docutils literal notra
 <h3>Running the Workflow<a class="headerlink" href="#running-the-workflow" title="Link to this heading">#</a></h3>
 <p><strong>Starting the Simulation:</strong><br />
 Given the configured <code class="docutils literal notranslate"><span class="pre">Execution</span> <span class="pre">Mode</span></code>, the plugin retrieves the corresponding weather and sensor data from the API.</p>
-<p><strong>Simulationphase:</strong>
+<p><strong>Simulationphase:</strong><br />
 The model is exported automatically to IDA-ICE. Instead of synthetic or standard boundary conditions, the workflow substitutes the measured weather and sensor data downloaded from the API as the boundary for the IDA-ICE simulation. Data required for clean exports are organised in SIMULTAN components and annotated with taxonomies so that IDA-ICE can uniquely identify them. Finally, the IDA-ICE simulation is started automatically.</p>
-<p><strong>Results:</strong>
+<p><strong>Results:</strong><br />
 Because the simulation uses measured input data, results from the workflow are typically more representative of real operation than standard simulations. Using the LivingLab UI, a full end-to-end run can be completed quickly.</p>
-</section>
-</section>
-<section id="query-and-persist-weather-data">
-<h2>Query and Persist Weather Data<a class="headerlink" href="#query-and-persist-weather-data" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">and</span> <span class="pre">Persist</span> <span class="pre">Weather</span> <span class="pre">Data</span></code> feature retrieves weather data from the API and stores it in the SIMULTAN data model. The Workflow includes this step; use this button when you want to import weather data for a specific period without immediately running an IDA-ICE simulation.</p>
-<p><strong>The UI is divided into three parts, which are divided into tabs.</strong><br />
-<a class="reference internal" href="#api-access"><span class="xref myst">API Access</span></a> &gt; connect to the API<br />
-<a class="reference internal" href="#datapoints"><span class="xref myst">Datapoints</span></a> &gt; assign sensors<br />
-<a class="reference internal" href="#query"><span class="xref myst">Query</span></a> &gt; select the time window</p>
-<section id="api-access">
-<h3>API Access<a class="headerlink" href="#api-access" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="apiaccess-ui">
-<img alt="_images/APIAccess_UI.png" src="_images/APIAccess_UI.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">UI for connecting to the API</span><a class="headerlink" href="#apiaccess-ui" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p><a class="reference internal" href="#apiaccess-ui"><span class="std std-numref">Fig. 7</span></a> To access weather data, establish a connection to the API by adding the API password (stored in the .config file). Use Test Connection to verify connectivity. On success, the UI displays “Connection successful” below the test button.</p>
-<p>More about the <code class="docutils literal notranslate"><span class="pre">config</span></code> file <a class="reference internal" href="#config-file-path"><span class="xref myst">here</span></a></p>
-</section>
-<section id="datapoints">
-<h3>Datapoints<a class="headerlink" href="#datapoints" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="mapping-ui">
-<img alt="_images/Mapping_UI.png" src="_images/Mapping_UI.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">UI for assigning sensors to values</span><a class="headerlink" href="#mapping-ui" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>In this area (<a class="reference internal" href="#mapping-ui"><span class="std std-numref">Fig. 8</span></a>) you manually map API sensor keys to the corresponding weather parameters. The mapping requires the exact sensor key (name) returned by the API; incorrect keys will produce no data. This mapping decides which sensor values populate which weather parameters in the SIMULTAN model.</p>
-<!-- verweis darauf wo die excakten sensor namen gefunden werden können!-->
-</section>
-<section id="query">
-<h3>Query<a class="headerlink" href="#query" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="weather-data-ui">
-<img alt="_images/Weather_Data_UI.png" src="_images/Weather_Data_UI.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">UI for Query and Persist Weather Data</span><a class="headerlink" href="#weather-data-ui" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Use the Start Date and End Date fields to limit the imported weather data to a specific time range. The checkbox <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Simulation</span> <span class="pre">Data</span> <span class="pre">Range</span></code> in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.</p>
-</section>
-<section id="results">
-<h3>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="pos-sensordata">
-<img alt="_images/pos_SensorData.png" src="_images/pos_SensorData.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Positioning of sensor data within the ComponentBuilder</span><a class="headerlink" href="#pos-sensordata" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Imported data is stored in dedicated components under <em>ComponentBuilder</em> &gt; <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Diffusive</span> <span class="pre">Radiation</span></code> (see <a class="reference internal" href="#pos-sensordata"><span class="std std-numref">Fig. 10</span></a>).
-The component contains two subcomponents named <code class="docutils literal notranslate"><span class="pre">Sensor</span> <span class="pre">Data</span></code> — one shows a table, the other a graph. Icons to the left of each subcomponent indicate the representation type.</p>
-<p>To open either view, locate the Value section in the <code class="docutils literal notranslate"><span class="pre">PropertyEditor</span></code> and click the interactive text (see <a class="reference internal" href="#propertyeditor-graph"><span class="std std-numref">Fig. 11</span></a>).</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To open the <em>PropertyEditor</em>: go to the General tab and click the <em>PropertyEditor</em> button — it appears on the right side of the screen.</p>
-</div>
-<figure class="align-default" id="propertyeditor-graph">
-<img alt="_images/PropertyEditor_graph.png" src="_images/PropertyEditor_graph.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Illustration of the PropertyEditor</span><a class="headerlink" href="#propertyeditor-graph" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
 <hr class="docutils" />
-<section id="sensor-data">
-<h2>Sensor Data<a class="headerlink" href="#sensor-data" title="Link to this heading">#</a></h2>
-<p>SIMULTAN provides three integrated actions for manual sensor-data handling:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#download-sensor-data"><span class="xref myst">Download Raw Sensor Data</span></a></p></li>
-<li><p><a class="reference internal" href="#download-sensor-data"><span class="xref myst">Download Processed Sensor Data</span></a></p></li>
-<li><p><a class="reference internal" href="#extract-sensor-data-from-simultan"><span class="xref myst">Extract Sensor Data from SIMULTAN</span></a></p></li>
-</ul>
-<hr class="docutils" />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To ensure that the sensor data is processed smoothly, please ensure that CSV Importer uses the <em>English language standard</em> (<strong>comma as separator</strong> and <strong>period as decimal separator</strong>). Otherwise, problems may arise when when opening the converted data, resulting in an unclean CSV file.</p>
-</div>
-<hr class="docutils" />
-<section id="download-sensor-data-raw-processed">
-<h3>Download Sensor Data (raw &amp; processed)<a class="headerlink" href="#download-sensor-data-raw-processed" title="Link to this heading">#</a></h3>
-<p>The buttons <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Raw</span> <span class="pre">Sensor</span> <span class="pre">Data</span></code> and <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Processed</span> <span class="pre">Sensor</span> <span class="pre">Data</span></code> work with the same user interface and are therefore identical to use.</p>
-<figure class="align-default" id="sensor-data-ui">
-<img alt="_images/sensor_data_ui.png" src="_images/sensor_data_ui.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">UI for downloading Sensor Data</span><a class="headerlink" href="#sensor-data-ui" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p><strong>Input fields explained</strong> (<a class="reference internal" href="#sensor-data-ui"><span class="std std-numref">Fig. 12</span></a>)</p>
-<ul class="simple">
-<li><p><strong>API Password</strong> — required for authentication.</p></li>
-<li><p><strong>Start Date / End Date</strong> — define the time window for the download.</p></li>
-<li><p><strong>DataPoint</strong> — selects the sensor/key to download.</p></li>
-<li><p><strong>Zone Name</strong> — the destination component/zone in the SIMULTAN data model where data will be stored.</p></li>
-<li><p><strong>Taxonomy</strong> — a unique identifier assigned to the imported data for later export and mapping.</p></li>
-</ul>
-<p>After filling the fields you can either download the data as a <strong>CSV file</strong> or integrate the data directly into the SIMULTAN data model (the Zone Name and Taxonomy fields are used in that case).</p>
-<hr class="docutils" />
-<section id="raw-vs-processed-sensor-data">
-<h4>Raw vs Processed Sensor Data<a class="headerlink" href="#raw-vs-processed-sensor-data" title="Link to this heading">#</a></h4>
-<p>Processed data differs from raw data primarily by smoothing and cleaning steps. The plugin offers both so users can choose between fidelity to the original measurements and easier-to-handle datasets.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Attribute</p></th>
-<th class="head"><p>Raw Sensor Data</p></th>
-<th class="head"><p>Processed Sensor Data</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Data Size</p></td>
-<td><p>Very large</p></td>
-<td><p>Smaller</p></td>
-</tr>
-<tr class="row-odd"><td><p>Evaluation Effort</p></td>
-<td><p>High</p></td>
-<td><p>Low</p></td>
-</tr>
-<tr class="row-even"><td><p>Error Susceptibility</p></td>
-<td><p>Contains outliers/noise</p></td>
-<td><p>Mostly cleaned</p></td>
-</tr>
-<tr class="row-odd"><td><p>Data Granularity</p></td>
-<td><p>Maximum</p></td>
-<td><p>Reduced</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
-</section>
-<hr class="docutils" />
-<section id="extract-sensor-data-from-simultan">
-<h2>Extract Sensor Data from SIMULTAN<a class="headerlink" href="#extract-sensor-data-from-simultan" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="#extract-sensordata"><span class="std std-numref">Fig. 13</span></a> This function allows you to download data based on a specific component. This allows you to save the current status of your data from your SIMULTAN data model separately. As a backup or for other purposes.</p>
-<figure class="align-default" id="extract-sensordata">
-<img alt="_images/extract_sensordata.png" src="_images/extract_sensordata.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">UI for the function Extract Sensor Data from SIMULTAN</span><a class="headerlink" href="#extract-sensordata" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="how-to-use">
-<h3>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Click <em>Extract Sensor Data from SIMULTAN</em></p></li>
-<li><p>Enter the taxonomy from which you want to extract the data. (e.g., Temperature_Sensor_Weather | You can find the taxonomy under the following components: <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Temperature</span> <span class="pre">Air</span></code>)</p></li>
-<li><p>Press <em>Extract</em></p></li>
-<li><p>Save the data in your file directory.</p></li>
-</ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="time-format-conversion">
-<h2>Time Format Conversion<a class="headerlink" href="#time-format-conversion" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">DateTime</span></code> and <code class="docutils literal notranslate"><span class="pre">HourlyIndex</span></code> formats are two common ways to represent time in datasets and simulations. <code class="docutils literal notranslate"><span class="pre">DateTime</span></code> includes full date and time information, making it easy to trace, compare, and interpret exact moments or periods. An <code class="docutils literal notranslate"><span class="pre">HourlyIndex</span></code>, on the other hand, simply counts each hourly interval from a defined starting point—this is useful for simulations and calculations that focus on time steps rather than specific dates.</p>
-<p>Converting between these formats is important: it lets users switch easily between human-readable times and efficient index-based processing. The ability to convert ensures flexibility when working with data, helping match the needs of both calculations and presentation.</p>
-<hr class="docutils" />
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Check that all data records in your <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file are formatted consistently. Just one outlier is enough to prevent a successful conversion.</p>
-</div>
-<hr class="docutils" />
-<section id="id2">
-<h3>How to use<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Press one of the two buttons, <code class="docutils literal notranslate"><span class="pre">Convert</span> <span class="pre">DateTime</span> <span class="pre">to</span> <span class="pre">Hourly</span> <span class="pre">Indexed</span></code> or <code class="docutils literal notranslate"><span class="pre">Convert</span> <span class="pre">Hourly</span> <span class="pre">Indexed</span> <span class="pre">to</span> <span class="pre">DateTime</span></code>, depending on what you want to do.</p></li>
-<li><p>Specify the year of your data. <!-- WAs ist wenn die daten in mehreren jahren sind?--></p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Browse...</span></code> to select the file you want to convert.</p></li>
-<li><p>Click <code class="docutils literal notranslate"><span class="pre">Convert</span></code> to start the process.</p></li>
-</ol>
-<blockquote>
-<div><p><a class="reference internal" href="#index-converter"><span class="std std-numref">Fig. 14</span></a> Both functions/UI work exactly the same way, just make sure you use the right method based on your input data.</p>
-</div></blockquote>
-<figure class="align-default" id="index-converter">
-<img alt="_images/Index_Converter.png" src="_images/Index_Converter.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">UI for converting time indices</span><a class="headerlink" href="#index-converter" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
-<hr class="docutils" />
-<section id="process-data-points-for-comparison">
-<h2>Process Data Points for Comparison<a class="headerlink" href="#process-data-points-for-comparison" title="Link to this heading">#</a></h2>
-<p>The <strong>Process Data Points for Comparison</strong> button converts raw CSV sensor data into a cleaned format suitable for direct comparison with simulation result CSV files.</p>
-<p>It processes CSV files containing sensor data in two possible formats:</p>
-<ul class="simple">
-<li><p><strong>Timestamps (DateTime)</strong></p></li>
-<li><p><strong>Hour indices</strong></p></li>
-</ul>
-<section id="processing-steps">
-<h3>Processing steps<a class="headerlink" href="#processing-steps" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Averages multiple readings within the same hour.</p></li>
-<li><p>Converts timestamps into hour indices based on the specified year.</p></li>
-<li><p>Fills missing hours by estimating values between available data points.</p></li>
-</ol>
-</section>
-<section id="output">
-<h3>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h3>
-<p>The output is a cleaned CSV file with two columns:</p>
-<ul class="simple">
-<li><p><strong>Hour index</strong> (0–8759)</p></li>
-<li><p><strong>Corresponding sensor value</strong></p></li>
-</ul>
-<!-- Beispiel csv anfügen!-->
-</section>
-</section>
-<hr class="docutils" />
-<section id="add-control-data-to-simulated-results">
-<h2>Add Control Data to Simulated Results<a class="headerlink" href="#add-control-data-to-simulated-results" title="Link to this heading">#</a></h2>
-<p>The <strong>Add Control Data to Simulated Results</strong> button merges real-world sensor data with simulation outputs, enabling side-by-side comparison of predicted and actual building performance.</p>
-<section id="how-it-works">
-<h3>How it works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Select a <strong>control data CSV file</strong> containing hourly indexed sensor data.</p></li>
-<li><p>Specify the <strong>name of the new column</strong> where control values will be stored.</p></li>
-<li><p>Choose the <strong>target simulation CSV file with hourly index</strong>.</p></li>
-<li><p>The tool matches records by <strong>hour index</strong> and appends the corresponding control sensor values as a new column.</p></li>
-</ol>
-</section>
-<section id="id3">
-<h3>Output<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>The selected simulation CSV file is updated <em>in place</em>.</p>
-<ul class="simple">
-<li><p>All existing simulation data is preserved.</p></li>
-<li><p>The real-world control data is integrated as an additional column for direct comparison.</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="simulate-and-process-results">
-<h2>Simulate and Process Results<a class="headerlink" href="#simulate-and-process-results" title="Link to this heading">#</a></h2>
-<p>The <strong>Simulate and Process Results</strong> button automates the entire building validation workflow. It integrates simulation and measurement data into a single process — from running IDA-ICE simulations to producing a unified CSV file for comparing predicted and actual building performance.</p>
-<section id="automated-pipeline-steps">
-<h3>Automated pipeline steps<a class="headerlink" href="#automated-pipeline-steps" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Launches <strong>IDA-ICE</strong> and simulates the selected IDA-ICE model (.idm file).</p></li>
-<li><p>Extracts <strong>temperature results</strong> from the simulation output files.</p></li>
-<li><p>Retrieves the <strong>simulation dates</strong> from the model to define the data query period.</p></li>
-<li><p>Downloads <strong>real sensor data</strong> from the LivingLab API for the exact timeframe.</p></li>
-<li><p>Processes both datasets into <strong>hourly averages</strong>, including gap-filling where needed.</p></li>
-<li><p>Merges simulation and sensor data by matching <strong>hour indices</strong>.</p></li>
-<li><p>Outputs a <strong>unified CSV file</strong> containing both predicted and measured values side-by-side.</p></li>
-</ol>
-</section>
-<section id="input-fiels">
-<h3>Input fiels<a class="headerlink" href="#input-fiels" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="simandprocessresults">
-<img alt="_images/simandprocessresults.png" src="_images/simandprocessresults.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Simulate and Process Results UI and Input fields</span><a class="headerlink" href="#simandprocessresults" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p><strong>Input fields explained</strong> (<a class="reference internal" href="#simandprocessresults"><span class="std std-numref">Fig. 15</span></a>)</p>
-<ul class="simple">
-<li><p><strong>Model File Path</strong> — IDA-ICE model as the baseline for comparison.</p></li>
-<li><p><strong>Name Of Simulation Room</strong> — path to the standalone command-line version of the IDA-ICE-Plugin.</p></li>
-<li><p><strong>Idaice Path</strong> — the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe).</p></li>
-<li><p><strong>Idaice Exporter Path</strong> — selects the sensor/key to download.</p></li>
-<li><p><strong>API</strong> — username, password, and URL for linking the API.</p></li>
-<li><p><strong>Project Id</strong> — <!-- Zsombor fragen-->.</p></li>
-<li><p><strong>Control DataPoint Id</strong> — selects the sensor/key for comparison.</p></li>
-</ul>
-</section>
-<section id="id4">
-<h3>Output<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>The result is a single CSV file in which:</p>
-<ul class="simple">
-<li><p>Simulation results (predicted values) and real sensor data (measured values) are aligned by hour index.</p></li>
-<li><p>The dataset is ready for direct validation, visualization, or further analysis.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This function replaces multiple manual steps with one automated workflow. Ensure that both the simulation model and API credentials are correctly configured before running the process.</p>
-</div>
 </section>
 </section>
 </section>
@@ -800,24 +487,6 @@ The component contains two subcomponents named <code class="docutils literal not
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Simultan_Basics.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Simultan Basics</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Running_a_Simulation.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running a Simulation</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -838,44 +507,6 @@ The component contains two subcomponents named <code class="docutils literal not
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-file-path">Config File Path</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excution-mode">Excution Mode</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-workflow">Running the Workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-and-persist-weather-data">Query and Persist Weather Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-access">API Access</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datapoints">Datapoints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query">Query</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-data">Sensor Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-sensor-data-raw-processed">Download Sensor Data (raw &amp; processed)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-vs-processed-sensor-data">Raw vs Processed Sensor Data</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-sensor-data-from-simultan">Extract Sensor Data from SIMULTAN</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-format-conversion">Time Format Conversion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How to use</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-data-points-for-comparison">Process Data Points for Comparison</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-control-data-to-simulated-results">Add Control Data to Simulated Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Output</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-and-process-results">Simulate and Process Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-pipeline-steps">Automated pipeline steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-fiels">Input fiels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Output</a></li>
 </ul>
 </li>
 </ul>
