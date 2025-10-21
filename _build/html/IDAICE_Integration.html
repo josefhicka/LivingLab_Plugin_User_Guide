@@ -402,13 +402,13 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-import-results">IDA-ICE Import Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-result-structure">Expected result structure</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-simulation-data">Update Simulation Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">How to use</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-temperature-files">Convert Temperature Files</a></li>
 </ul>
             </nav>
         </div>
@@ -420,33 +420,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!-- Update Simultation Data hinzufügen!-->
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>IDAICE Integration<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>This chapter covers all functions of the <em>LivingLab plugin</em> that relate to data transfer between IDA-ICE and SIMULTAN: <strong>IDA-ICE Export</strong>, <strong>IDA-ICE Simulate</strong>, and <strong>IDA-ICE Import Results</strong>. Each feature is available via its own button in the LivingLab UI and is intended to support an end-to-end workflow: export a SIMULTAN model to an IDA-ICE model file (.idm), run IDA-ICE simulations, and import the resulting results back into SIMULTAN.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="idaice-integration">
+<span id="id1"></span><h1>IDAICE Integration<a class="headerlink" href="#idaice-integration" title="Link to this heading">#</a></h1>
+<p>This chapter covers all functions of the <em>LivingLab Plugin</em> that relate to data transfer between IDA-ICE and SIMULTAN: IDA-ICE Export, IDA-ICE Simulate, IDA-ICE Import Results and more. Each feature is available via its own button in the LivingLab UI and is intended to support an end-to-end workflow: export a SIMULTAN model to an IDA-ICE model file (.idm), run IDA-ICE simulations, and import the resulting results back into SIMULTAN.</p>
 <hr class="docutils" />
 <section id="ida-ice-export">
 <h2>IDA-ICE Export<a class="headerlink" href="#ida-ice-export" title="Link to this heading">#</a></h2>
 <p>The <strong>IDA-ICE Export</strong> button converts the active SIMULTAN Datamodel into an IDA-ICE model files (.idm). The export converts geometry (including zones and shading elements), constructions, material properties, and the ESBO plant  from the SIMULTAN data model into an IDA-ICE file.</p>
+<hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Exporting the SIMULTAN model using the LivingLab plugin means that all measured data is also exported. Causing less smooth, more complex, and slower simulations. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin.</p>
+<p>Exporting the SIMULTAN model using the <em>LivingLab Plugin</em> means that all measured data is also exported. Causing less smooth, more complex, and <strong>slower simulations</strong>. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin.</p>
 </div>
 <hr class="docutils" />
 <section id="how-to-use">
 <h3>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Click IDA-ICE Export</p></li>
+<li><p>Click <em>IDA-ICE Export</em></p></li>
 <li><p>Name the file</p></li>
-<li><p>Save as an idm. file</p></li>
+<li><p>Save as an <code class="docutils literal notranslate"><span class="pre">.idm</span></code> file</p></li>
 </ol>
-<!-- Eventuell rausgeben da es überflüssig ist, selbsterklärend!-->
 </section>
 </section>
 <hr class="docutils" />
 <section id="ida-ice-simulate">
 <h2>IDA-ICE Simulate<a class="headerlink" href="#ida-ice-simulate" title="Link to this heading">#</a></h2>
-<p>The <strong>IDA-ICE Simulate</strong> button launches IDA-ICE to run simulations using selected .idm model files. The plugin starts IDA-ICE, monitors the external process, and reports completion and basic status to the user. Typical simulation outputs are text-based result files such as TEMPERATURES.prn, ZONE-ENERGY.prn, and ENERGY.prn.</p>
+<p>The <strong>IDA-ICE Simulate</strong> button launches IDA-ICE to run simulations using selected .idm model files. The plugin starts IDA-ICE, monitors the external process, and reports completion and basic status to the user. Typical simulation outputs are text-based result files such as <em>TEMPERATURES.prn</em>, <em>ZONE-ENERGY.prn</em>, and <em>ENERGY.prn</em>.</p>
 <figure class="align-default" id="idaice-simulate">
 <img alt="_images/IDAICE_Simulate.png" src="_images/IDAICE_Simulate.png" />
 <figcaption>
@@ -457,58 +456,72 @@ document.write(`
 <section id="id2">
 <h3>How to use<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Click IDA-ICE Simulate.</p></li>
-<li><p>In the dialog, specify the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe (see <a class="reference internal" href="#idaice-simulate"><span class="std std-numref">Fig. 16</span></a>)).</p></li>
-<li><p>Click Simulate, then select the .idm file you want to run.</p></li>
+<li><p><strong>Click</strong> <em>IDA-ICE Simulate</em>.</p></li>
+<li><p>In the dialog, <strong>specify the path to the IDA-ICE executable</strong> (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe (see <a class="reference internal" href="#idaice-simulate"><span class="std std-numref">Fig. 16</span></a>)).</p></li>
+<li><p><strong>Click Simulate</strong>, then <strong>select the .idm file</strong> you want to run (created in <a class="reference internal" href="#ida-ice-export"><span class="xref myst"><em>IDA-ICE Export</em></span></a>).</p></li>
 <li><p>The plugin launches IDA-ICE and polls the ida-ice process every 5 seconds to monitor progress.</p></li>
-<li><p>When the process is complete, the simulation generates standard result files (TEMPERATURES.prn, ENERGY.prn, etc.).</p></li>
+<li><p>When the process is complete, the simulation <strong>generates standard result files</strong> (TEMPERATURES.prn, ENERGY.prn, etc. (see <a class="reference internal" href="#idaice-simulate-folder"><span class="std std-numref">Fig. 17</span></a>)) in <strong>the created folder</strong> belonging to the simulated .idm file.</p></li>
 </ol>
-<!-- Bild von ausgegeben Dateien!-->
+<hr class="docutils" />
+<figure class="align-default" id="idaice-simulate-folder">
+<img alt="_images/idaice_simulate_folder.png" src="_images/idaice_simulate_folder.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Generated results files within the created folder</span><a class="headerlink" href="#idaice-simulate-folder" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<!-- Bild nicht passend simulation hat keine unterordner erstellt!-->
 </section>
 </section>
 <hr class="docutils" />
 <section id="ida-ice-import-results">
 <h2>IDA-ICE Import Results<a class="headerlink" href="#ida-ice-import-results" title="Link to this heading">#</a></h2>
-<p>The <strong>IDA-ICE Import Results</strong> button reads IDA-ICE simulation output files and transfers the results back into the SIMULTAN data model. The import parses per-room result files and creates or updates components that contain time-series data (tables and graphs) for heating loads, cooling loads and operative temperatures.</p>
+<p>The <strong>IDA-ICE Import Results</strong> button reads IDA-ICE simulation files and transfers the simulated results back into the SIMULTAN data model. The import parses per-room result files and creates or updates components that contain time-series data (tables and graphs) for heating loads, cooling loads and operative temperatures.</p>
 <hr class="docutils" />
 <section id="how-it-works">
 <h3>How it works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Click IDA-ICE Import Results and select the corresponding .idm result file (of one specific room).</p></li>
+<li><p><strong>Click</strong> <em>IDA-ICE Import Results</em> and <strong>select the corresponding .idm file</strong> (created in <a class="reference internal" href="#ida-ice-export"><span class="xref myst"><em>IDA-ICE Export</em></span></a>).</p></li>
 <li><p>The plugin iterates over all rooms defined in SIMULTAN under the Roomlist component. For each zone it searches the simulation output folder and subfolders for matching result files (e.g., ZONE-ENERGY.prn, TEMPERATURES.prn).</p></li>
-<li><p>For each room found, the plugin parses the relevant files: heating/cooling loads from ZONE-ENERGY.prn, temperatures from TEMPERATURES.prn.</p></li>
+<li><p>For each room, the plugin parses the relevant files: heating/cooling loads from <em>ZONE-ENERGY.prn</em>, temperatures from <em>TEMPERATURES.prn</em>.</p></li>
 <li><p>Within SIMULTAN these files get stored under the components: <code class="docutils literal notranslate"><span class="pre">IDA</span> <span class="pre">ICE</span> <span class="pre">Analyses</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Results</span></code>. Time series are stored as both table and graph parameters.</p></li>
 </ol>
+<hr class="docutils" />
+<figure class="align-default" id="import-results-comp">
+<img alt="_images/Import_results_comp.png" src="_images/Import_results_comp.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Csomponents filled with simulation results</span><a class="headerlink" href="#import-results-comp" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<blockquote>
+<div><p>Under the <em>Value Fields</em> tab in SIMULTAN new Tables and Graphs should be added.</p>
+</div></blockquote>
 </section>
-<section id="expected-result-structure">
-<h3>Expected result structure<a class="headerlink" href="#expected-result-structure" title="Link to this heading">#</a></h3>
-<!-- Verweis auf ergebnisse, und alles was dabei wichtig ist!-->
-<!-- If there are results, then those get imported under the IDA ICE Analysis/Results component. Also, you can see the new Tables and Graphs added under the Value Fields tab in Simultan. -->
 </section>
-</section>
+<hr class="docutils" />
 <section id="update-simulation-data">
 <h2>Update Simulation Data<a class="headerlink" href="#update-simulation-data" title="Link to this heading">#</a></h2>
-<p>This function updates the simulation and warm-up dates in the current SIMULTAN project.
-The corresponding components are located in the <em>ComponentBuilder</em> under <code class="docutils literal notranslate"><span class="pre">LivingLab</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">IDAICEAnalysis</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Data</span></code> (see <a class="reference internal" href="#simulationdata-components"><span class="std std-numref">Fig. 17</span></a>).
+<p>This function updates the simulation and <em>Warmup Data</em> in the current SIMULTAN project.
+The corresponding components are located in the <em>ComponentBuilder</em> under <code class="docutils literal notranslate"><span class="pre">LivingLab</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">IDAICEAnalysis</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Data</span></code> (see <a class="reference internal" href="#simulationdata-components"><span class="std std-numref">Fig. 19</span></a>).
 When executed, these components are exported into the IDA-ICE model file, ensuring that the simulation runs over the correct time interval.</p>
 <figure class="align-default" id="simulationdata-components">
 <img alt="_images/simulationdata_components.png" src="_images/simulationdata_components.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Update Simulation Data Components</span><a class="headerlink" href="#simulationdata-components" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Update Simulation Data Components</span><a class="headerlink" href="#simulationdata-components" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="id3">
 <h3>How to use<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Simulation</span> <span class="pre">Data</span></code> to open the function (<a class="reference internal" href="#updatesimdata-ui"><span class="std std-numref">Fig. 18</span></a>).</p></li>
+<li><p><strong>Click</strong> on <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Simulation</span> <span class="pre">Data</span></code> to open the function (<a class="reference internal" href="#updatesimdata-ui"><span class="std std-numref">Fig. 20</span></a>).</p></li>
 <li><p>The UI includes 3 parameters; <code class="docutils literal notranslate"><span class="pre">Warmup</span> <span class="pre">Start</span></code> <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">End</span></code>.</p></li>
-<li><p>Enter these three parameters in ascending order, using the following format: <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span> <span class="pre">hh:mm:ss</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">2025-10-17</span> <span class="pre">15:37:00</span></code>).</p></li>
-<li><p>Confirm with <code class="docutils literal notranslate"><span class="pre">Close</span></code>.</p></li>
+<li><p><strong>Enter the three parameters</strong> in ascending order, using the following format: <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span> <span class="pre">hh:mm:ss</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">2025-10-17</span> <span class="pre">15:37:00</span></code>).</p></li>
+<li><p><strong>Confirm</strong> with <code class="docutils literal notranslate"><span class="pre">Close</span></code>.</p></li>
 </ol>
 <figure class="align-default" id="updatesimdata-ui">
 <img alt="_images/updatesimdata_ui.png" src="_images/updatesimdata_ui.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Update Simulation Data UI</span><a class="headerlink" href="#updatesimdata-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Update Simulation Data UI</span><a class="headerlink" href="#updatesimdata-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -516,6 +529,15 @@ When executed, these components are exported into the IDA-ICE model file, ensuri
 <p>The <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> parameter represents both the <strong>End Date</strong> of the <code class="docutils literal notranslate"><span class="pre">Warmup</span> <span class="pre">Phase</span></code> and the <strong>Start Date</strong> of the <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Phase</span></code>, as these two phases are directly linked.</p>
 </div>
 </section>
+</section>
+<hr class="docutils" />
+<section id="convert-temperature-files">
+<h2>Convert Temperature Files<a class="headerlink" href="#convert-temperature-files" title="Link to this heading">#</a></h2>
+<p>The <strong>Convert Temperature Files</strong> function processes simulation output data by converting zone temperature result files from the IDA-ICE format (<code class="docutils literal notranslate"><span class="pre">.prn</span></code>) into standard CSV files. When you select a building’s <code class="docutils literal notranslate"><span class="pre">.idm</span></code> file (must <strong>already</strong> have been simulated), the command automatically searches for corresponding zone result files and converts them into CSV format within each room or zone subfolder.</p>
+<p>This conversion simplifies further data analysis and comparison with measured or processed sensor data, ensuring that all temperature datasets share a consistent and easily readable format.</p>
+<blockquote>
+<div><p>The conversion process does not alter the simulation results — it only changes the file format for improved accessibility and compatibility with other tools.</p>
+</div></blockquote>
 </section>
 </section>
 
@@ -593,13 +615,13 @@ When executed, these components are exported into the IDA-ICE model file, ensuri
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ida-ice-import-results">IDA-ICE Import Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-result-structure">Expected result structure</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-simulation-data">Update Simulation Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">How to use</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-temperature-files">Convert Temperature Files</a></li>
 </ul>
   </nav></div>
 

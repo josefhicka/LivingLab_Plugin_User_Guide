@@ -393,7 +393,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-format-conversion">Time Format Conversion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Time Format Conversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
 </ul>
 </li>
 </ul>
@@ -418,11 +418,10 @@ document.write(`
 <hr class="docutils" />
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Check that all data records in your <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file are formatted consistently. Just one outlier is enough to prevent a successful conversion.</p>
+<p>Check that all data records in your <code class="docutils literal notranslate"><span class="pre">Csv</span></code> file are formatted consistently. Just one outlier is enough to prevent a successful conversion.</p>
 </div>
-<section id="id2">
-<h3>Time Format Conversion<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p><strong>How to use</strong></p>
+<section id="how-to-use">
+<h3>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Press one of the two buttons, <code class="docutils literal notranslate"><span class="pre">Convert</span> <span class="pre">DateTime</span> <span class="pre">to</span> <span class="pre">Hourly</span> <span class="pre">Indexed</span></code> or <code class="docutils literal notranslate"><span class="pre">Convert</span> <span class="pre">Hourly</span> <span class="pre">Indexed</span> <span class="pre">to</span> <span class="pre">DateTime</span></code>, depending on what you want to do.</p></li>
 <li><p>Specify the year of your data. <!-- WAs ist wenn die daten in mehreren jahren sind?--></p></li>
@@ -430,9 +429,13 @@ document.write(`
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Convert</span></code> to start the process.</p></li>
 </ol>
 <hr class="docutils" />
-<blockquote>
-<div><p><a class="reference internal" href="#index-converter"><span class="std std-numref">Fig. 14</span></a> Both functions/UI work exactly the same way, just make sure you use the right method based on your input data.</p>
-</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#index-converter"><span class="std std-numref">Fig. 14</span></a> Both functions/UI work exactly the same way, just make sure you use the right method based on your input data.</p></li>
+<li><p>Conversion also works for files with <strong>multiple Simulation Years</strong>. Entries from the specified year (e.g., 2025) onward get positive hourly indices; earlier entries receive negative indices.</p></li>
+</ul>
+</div>
 <hr class="docutils" />
 <figure class="align-default" id="index-converter">
 <img alt="_images/Index_Converter.png" src="_images/Index_Converter.png" />
@@ -511,7 +514,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-format-conversion">Time Format Conversion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Time Format Conversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
 </ul>
 </li>
 </ul>

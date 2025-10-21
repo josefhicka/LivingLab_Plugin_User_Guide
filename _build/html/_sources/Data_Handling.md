@@ -2,18 +2,18 @@
 
 # Data Handling
 
-This chapter focuses on managing and retrieving data within the LivingLab Plugin. You will learn how to query and persist weather data from the API, map sensor keys to parameters, and manage raw and processed sensor datasets. Clear guidance is provided on input requirements, UI usage, and storage within the SIMULTAN data model.
+This chapter focuses on managing and retrieving data within the *LivingLab Plugin*. You will learn how to query and persist weather data from the API, map sensor keys to parameters, and manage raw and processed sensor datasets. Clear guidance is provided on input requirements, UI usage, and storage within the SIMULTAN data model.
 
 ---
 
 ## Query and Persist Weather Data
 
-The `Query and Persist Weather Data` feature retrieves weather data from the API and stores it in the SIMULTAN data model. The Workflow includes this step; use this button when you want to import weather data for a specific period without immediately running an IDA-ICE simulation.
+The `Query and Persist Weather Data` feature retrieves weather data from the API and stores it in the SIMULTAN data model. The Workflow includes this step; use this button when you want to import weather data for a specific period without immediately running the entire workflow.
 
-**The UI is divided into three parts, which are divided into tabs.**  
-[API Access](#api-access) > connect to the API  
-[Datapoints](#datapoints) > assign sensors  
-[Query](#query) > select the time window  
+**The UI is divided into three parts, which are divided into tabs:**  
+[API Access](#api-access) > All API-related information relevant to establishing a connection.  
+[Datapoints](#datapoints) > Individual assignment of sensors to weather parameters.   
+[Query](#query) > Selection of a period from which the weather data is obtained.  
 
 ### API Access
 
@@ -24,9 +24,11 @@ name: APIAccess_UI
 UI for connecting to the API
 ```
 
-{numref}`APIAccess_UI` To access weather data, establish a connection to the API by adding the API password (stored in the .config file). Use Test Connection to verify connectivity. On success, the UI displays “Connection successful” below the test button.
+{numref}`APIAccess_UI` To access weather data, establish a connection to the API by adding the API password (stored in the `config` file). Use `Test Connection` to verify connectivity. On success, the UI displays **“Connection successful”** below the test button.
 
-More about the `config` file [here](#config-file-path)
+> More about the `config` file [here](Workflow.md#config-file-path)
+
+---
 
 ### Datapoints
 
@@ -49,7 +51,7 @@ name: Weather_Data_UI
 UI for Query and Persist Weather Data
 ```
 
-Use the Start Date and End Date fields to limit the imported weather data to a specific time range. The checkbox `Use Simulation Data Range` in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.
+Use the `Start Date` and `End Date` fields to limit the imported weather data to a specific time range. The checkbox `Use Simulation Data Range` in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.
 
 ### Results
 
@@ -63,7 +65,7 @@ Positioning of sensor data within the ComponentBuilder
 Imported data is stored in dedicated components under *ComponentBuilder* > `Sensors` > `Weather Station` > `Diffusive Radiation` (see {numref}`pos_SensorData`).
 The component contains two subcomponents named `Sensor Data` — one shows a table, the other a graph. Icons to the left of each subcomponent indicate the representation type.
 
-To open either view, locate the Value section in the `PropertyEditor` and click the interactive text (see {numref}`PropertyEditor_graph`).
+To open either view, locate the Value section in the *PropertyEditor* and click the interactive text (see {numref}`PropertyEditor_graph`).
 
 ```{Tip}
 To open the *PropertyEditor*: go to the General tab and click the *PropertyEditor* button — it appears on the right side of the screen.
@@ -82,14 +84,14 @@ Illustration of the PropertyEditor
 
  SIMULTAN provides three integrated actions for manual sensor-data handling:
 
-- [Download Raw Sensor Data](#download-sensor-data)
-- [Download Processed Sensor Data](#download-sensor-data)
+- [Download Raw Sensor Data](#download-sensor-data-raw-processed)
+- [Download Processed Sensor Data](#download-sensor-data-raw-processed)
 - [Extract Sensor Data from SIMULTAN](#extract-sensor-data-from-simultan)
 
 ---
 
 ```{note}
-To ensure that the sensor data is processed smoothly, please ensure that CSV Importer uses the *English language standard* (**comma as separator** and **period as decimal separator**). Otherwise, problems may arise when when opening the converted data, resulting in an unclean CSV file.
+To ensure that the sensor data is processed smoothly, please ensure that CSV Importer uses the *English language standard* (**comma as separator** and **period as decimal separator**). Otherwise, problems arise when opening the converted data, resulting in an unclean CSV file.
 ``` 
 
 ---
@@ -131,7 +133,7 @@ Processed data differs from raw data primarily by smoothing and cleaning steps. 
 
 ### Extract Sensor Data from SIMULTAN
 
-{numref}`extract_sensordata` This function allows you to download data based on a specific component. This allows you to save the current status of your data from your SIMULTAN data model separately. As a backup or for other purposes.
+{numref}`extract_sensordata` This function allows you to download data based on a specific component. This allows you to save the current status of your data from your SIMULTAN data model separately. As a **backup** or for other purposes.
 
 ```{figure} img/extract_sensordata.png
 ---
@@ -143,7 +145,7 @@ UI for the function Extract Sensor Data from SIMULTAN
 #### How to use
 
 1. Click *Extract Sensor Data from SIMULTAN*
-2. Enter the taxonomy from which you want to extract the data. (e.g., Temperature_Sensor_Weather | You can find the taxonomy under the following components: `Sensors` > `Weather Station` > `Temperature Air`)
+2. Enter the taxonomy from which you want to extract the data. (e.g., **Temperature_Sensor_Weather**  |  You can find the taxonomy under the following components: `Sensors` > `Weather Station` > `Temperature Air`)
 3. Press *Extract* 
 4. Save the data in your file directory.
 

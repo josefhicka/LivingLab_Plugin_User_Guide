@@ -15,12 +15,11 @@ Converting between these formats is important: it lets users switch easily betwe
 ---
 
 ```{warning}
-Check that all data records in your `.csv` file are formatted consistently. Just one outlier is enough to prevent a successful conversion.
+Check that all data records in your `Csv` file are formatted consistently. Just one outlier is enough to prevent a successful conversion.
 ``` 
 
-### Time Format Conversion
+### How to use
 
-**How to use**
 1. Press one of the two buttons, `Convert DateTime to Hourly Indexed` or `Convert Hourly Indexed to DateTime`, depending on what you want to do.
 2. Specify the year of your data. <!-- WAs ist wenn die daten in mehreren jahren sind?-->
 3. Press `Browse...` to select the file you want to convert.
@@ -28,7 +27,10 @@ Check that all data records in your `.csv` file are formatted consistently. Just
 
 ---
 
-> {numref}`Index_Converter` Both functions/UI work exactly the same way, just make sure you use the right method based on your input data.
+```{tip}
+- {numref}`Index_Converter` Both functions/UI work exactly the same way, just make sure you use the right method based on your input data.   
+- Conversion also works for files with **multiple Simulation Years**. Entries from the specified year (e.g., 2025) onward get positive hourly indices; earlier entries receive negative indices.
+```
 
 ---
 

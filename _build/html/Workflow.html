@@ -394,7 +394,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-workflow">Run Workflow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-file-path">Config File Path</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excution-mode">Excution Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-mode">Execution Mode</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-workflow">Running the Workflow</a></li>
 </ul>
 </li>
@@ -411,8 +411,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="workflow">
 <span id="id1"></span><h1>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h1>
-<p>This chapter describes the plugin’s functions and explains how to use them. The SIMULTAN <em>LivingLab Plugin</em> provides a broad set of features and a tailored user interface.</p>
-<p>To maximise flexibility while keeping the interface user-friendly, each feature is exposed via a dedicated button.</p>
+<p>This chapter describes the <strong>Plugin’s Functions</strong> and explains how to use them. The SIMULTAN <em>LivingLab Plugin</em> provides a broad set of features and a tailored user interface. Each feature is exposed via a dedicated button which maximises flexibility. This allows us to give users complete freedom and offer maximum functionality without compromising user-friendliness.</p>
+<hr class="docutils" />
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In the next revision of the plugin, the <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Model</span></code> button will be removed because it no longer provides value.</p>
@@ -420,33 +420,40 @@ document.write(`
 <hr class="docutils" />
 <section id="run-workflow">
 <h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Link to this heading">#</a></h2>
-<p>The <strong>Workflow</strong> button is the core of the LivingLab Plugin. It combines nearly all plugin tools into a single, automated sequence from data retrieval to running an IDA-ICE simulation.</p>
+<p>The <strong>Workflow</strong> button is the core of the <em>LivingLab Plugin</em>. It combines nearly all plugin tools into a single, automated sequence from data retrieval to running an IDA-ICE simulation.</p>
 <p>After opening the Workflow UI you should see the following screen <a class="reference internal" href="#runworkflwo-ui"><span class="std std-numref">Fig. 6</span></a>:</p>
 <figure class="align-default" id="runworkflwo-ui">
 <img alt="_images/RunWorkflow_UI.png" src="_images/RunWorkflow_UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">UI for Running a Worklow in the <em>LivingLab Plugin</em></span><a class="headerlink" href="#runworkflwo-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">UI for Running a Workflow in the <em>LivingLab Plugin</em></span><a class="headerlink" href="#runworkflwo-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<hr class="docutils" />
 <section id="config-file-path">
 <h3>Config File Path<a class="headerlink" href="#config-file-path" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">config</span></code> file (configuration file) contains settings that control the plugin behaviour. For this plugin the file typically includes the API username, API password, the sensor endpoint (or sensor mapping), and other parameters required by the workflow. The <code class="docutils literal notranslate"><span class="pre">config</span></code> file has to be stored in the same folder as the corresponding SIMULTAN file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">config</span></code> file (configuration file) contains settings that control the plugin behaviour. For this plugin the file typically includes the API username, API password, the sensor endpoint (or sensor mapping), and other parameters required by the workflow. The <code class="docutils literal notranslate"><span class="pre">config</span></code> file has to be stored in the <strong>same folder</strong> as the corresponding SIMULTAN file.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you cannot find your SIMULTAN file folder on Windows, enable “Hidden Objects” in File Explorer.</p>
 </div>
 </section>
 <hr class="docutils" />
-<section id="excution-mode">
-<h3>Excution Mode<a class="headerlink" href="#excution-mode" title="Link to this heading">#</a></h3>
+<section id="execution-mode">
+<h3>Execution Mode<a class="headerlink" href="#execution-mode" title="Link to this heading">#</a></h3>
 <p>The Workflow supports two execution modes:</p>
 <ul class="simple">
-<li><p><strong>Continuous:</strong><br />
-The interval for repeated runs is defined in the <code class="docutils literal notranslate"><span class="pre">config</span></code> file &gt; …<!-- Information von Zsombor wo Intervall im config File definiert wurde--><br />
-<code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">Runs</span></code> specifies how many times the simulation should repeat.<br />
+<li><p><strong>Continuous:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">Runs</span></code> specifies how many times the simulation should repeat.</p></li>
+<li><p>The <strong>interval</strong> for repeated runs is defined in the <code class="docutils literal notranslate"><span class="pre">config</span></code> file &gt; …<!-- Information von Zsombor wo Intervall im config File definiert wurde--><br />
 <strong>Tip:</strong> Setting <code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">Runs</span> <span class="pre">=</span> <span class="pre">-1</span></code> triggers continuous, indefinite repetition.</p></li>
-<li><p><strong>Specific Range:</strong><br />
-Define a concrete time window by filling the <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> and <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">End</span></code> fields; the workflow runs only for this period.</p></li>
+</ul>
+</li>
+<li><p><strong>Specific Range:</strong></p>
+<ul>
+<li><p>Define a concrete time window by filling the <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> and <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">End</span></code> fields; the workflow runs only for this period.</p></li>
+</ul>
+</li>
 </ul>
 <!-- ⚠️ Vorschlag: Dokumentieren Sie genau, welcher .config-Schlüssel das Intervall definiert (Name, Einheiten), und geben Sie eine Parameterbeschreibung an (z. B. Millisekunden, Sekunden, Minuten). -->
 </section>
@@ -455,7 +462,7 @@ Define a concrete time window by filling the <code class="docutils literal notra
 <h3>Running the Workflow<a class="headerlink" href="#running-the-workflow" title="Link to this heading">#</a></h3>
 <p><strong>Starting the Simulation:</strong><br />
 Given the configured <code class="docutils literal notranslate"><span class="pre">Execution</span> <span class="pre">Mode</span></code>, the plugin retrieves the corresponding weather and sensor data from the API.</p>
-<p><strong>Simulationphase:</strong><br />
+<p><strong>Simulationsphase:</strong><br />
 The model is exported automatically to IDA-ICE. Instead of synthetic or standard boundary conditions, the workflow substitutes the measured weather and sensor data downloaded from the API as the boundary for the IDA-ICE simulation. Data required for clean exports are organised in SIMULTAN components and annotated with taxonomies so that IDA-ICE can uniquely identify them. Finally, the IDA-ICE simulation is started automatically.</p>
 <p><strong>Results:</strong><br />
 Because the simulation uses measured input data, results from the workflow are typically more representative of real operation than standard simulations. Using the LivingLab UI, a full end-to-end run can be completed quickly.</p>
@@ -531,7 +538,7 @@ Because the simulation uses measured input data, results from the workflow are t
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-workflow">Run Workflow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-file-path">Config File Path</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excution-mode">Excution Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-mode">Execution Mode</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-workflow">Running the Workflow</a></li>
 </ul>
 </li>

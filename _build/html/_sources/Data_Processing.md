@@ -36,6 +36,22 @@ The output is a cleaned CSV file with two columns:
 
 The **Add Control Data to Simulated Results** button merges real-world sensor data with simulation outputs, enabling side-by-side comparison of predicted and actual building performance.  
 
+### Prerequisites
+
+**Simulation Data:**
+- The simulation data file must be a `.prn` file (an IDA-ICE simulation result) converted into a CSV format. Use [Convert Temperature Files](IDAICE_Integration.md#convert-temperature-files) to perform this conversion.
+- The resulting simulation CSV file must include clearly named columns, typically `Mean Temperature` and `Operative Temperature`.   
+
+**Controll Data:**
+- The control data must be provided as a CSV file containing a simple hourly indexed list of values.
+
+---
+
+>  The function can also compare files with different numbers of data points or varying time intervals.
+However, it aligns values based on the hourly indices of the target CSV file, to which the control data is added.
+
+
+
 ### How it works
 
 1. Select a **control data CSV file** containing hourly indexed sensor data.  
@@ -80,13 +96,13 @@ Simulate and Process Results UI and Input fields
 - **Idaice Path** — the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe).
 - **Idaice Exporter Path** — selects the sensor/key to download.
 - **API** — username, password, and URL for linking the API.
-- **Project Id** — <!-- Zsombor fragen-->.
+- **Project Id** — required by the Aedifion API.
 - **Control DataPoint Id** — selects the sensor/key for comparison.
 
 ### Output
 
 The result is a single CSV file in which:  
-- Simulation results (predicted values) and real sensor data (measured values) are aligned by hour index.  
+- Simulation results (predicted values) and real sensor data (measured values) are aligned **by hour index**.  
 - The dataset is ready for direct validation, visualization, or further analysis.  
 
 ```{note}
@@ -95,4 +111,4 @@ This function replaces multiple manual steps with one automated workflow. Ensure
 
 ---
 
-After processing and aligning all sensor and simulation data, the next step is to integrate these datasets with IDA-ICE. The following chapter, **IDA-ICE Integration**, guides you through exporting SIMULTAN models to IDA-ICE, running simulations, and importing the results back for further analysis and validation.
+*After processing and aligning all sensor and simulation data, the next step is to integrate these datasets with IDA-ICE. The following chapter, **IDA-ICE Integration**, guides you through exporting SIMULTAN models to IDA-ICE, running simulations, and importing the results back for further analysis and validation.*

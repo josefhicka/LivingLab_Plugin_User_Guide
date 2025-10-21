@@ -13,11 +13,12 @@ The SIMULTAN data structure consists of two main elements:
 
 ## Taxonomies
 
-Taxonomies are classification systems used to organize elements into hierarchical categories and subcategories. They help structure complex models and define relationships between entities.  
-Taxonomies also define the storage locations of data. When new data enters the data model through simulations or queries, it can be stored under the correct taxonomy using algorithms.
+Taxonomies are **classification systems** used to organize elements into **hierarchical categories and subcategories**. They help structure complex models and define relationships between entities. Taxonomies also define the storage locations of data. When new data enters the data model through simulations or queries, it can be stored under the correct taxonomy using algorithms.
+
+---
 
 ```{note}
-**Components that are not assigned to a taxonomy are completely ignored by the plugin.**
+Components that are not assigned to a taxonomy are completely ignored by the plugin.
 ``` 
 
 ---
@@ -33,13 +34,13 @@ name: livinglabtax
 Overview of LivingLab taxonomies
 ```
 
-This system ensures accurate data exchange. This enables the subsequent generation of a fully automated workflow. More on this in chapter [Run Workflow](Plugin_Features.md#run-workflow).
+This system ensures accurate data exchange. This enables the subsequent generation of a fully automated workflow. More on this in [chapter](Workflow.md#run-workflow).
 We recommend starting with the attached [file](files/install_test_model.simultan) to learn how to use the plugin. It also ensures synchronization and reduces the chance of errors.
 
 ---
 
 ## Components
-The *ComponentBuilder* represent the functional building blocks of a simulation model as shown in {numref}`components_beispiel`. Examples include heat pumps, fans. Each component has specific properties and parameters relevant to simulation, such as power consumption.
+The *ComponentBuilder* represent the functional building blocks of a simulation model as shown in {numref}`components_beispiel`. Examples include heat pumps, fans, results fields and much more. Each component has specific **properties** and **parameters** relevant for simulation.
 
 ```{figure} img/components_beispiel.png
 ---
@@ -53,4 +54,4 @@ Some components of a data model
 
 ### Intersection of Taxonomies and Components
 
-Each component in the data model should be linked to a taxonomy. This is the case if a taxonomy name is linked in the `List` column. However, if this field remains empty, it means that this component is inactive and is ignored by the data model.
+Each component in the data model should be linked to a taxonomy. This is the case if a taxonomy name is linked in the `List` column. However, if this field **remains empty**, it means that this component is **inactive** and is ignored by the data model.

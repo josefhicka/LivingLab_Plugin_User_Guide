@@ -398,6 +398,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-control-data-to-simulated-results">Add Control Data to Simulated Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Output</a></li>
 </ul>
@@ -453,6 +454,23 @@ document.write(`
 <section id="add-control-data-to-simulated-results">
 <h2>Add Control Data to Simulated Results<a class="headerlink" href="#add-control-data-to-simulated-results" title="Link to this heading">#</a></h2>
 <p>The <strong>Add Control Data to Simulated Results</strong> button merges real-world sensor data with simulation outputs, enabling side-by-side comparison of predicted and actual building performance.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<p><strong>Simulation Data:</strong></p>
+<ul class="simple">
+<li><p>The simulation data file must be a <code class="docutils literal notranslate"><span class="pre">.prn</span></code> file (an IDA-ICE simulation result) converted into a CSV format. Use <a class="reference internal" href="IDAICE_Integration.html#convert-temperature-files"><span class="std std-ref">Convert Temperature Files</span></a> to perform this conversion.</p></li>
+<li><p>The resulting simulation CSV file must include clearly named columns, typically <code class="docutils literal notranslate"><span class="pre">Mean</span> <span class="pre">Temperature</span></code> and <code class="docutils literal notranslate"><span class="pre">Operative</span> <span class="pre">Temperature</span></code>.</p></li>
+</ul>
+<p><strong>Controll Data:</strong></p>
+<ul class="simple">
+<li><p>The control data must be provided as a CSV file containing a simple hourly indexed list of values.</p></li>
+</ul>
+<hr class="docutils" />
+<blockquote>
+<div><p>The function can also compare files with different numbers of data points or varying time intervals.
+However, it aligns values based on the hourly indices of the target CSV file, to which the control data is added.</p>
+</div></blockquote>
+</section>
 <section id="how-it-works">
 <h3>How it works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
@@ -502,7 +520,7 @@ document.write(`
 <li><p><strong>Idaice Path</strong> — the path to the IDA-ICE executable (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe).</p></li>
 <li><p><strong>Idaice Exporter Path</strong> — selects the sensor/key to download.</p></li>
 <li><p><strong>API</strong> — username, password, and URL for linking the API.</p></li>
-<li><p><strong>Project Id</strong> — <!-- Zsombor fragen-->.</p></li>
+<li><p><strong>Project Id</strong> — required by the Aedifion API.</p></li>
 <li><p><strong>Control DataPoint Id</strong> — selects the sensor/key for comparison.</p></li>
 </ul>
 </section>
@@ -510,7 +528,7 @@ document.write(`
 <h3>Output<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The result is a single CSV file in which:</p>
 <ul class="simple">
-<li><p>Simulation results (predicted values) and real sensor data (measured values) are aligned by hour index.</p></li>
+<li><p>Simulation results (predicted values) and real sensor data (measured values) are aligned <strong>by hour index</strong>.</p></li>
 <li><p>The dataset is ready for direct validation, visualization, or further analysis.</p></li>
 </ul>
 <div class="admonition note">
@@ -518,7 +536,7 @@ document.write(`
 <p>This function replaces multiple manual steps with one automated workflow. Ensure that both the simulation model and API credentials are correctly configured before running the process.</p>
 </div>
 <hr class="docutils" />
-<p>After processing and aligning all sensor and simulation data, the next step is to integrate these datasets with IDA-ICE. The following chapter, <strong>IDA-ICE Integration</strong>, guides you through exporting SIMULTAN models to IDA-ICE, running simulations, and importing the results back for further analysis and validation.</p>
+<p><em>After processing and aligning all sensor and simulation data, the next step is to integrate these datasets with IDA-ICE. The following chapter, <strong>IDA-ICE Integration</strong>, guides you through exporting SIMULTAN models to IDA-ICE, running simulations, and importing the results back for further analysis and validation.</em></p>
 </section>
 </section>
 </section>
@@ -593,6 +611,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-control-data-to-simulated-results">Add Control Data to Simulated Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How it works</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Output</a></li>
 </ul>

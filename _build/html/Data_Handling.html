@@ -423,15 +423,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-handling">
 <span id="id1"></span><h1>Data Handling<a class="headerlink" href="#data-handling" title="Link to this heading">#</a></h1>
-<p>This chapter focuses on managing and retrieving data within the LivingLab Plugin. You will learn how to query and persist weather data from the API, map sensor keys to parameters, and manage raw and processed sensor datasets. Clear guidance is provided on input requirements, UI usage, and storage within the SIMULTAN data model.</p>
+<p>This chapter focuses on managing and retrieving data within the <em>LivingLab Plugin</em>. You will learn how to query and persist weather data from the API, map sensor keys to parameters, and manage raw and processed sensor datasets. Clear guidance is provided on input requirements, UI usage, and storage within the SIMULTAN data model.</p>
 <hr class="docutils" />
 <section id="query-and-persist-weather-data">
 <h2>Query and Persist Weather Data<a class="headerlink" href="#query-and-persist-weather-data" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">and</span> <span class="pre">Persist</span> <span class="pre">Weather</span> <span class="pre">Data</span></code> feature retrieves weather data from the API and stores it in the SIMULTAN data model. The Workflow includes this step; use this button when you want to import weather data for a specific period without immediately running an IDA-ICE simulation.</p>
-<p><strong>The UI is divided into three parts, which are divided into tabs.</strong><br />
-<a class="reference internal" href="#api-access"><span class="xref myst">API Access</span></a> &gt; connect to the API<br />
-<a class="reference internal" href="#datapoints"><span class="xref myst">Datapoints</span></a> &gt; assign sensors<br />
-<a class="reference internal" href="#query"><span class="xref myst">Query</span></a> &gt; select the time window</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">and</span> <span class="pre">Persist</span> <span class="pre">Weather</span> <span class="pre">Data</span></code> feature retrieves weather data from the API and stores it in the SIMULTAN data model. The Workflow includes this step; use this button when you want to import weather data for a specific period without immediately running the entire workflow.</p>
+<p><strong>The UI is divided into three parts, which are divided into tabs:</strong><br />
+<a class="reference internal" href="#api-access"><span class="xref myst">API Access</span></a> &gt; All API-related information relevant to establishing a connection.<br />
+<a class="reference internal" href="#datapoints"><span class="xref myst">Datapoints</span></a> &gt; Individual assignment of sensors to weather parameters.<br />
+<a class="reference internal" href="#query"><span class="xref myst">Query</span></a> &gt; Selection of a period from which the weather data is obtained.</p>
 <section id="api-access">
 <h3>API Access<a class="headerlink" href="#api-access" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="apiaccess-ui">
@@ -440,9 +440,12 @@ document.write(`
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">UI for connecting to the API</span><a class="headerlink" href="#apiaccess-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><a class="reference internal" href="#apiaccess-ui"><span class="std std-numref">Fig. 7</span></a> To access weather data, establish a connection to the API by adding the API password (stored in the .config file). Use Test Connection to verify connectivity. On success, the UI displays “Connection successful” below the test button.</p>
-<p>More about the <code class="docutils literal notranslate"><span class="pre">config</span></code> file <a class="reference internal" href="#config-file-path"><span class="xref myst">here</span></a></p>
+<p><a class="reference internal" href="#apiaccess-ui"><span class="std std-numref">Fig. 7</span></a> To access weather data, establish a connection to the API by adding the API password (stored in the <code class="docutils literal notranslate"><span class="pre">config</span></code> file). Use <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Connection</span></code> to verify connectivity. On success, the UI displays <strong>“Connection successful”</strong> below the test button.</p>
+<blockquote>
+<div><p>More about the <code class="docutils literal notranslate"><span class="pre">config</span></code> file <a class="reference internal" href="Workflow.html#config-file-path"><span class="std std-ref">here</span></a></p>
+</div></blockquote>
 </section>
+<hr class="docutils" />
 <section id="datapoints">
 <h3>Datapoints<a class="headerlink" href="#datapoints" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="mapping-ui">
@@ -462,7 +465,7 @@ document.write(`
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">UI for Query and Persist Weather Data</span><a class="headerlink" href="#weather-data-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Use the Start Date and End Date fields to limit the imported weather data to a specific time range. The checkbox <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Simulation</span> <span class="pre">Data</span> <span class="pre">Range</span></code> in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Date</span></code> and <code class="docutils literal notranslate"><span class="pre">End</span> <span class="pre">Date</span></code> fields to limit the imported weather data to a specific time range. The checkbox <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Simulation</span> <span class="pre">Data</span> <span class="pre">Range</span></code> in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.</p>
 </section>
 <section id="results">
 <h3>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h3>
@@ -474,7 +477,7 @@ document.write(`
 </figure>
 <p>Imported data is stored in dedicated components under <em>ComponentBuilder</em> &gt; <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Diffusive</span> <span class="pre">Radiation</span></code> (see <a class="reference internal" href="#pos-sensordata"><span class="std std-numref">Fig. 10</span></a>).
 The component contains two subcomponents named <code class="docutils literal notranslate"><span class="pre">Sensor</span> <span class="pre">Data</span></code> — one shows a table, the other a graph. Icons to the left of each subcomponent indicate the representation type.</p>
-<p>To open either view, locate the Value section in the <code class="docutils literal notranslate"><span class="pre">PropertyEditor</span></code> and click the interactive text (see <a class="reference internal" href="#propertyeditor-graph"><span class="std std-numref">Fig. 11</span></a>).</p>
+<p>To open either view, locate the Value section in the <em>PropertyEditor</em> and click the interactive text (see <a class="reference internal" href="#propertyeditor-graph"><span class="std std-numref">Fig. 11</span></a>).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To open the <em>PropertyEditor</em>: go to the General tab and click the <em>PropertyEditor</em> button — it appears on the right side of the screen.</p>
@@ -492,14 +495,14 @@ The component contains two subcomponents named <code class="docutils literal not
 <h2>Sensor Data<a class="headerlink" href="#sensor-data" title="Link to this heading">#</a></h2>
 <p>SIMULTAN provides three integrated actions for manual sensor-data handling:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#download-sensor-data"><span class="xref myst">Download Raw Sensor Data</span></a></p></li>
-<li><p><a class="reference internal" href="#download-sensor-data"><span class="xref myst">Download Processed Sensor Data</span></a></p></li>
+<li><p><a class="reference internal" href="#download-sensor-data-raw-processed"><span class="xref myst">Download Raw Sensor Data</span></a></p></li>
+<li><p><a class="reference internal" href="#download-sensor-data-raw-processed"><span class="xref myst">Download Processed Sensor Data</span></a></p></li>
 <li><p><a class="reference internal" href="#extract-sensor-data-from-simultan"><span class="xref myst">Extract Sensor Data from SIMULTAN</span></a></p></li>
 </ul>
 <hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To ensure that the sensor data is processed smoothly, please ensure that CSV Importer uses the <em>English language standard</em> (<strong>comma as separator</strong> and <strong>period as decimal separator</strong>). Otherwise, problems may arise when when opening the converted data, resulting in an unclean CSV file.</p>
+<p>To ensure that the sensor data is processed smoothly, please ensure that CSV Importer uses the <em>English language standard</em> (<strong>comma as separator</strong> and <strong>period as decimal separator</strong>). Otherwise, problems arise when opening the converted data, resulting in an unclean CSV file.</p>
 </div>
 <hr class="docutils" />
 <section id="download-sensor-data-raw-processed">
@@ -556,7 +559,7 @@ The component contains two subcomponents named <code class="docutils literal not
 <hr class="docutils" />
 <section id="extract-sensor-data-from-simultan">
 <h3>Extract Sensor Data from SIMULTAN<a class="headerlink" href="#extract-sensor-data-from-simultan" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="#extract-sensordata"><span class="std std-numref">Fig. 13</span></a> This function allows you to download data based on a specific component. This allows you to save the current status of your data from your SIMULTAN data model separately. As a backup or for other purposes.</p>
+<p><a class="reference internal" href="#extract-sensordata"><span class="std std-numref">Fig. 13</span></a> This function allows you to download data based on a specific component. This allows you to save the current status of your data from your SIMULTAN data model separately. As a <strong>backup</strong> or for other purposes.</p>
 <figure class="align-default" id="extract-sensordata">
 <img alt="_images/extract_sensordata.png" src="_images/extract_sensordata.png" />
 <figcaption>
@@ -567,7 +570,7 @@ The component contains two subcomponents named <code class="docutils literal not
 <h4>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click <em>Extract Sensor Data from SIMULTAN</em></p></li>
-<li><p>Enter the taxonomy from which you want to extract the data. (e.g., Temperature_Sensor_Weather | You can find the taxonomy under the following components: <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Temperature</span> <span class="pre">Air</span></code>)</p></li>
+<li><p>Enter the taxonomy from which you want to extract the data. (e.g., <strong>Temperature_Sensor_Weather</strong>  |  You can find the taxonomy under the following components: <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Temperature</span> <span class="pre">Air</span></code>)</p></li>
 <li><p>Press <em>Extract</em></p></li>
 <li><p>Save the data in your file directory.</p></li>
 </ol>
