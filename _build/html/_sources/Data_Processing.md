@@ -108,7 +108,3 @@ The result is a single CSV file in which:
 ```{note}
 This function replaces multiple manual steps with one automated workflow. Ensure that both the simulation model and API credentials are correctly configured before running the process.
 ```
-
----
-
-*After processing and aligning all sensor and simulation data, the next step is to integrate these datasets with IDA-ICE. The following chapter, **IDA-ICE Integration**, guides you through exporting SIMULTAN models to IDA-ICE, running simulations, and importing the results back for further analysis and validation.*

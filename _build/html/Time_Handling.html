@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Time_Handling';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Processing" href="Data_Processing.html" />
+    <link rel="next" title="IDAICE Integration" href="IDAICE_Integration.html" />
     <link rel="prev" title="Data Handling" href="Data_Handling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,23 +175,23 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Living-Lab-Plugin User Guide
+                    LivingLab-Plugin User Guide
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Chapters</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab-Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plugin Features</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Handling.html">Data Handling</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Time Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References &amp; License</span></p>
 <ul class="nav bd-sidenav">
@@ -409,7 +409,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="time-handling">
 <span id="id1"></span><h1>Time Handling<a class="headerlink" href="#time-handling" title="Link to this heading">#</a></h1>
-<p>Proper time management is essential when working with sensor and simulation data. This chapter explains the conversion between <code class="docutils literal notranslate"><span class="pre">DateTime</span></code> and <code class="docutils literal notranslate"><span class="pre">HourlyIndex</span></code> formats, ensuring that time representations are consistent and compatible with both human-readable and simulation-oriented workflows.</p>
+<p>Proper time format management is essential when working with sensor and simulation data. This chapter explains the conversion between <code class="docutils literal notranslate"><span class="pre">DateTime</span></code> and <code class="docutils literal notranslate"><span class="pre">HourlyIndex</span></code> formats, ensuring that time representations are consistent.</p>
 <hr class="docutils" />
 <section id="time-format-conversion">
 <h2>Time Format Conversion<a class="headerlink" href="#time-format-conversion" title="Link to this heading">#</a></h2>
@@ -424,7 +424,7 @@ document.write(`
 <h3>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Press one of the two buttons, <code class="docutils literal notranslate"><span class="pre">Convert</span> <span class="pre">DateTime</span> <span class="pre">to</span> <span class="pre">Hourly</span> <span class="pre">Indexed</span></code> or <code class="docutils literal notranslate"><span class="pre">Convert</span> <span class="pre">Hourly</span> <span class="pre">Indexed</span> <span class="pre">to</span> <span class="pre">DateTime</span></code>, depending on what you want to do.</p></li>
-<li><p>Specify the year of your data. <!-- WAs ist wenn die daten in mehreren jahren sind?--></p></li>
+<li><p>Specify the year of your data.</p></li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Browse...</span></code> to select the file you want to convert.</p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Convert</span></code> to start the process.</p></li>
 </ol>
@@ -443,8 +443,6 @@ document.write(`
 <p><span class="caption-number">Fig. 14 </span><span class="caption-text">UI for converting time indices</span><a class="headerlink" href="#index-converter" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<hr class="docutils" />
-<p><em>Once your time representations are aligned and consistent, you can process the data for analysis and comparison. Data Processing shows how to clean, average, and merge datasets for accurate validation.</em></p>
 </section>
 </section>
 </section>
@@ -489,11 +487,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Data_Processing.html"
+       href="IDAICE_Integration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Processing</p>
+        <p class="prev-next-title">IDAICE Integration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

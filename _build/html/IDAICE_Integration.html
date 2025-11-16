@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'IDAICE_Integration';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Copyright and license agreements" href="LICENSE.html" />
-    <link rel="prev" title="Data Processing" href="Data_Processing.html" />
+    <link rel="next" title="Data Processing" href="Data_Processing.html" />
+    <link rel="prev" title="Time Handling" href="Time_Handling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,23 +175,23 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Living-Lab-Plugin User Guide
+                    LivingLab-Plugin User Guide
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Chapters</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab-Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plugin Features</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Handling.html">Data Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Time_Handling.html">Time Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">IDAICE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References &amp; License</span></p>
 <ul class="nav bd-sidenav">
@@ -430,7 +430,7 @@ document.write(`
 <hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Exporting the SIMULTAN model using the <em>LivingLab Plugin</em> means that all measured data is also exported. Causing less smooth, more complex, and <strong>slower simulations</strong>. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin.</p>
+<p>Exporting the SIMULTAN model using the <em>LivingLab Plugin</em> means that all measured data is also exported. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin.</p>
 </div>
 <hr class="docutils" />
 <section id="how-to-use">
@@ -449,7 +449,7 @@ document.write(`
 <figure class="align-default" id="idaice-simulate">
 <img alt="_images/IDAICE_Simulate.png" src="_images/IDAICE_Simulate.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">UI for the IDA-ICE Simulate Button</span><a class="headerlink" href="#idaice-simulate" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">UI for the IDA-ICE Simulate Button</span><a class="headerlink" href="#idaice-simulate" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
@@ -457,16 +457,16 @@ document.write(`
 <h3>How to use<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Click</strong> <em>IDA-ICE Simulate</em>.</p></li>
-<li><p>In the dialog, <strong>specify the path to the IDA-ICE executable</strong> (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe (see <a class="reference internal" href="#idaice-simulate"><span class="std std-numref">Fig. 16</span></a>)).</p></li>
+<li><p>In the dialog, <strong>specify the path to the IDA-ICE executable</strong> (e.g., C:\Program Files\IDA-ICE\bin\ida-ice.exe (see <a class="reference internal" href="#idaice-simulate"><span class="std std-numref">Fig. 15</span></a>)).</p></li>
 <li><p><strong>Click Simulate</strong>, then <strong>select the .idm file</strong> you want to run (created in <a class="reference internal" href="#ida-ice-export"><span class="xref myst"><em>IDA-ICE Export</em></span></a>).</p></li>
 <li><p>The plugin launches IDA-ICE and polls the ida-ice process every 5 seconds to monitor progress.</p></li>
-<li><p>When the process is complete, the simulation <strong>generates standard result files</strong> (TEMPERATURES.prn, ENERGY.prn, etc. (see <a class="reference internal" href="#idaice-simulate-folder"><span class="std std-numref">Fig. 17</span></a>)) in <strong>the created folder</strong> belonging to the simulated .idm file.</p></li>
+<li><p>When the process is complete, the simulation <strong>generates standard result files</strong> (TEMPERATURES.prn, ENERGY.prn, etc. (see <a class="reference internal" href="#idaice-simulate-folder"><span class="std std-numref">Fig. 16</span></a>)) in <strong>the created folder</strong> belonging to the simulated .idm file.</p></li>
 </ol>
 <hr class="docutils" />
 <figure class="align-default" id="idaice-simulate-folder">
 <img alt="_images/idaice_simulate_folder.png" src="_images/idaice_simulate_folder.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Generated results files within the created folder</span><a class="headerlink" href="#idaice-simulate-folder" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Generated results files within the created folder</span><a class="headerlink" href="#idaice-simulate-folder" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- Bild nicht passend simulation hat keine unterordner erstellt!-->
@@ -489,7 +489,7 @@ document.write(`
 <figure class="align-default" id="import-results-comp">
 <img alt="_images/Import_results_comp.png" src="_images/Import_results_comp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Csomponents filled with simulation results</span><a class="headerlink" href="#import-results-comp" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Csomponents filled with simulation results</span><a class="headerlink" href="#import-results-comp" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
@@ -502,18 +502,24 @@ document.write(`
 <section id="update-simulation-data">
 <h2>Update Simulation Data<a class="headerlink" href="#update-simulation-data" title="Link to this heading">#</a></h2>
 <p>This function updates the simulation and <em>Warmup Data</em> in the current SIMULTAN project.
-The corresponding components are located in the <em>ComponentBuilder</em> under <code class="docutils literal notranslate"><span class="pre">LivingLab</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">IDAICEAnalysis</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Data</span></code> (see <a class="reference internal" href="#simulationdata-components"><span class="std std-numref">Fig. 19</span></a>).
+The corresponding components are located in the <em>ComponentBuilder</em> under <code class="docutils literal notranslate"><span class="pre">LivingLab</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">IDAICEAnalysis</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Data</span></code> (see <a class="reference internal" href="#simulationdata-components"><span class="std std-numref">Fig. 18</span></a>).
 When executed, these components are exported into the IDA-ICE model file, ensuring that the simulation runs over the correct time interval.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Warmup Phase</strong><br />
+The warm-up phase is a preliminary simulation period during which the building model adapts to boundary conditions and reaches a steady periodic behaviour. This ensures realistic initial conditions for the main simulation.</p>
+</div>
+<hr class="docutils" />
 <figure class="align-default" id="simulationdata-components">
 <img alt="_images/simulationdata_components.png" src="_images/simulationdata_components.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Update Simulation Data Components</span><a class="headerlink" href="#simulationdata-components" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Update Simulation Data Components</span><a class="headerlink" href="#simulationdata-components" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="id3">
 <h3>How to use<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong>Click</strong> on <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Simulation</span> <span class="pre">Data</span></code> to open the function (<a class="reference internal" href="#updatesimdata-ui"><span class="std std-numref">Fig. 20</span></a>).</p></li>
+<li><p><strong>Click</strong> on <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Simulation</span> <span class="pre">Data</span></code> to open the function (<a class="reference internal" href="#updatesimdata-ui"><span class="std std-numref">Fig. 19</span></a>).</p></li>
 <li><p>The UI includes 3 parameters; <code class="docutils literal notranslate"><span class="pre">Warmup</span> <span class="pre">Start</span></code> <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Start</span></code> <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">End</span></code>.</p></li>
 <li><p><strong>Enter the three parameters</strong> in ascending order, using the following format: <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span> <span class="pre">hh:mm:ss</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">2025-10-17</span> <span class="pre">15:37:00</span></code>).</p></li>
 <li><p><strong>Confirm</strong> with <code class="docutils literal notranslate"><span class="pre">Close</span></code>.</p></li>
@@ -521,7 +527,7 @@ When executed, these components are exported into the IDA-ICE model file, ensuri
 <figure class="align-default" id="updatesimdata-ui">
 <img alt="_images/updatesimdata_ui.png" src="_images/updatesimdata_ui.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Update Simulation Data UI</span><a class="headerlink" href="#updatesimdata-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Update Simulation Data UI</span><a class="headerlink" href="#updatesimdata-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -533,7 +539,7 @@ When executed, these components are exported into the IDA-ICE model file, ensuri
 <hr class="docutils" />
 <section id="convert-temperature-files">
 <h2>Convert Temperature Files<a class="headerlink" href="#convert-temperature-files" title="Link to this heading">#</a></h2>
-<p>The <strong>Convert Temperature Files</strong> function processes simulation output data by converting zone temperature result files from the IDA-ICE format (<code class="docutils literal notranslate"><span class="pre">.prn</span></code>) into standard CSV files. When you select a building’s <code class="docutils literal notranslate"><span class="pre">.idm</span></code> file (must <strong>already</strong> have been simulated), the command automatically searches for corresponding zone result files and converts them into CSV format within each room or zone subfolder.</p>
+<p>The Convert Temperature Files function processes simulation output data by converting zone temperature result files from the IDA-ICE format (<code class="docutils literal notranslate"><span class="pre">.prn</span></code>) into standard CSV files. When you select a building’s <code class="docutils literal notranslate"><span class="pre">.idm</span></code> file (must <strong>already</strong> have been simulated), the command automatically searches for corresponding zone result files and converts them into CSV format within each room or zone subfolder.</p>
 <p>This conversion simplifies further data analysis and comparison with measured or processed sensor data, ensuring that all temperature datasets share a consistent and easily readable format.</p>
 <blockquote>
 <div><p>The conversion process does not alter the simulation results — it only changes the file format for improved accessibility and compatibility with other tools.</p>
@@ -572,20 +578,20 @@ When executed, these components are exported into the IDA-ICE model file, ensuri
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Data_Processing.html"
+       href="Time_Handling.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Processing</p>
+        <p class="prev-next-title">Time Handling</p>
       </div>
     </a>
     <a class="right-next"
-       href="LICENSE.html"
+       href="Data_Processing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Copyright and license agreements</p>
+        <p class="prev-next-title">Data Processing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

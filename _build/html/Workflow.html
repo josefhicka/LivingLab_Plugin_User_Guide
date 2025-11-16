@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Workflow';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Handling" href="Data_Handling.html" />
-    <link rel="prev" title="Simultan Basics" href="Simultan_Basics.html" />
+    <link rel="next" title="Copyright and license agreements" href="LICENSE.html" />
+    <link rel="prev" title="IDAICE Integration" href="IDAICE_Integration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,23 +175,23 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Living-Lab-Plugin User Guide
+                    LivingLab-Plugin User Guide
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Chapters</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab-Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plugin Features</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Handling.html">Data Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Time_Handling.html">Time Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Workflow</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References &amp; License</span></p>
 <ul class="nav bd-sidenav">
@@ -415,17 +415,17 @@ document.write(`
 <hr class="docutils" />
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>In the next revision of the plugin, the <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Model</span></code> button will be removed because it no longer provides value.</p>
+<p>In the next revision of the plugin, the <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Model</span></code> button is no longer needed.</p>
 </div>
 <hr class="docutils" />
 <section id="run-workflow">
 <h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Link to this heading">#</a></h2>
 <p>The <strong>Workflow</strong> button is the core of the <em>LivingLab Plugin</em>. It combines nearly all plugin tools into a single, automated sequence from data retrieval to running an IDA-ICE simulation.</p>
-<p>After opening the Workflow UI you should see the following screen <a class="reference internal" href="#runworkflwo-ui"><span class="std std-numref">Fig. 6</span></a>:</p>
+<p>After opening the Workflow UI you should see the following screen <a class="reference internal" href="#runworkflwo-ui"><span class="std std-numref">Fig. 21</span></a>:</p>
 <figure class="align-default" id="runworkflwo-ui">
 <img alt="_images/RunWorkflow_UI.png" src="_images/RunWorkflow_UI.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">UI for Running a Workflow in the <em>LivingLab Plugin</em></span><a class="headerlink" href="#runworkflwo-ui" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">UI for Running a Workflow in the <em>LivingLab Plugin</em></span><a class="headerlink" href="#runworkflwo-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
@@ -462,12 +462,10 @@ document.write(`
 <h3>Running the Workflow<a class="headerlink" href="#running-the-workflow" title="Link to this heading">#</a></h3>
 <p><strong>Starting the Simulation:</strong><br />
 Given the configured <code class="docutils literal notranslate"><span class="pre">Execution</span> <span class="pre">Mode</span></code>, the plugin retrieves the corresponding weather and sensor data from the API.</p>
-<p><strong>Simulationsphase:</strong><br />
+<p><strong>Simulationphase:</strong><br />
 The model is exported automatically to IDA-ICE. Instead of synthetic or standard boundary conditions, the workflow substitutes the measured weather and sensor data downloaded from the API as the boundary for the IDA-ICE simulation. Data required for clean exports are organised in SIMULTAN components and annotated with taxonomies so that IDA-ICE can uniquely identify them. Finally, the IDA-ICE simulation is started automatically.</p>
 <p><strong>Results:</strong><br />
 Because the simulation uses measured input data, results from the workflow are typically more representative of real operation than standard simulations. Using the LivingLab UI, a full end-to-end run can be completed quickly.</p>
-<hr class="docutils" />
-<p><em>With the workflow execution completed, the next step is to manage and prepare the data retrieved from the API and simulation sources. This is covered in the following Data Handling chapter.</em></p>
 </section>
 </section>
 </section>
@@ -503,20 +501,20 @@ Because the simulation uses measured input data, results from the workflow are t
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Simultan_Basics.html"
+       href="IDAICE_Integration.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Simultan Basics</p>
+        <p class="prev-next-title">IDAICE Integration</p>
       </div>
     </a>
     <a class="right-next"
-       href="Data_Handling.html"
+       href="LICENSE.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Handling</p>
+        <p class="prev-next-title">Copyright and license agreements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

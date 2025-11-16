@@ -51,7 +51,7 @@ name: Weather_Data_UI
 UI for Query and Persist Weather Data
 ```
 
-Use the `Start Date` and `End Date` fields to limit the imported weather data to a specific time range. The checkbox `Use Simulation Data Range` in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.
+Use the `Start Date` and `End Date` fields to limit the imported weather data to a specific time range. If the checkbox `Use Simulation Data Range` is enabled the plugin uses the time stamps defined in the Simulation Data. *ComponentBuilder* > `IDA ICE Analysis` > `Simulation Data` > `Warmup Phase`.
 
 ### Results
 
@@ -62,7 +62,7 @@ name: pos_SensorData
 Positioning of sensor data within the ComponentBuilder
 ```
 
-Imported data is stored in dedicated components under *ComponentBuilder* > `Sensors` > `Weather Station` > `Diffusive Radiation` (see {numref}`pos_SensorData`).
+Imported data is stored in dedicated components. For example under *ComponentBuilder* > `Sensors` > `Weather Station` > `Diffusive Radiation` (see {numref}`pos_SensorData`).
 The component contains two subcomponents named `Sensor Data` — one shows a table, the other a graph. Icons to the left of each subcomponent indicate the representation type.
 
 To open either view, locate the Value section in the *PropertyEditor* and click the interactive text (see {numref}`PropertyEditor_graph`).

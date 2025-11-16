@@ -14,7 +14,7 @@ The **IDA-ICE Export** button converts the active SIMULTAN Datamodel into an IDA
 ---
 
 ```{Note}
-Exporting the SIMULTAN model using the *LivingLab Plugin* means that all measured data is also exported. Causing less smooth, more complex, and **slower simulations**. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin. 
+Exporting the SIMULTAN model using the *LivingLab Plugin* means that all measured data is also exported. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin. 
 ```
 
 ---
@@ -94,6 +94,13 @@ This function updates the simulation and *Warmup Data* in the current SIMULTAN p
 The corresponding components are located in the *ComponentBuilder* under `LivingLab` > `IDAICEAnalysis` > `Simulation Data` (see {numref}`simulationdata_components`).
 When executed, these components are exported into the IDA-ICE model file, ensuring that the simulation runs over the correct time interval.
 
+```{note}
+**Warmup Phase**  
+The warm-up phase is a preliminary simulation period during which the building model adapts to boundary conditions and reaches a steady periodic behaviour. This ensures realistic initial conditions for the main simulation.
+```
+
+---
+
 ```{figure} img/simulationdata_components.png
 ---
 name: simulationdata_components
@@ -123,7 +130,7 @@ The `Simulation Start` parameter represents both the **End Date** of the `Warmup
 
 ## Convert Temperature Files
 
-The **Convert Temperature Files** function processes simulation output data by converting zone temperature result files from the IDA-ICE format (`.prn`) into standard CSV files. When you select a building’s `.idm` file (must **already** have been simulated), the command automatically searches for corresponding zone result files and converts them into CSV format within each room or zone subfolder.
+The Convert Temperature Files function processes simulation output data by converting zone temperature result files from the IDA-ICE format (`.prn`) into standard CSV files. When you select a building’s `.idm` file (must **already** have been simulated), the command automatically searches for corresponding zone result files and converts them into CSV format within each room or zone subfolder.
 
 This conversion simplifies further data analysis and comparison with measured or processed sensor data, ensuring that all temperature datasets share a consistent and easily readable format.
 

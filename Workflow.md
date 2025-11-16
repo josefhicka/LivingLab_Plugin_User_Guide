@@ -7,7 +7,7 @@ This chapter describes the **Plugin’s Functions** and explains how to use them
 ---
 
 ```{warning}
-In the next revision of the plugin, the `Download Model` button will be removed because it no longer provides value.
+In the next revision of the plugin, the `Download Model` button is no longer needed.
 ``` 
 
 ---
@@ -53,15 +53,11 @@ The Workflow supports two execution modes:
 
 ### Running the Workflow
 
-**Starting the Simulation:**  
+**Starting the Simulation:**   
 Given the configured `Execution Mode`, the plugin retrieves the corresponding weather and sensor data from the API.
 
-**Simulationsphase:**   
+**Simulationphase:**  
 The model is exported automatically to IDA-ICE. Instead of synthetic or standard boundary conditions, the workflow substitutes the measured weather and sensor data downloaded from the API as the boundary for the IDA-ICE simulation. Data required for clean exports are organised in SIMULTAN components and annotated with taxonomies so that IDA-ICE can uniquely identify them. Finally, the IDA-ICE simulation is started automatically.
 
-**Results:**   
+**Results:**  
 Because the simulation uses measured input data, results from the workflow are typically more representative of real operation than standard simulations. Using the LivingLab UI, a full end-to-end run can be completed quickly.
-
----
-
-*With the workflow execution completed, the next step is to manage and prepare the data retrieved from the API and simulation sources. This is covered in the following Data Handling chapter.*

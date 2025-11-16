@@ -2,7 +2,7 @@
 
 # Time Handling
 
-Proper time management is essential when working with sensor and simulation data. This chapter explains the conversion between `DateTime` and `HourlyIndex` formats, ensuring that time representations are consistent and compatible with both human-readable and simulation-oriented workflows.
+Proper time format management is essential when working with sensor and simulation data. This chapter explains the conversion between `DateTime` and `HourlyIndex` formats, ensuring that time representations are consistent.
 
 ---
 
@@ -21,7 +21,7 @@ Check that all data records in your `Csv` file are formatted consistently. Just 
 ### How to use
 
 1. Press one of the two buttons, `Convert DateTime to Hourly Indexed` or `Convert Hourly Indexed to DateTime`, depending on what you want to do.
-2. Specify the year of your data. <!-- WAs ist wenn die daten in mehreren jahren sind?-->
+2. Specify the year of your data.
 3. Press `Browse...` to select the file you want to convert.
 4. Click `Convert` to start the process.
 
@@ -40,7 +40,3 @@ name: Index_Converter
 ---
 UI for converting time indices
 ```
-
----
-
-*Once your time representations are aligned and consistent, you can process the data for analysis and comparison. Data Processing shows how to clean, average, and merge datasets for accurate validation.*

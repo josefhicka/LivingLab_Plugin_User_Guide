@@ -5,7 +5,7 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Inhalt
+  - caption: Introductory Chapters
     chapters:
       - file: Introduction
       - file: Getting_started_with_the_LivingLab_Plugin
@@ -13,11 +13,11 @@ parts:
 
   - caption: Plugin Features
     chapters:
-      - file: Workflow
       - file: Data_Handling
       - file: Time_Handling
-      - file: Data_Processing
       - file: IDAICE_Integration
+      - file: Data_Processing
+      - file: Workflow
 
   - caption: References & License
     chapters:

@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Time Handling" href="Time_Handling.html" />
-    <link rel="prev" title="Workflow" href="Workflow.html" />
+    <link rel="prev" title="Simultan Basics" href="Simultan_Basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,23 +175,23 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Living-Lab-Plugin User Guide
+                    LivingLab-Plugin User Guide
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhalt</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Chapters</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_started_with_the_LivingLab_Plugin.html">Getting started with the LivingLab-Plugin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Simultan_Basics.html">Simultan Basics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Plugin Features</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Time_Handling.html">Time Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IDAICE_Integration.html">IDAICE Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Processing.html">Data Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">Workflow</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References &amp; License</span></p>
 <ul class="nav bd-sidenav">
@@ -465,7 +465,7 @@ document.write(`
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">UI for Query and Persist Weather Data</span><a class="headerlink" href="#weather-data-ui" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Date</span></code> and <code class="docutils literal notranslate"><span class="pre">End</span> <span class="pre">Date</span></code> fields to limit the imported weather data to a specific time range. The checkbox <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Simulation</span> <span class="pre">Data</span> <span class="pre">Range</span></code> in the user interface controls the use of the fields. Make sure that the checkbox is enabled before starting the query.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Date</span></code> and <code class="docutils literal notranslate"><span class="pre">End</span> <span class="pre">Date</span></code> fields to limit the imported weather data to a specific time range. If the checkbox <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Simulation</span> <span class="pre">Data</span> <span class="pre">Range</span></code> is enabled the plugin uses the time stamps defined in the Simulation Data. <em>ComponentBuilder</em> &gt; <code class="docutils literal notranslate"><span class="pre">IDA</span> <span class="pre">ICE</span> <span class="pre">Analysis</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Data</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Warmup</span> <span class="pre">Phase</span></code>.</p>
 </section>
 <section id="results">
 <h3>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h3>
@@ -475,7 +475,7 @@ document.write(`
 <p><span class="caption-number">Fig. 10 </span><span class="caption-text">Positioning of sensor data within the ComponentBuilder</span><a class="headerlink" href="#pos-sensordata" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Imported data is stored in dedicated components under <em>ComponentBuilder</em> &gt; <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Diffusive</span> <span class="pre">Radiation</span></code> (see <a class="reference internal" href="#pos-sensordata"><span class="std std-numref">Fig. 10</span></a>).
+<p>Imported data is stored in dedicated components. For example under <em>ComponentBuilder</em> &gt; <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Weather</span> <span class="pre">Station</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Diffusive</span> <span class="pre">Radiation</span></code> (see <a class="reference internal" href="#pos-sensordata"><span class="std std-numref">Fig. 10</span></a>).
 The component contains two subcomponents named <code class="docutils literal notranslate"><span class="pre">Sensor</span> <span class="pre">Data</span></code> — one shows a table, the other a graph. Icons to the left of each subcomponent indicate the representation type.</p>
 <p>To open either view, locate the Value section in the <em>PropertyEditor</em> and click the interactive text (see <a class="reference internal" href="#propertyeditor-graph"><span class="std std-numref">Fig. 11</span></a>).</p>
 <div class="admonition tip">
@@ -612,12 +612,12 @@ The component contains two subcomponents named <code class="docutils literal not
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Workflow.html"
+       href="Simultan_Basics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Workflow</p>
+        <p class="prev-next-title">Simultan Basics</p>
       </div>
     </a>
     <a class="right-next"

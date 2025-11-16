@@ -14,7 +14,7 @@ The **IDA-ICE Export** button converts the active SIMULTAN Datamodel into an IDA
 ---
 
 ```{Note}
-Exporting the SIMULTAN model using the *LivingLab Plugin* means that all measured data is also exported. Causing less smooth, more complex, and **slower simulations**. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin. 
+Exporting the SIMULTAN model using the *LivingLab Plugin* means that all measured data is also exported. If this measured data is not needed, you can avoid the disadvantage by using the export function of the IDA-ICE plugin. 
 ```
 
 ---
@@ -93,6 +93,13 @@ Csomponents filled with simulation results
 This function updates the simulation and *Warmup Data* in the current SIMULTAN project.
 The corresponding components are located in the *ComponentBuilder* under `LivingLab` > `IDAICEAnalysis` > `Simulation Data` (see {numref}`simulationdata_components`).
 When executed, these components are exported into the IDA-ICE model file, ensuring that the simulation runs over the correct time interval.
+
+```{note}
+**Warmup Phase**  
+The warm-up phase is a preliminary simulation period during which the building model adapts to boundary conditions and reaches a steady periodic behaviour. This ensures realistic initial conditions for the main simulation.
+```
+
+---
 
 ```{figure} img/simulationdata_components.png
 ---

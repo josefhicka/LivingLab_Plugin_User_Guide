@@ -2,7 +2,7 @@
 
 # Simultan Basics
 
-As with all other Simultan plugins, the LivingLab plugin offers a large number of new tools and possibilities. However, there are basic building blocks that are relevant in every plugin and that you therefore need to understand.
+As with all other capital case plugins, the LivingLab-Plugin offers a large number of new tools and possibilities. However, there are basic building blocks that are relevant in every plugin and that you therefore need to understand.
 
 The SIMULTAN data structure consists of two main elements:
 
@@ -34,7 +34,7 @@ name: livinglabtax
 Overview of LivingLab taxonomies
 ```
 
-This system ensures accurate data exchange. This enables the subsequent generation of a fully automated workflow. More on this in [chapter](Workflow.md#run-workflow).
+This system ensures accurate data exchange. This enables the subsequent generation of a fully automated workflow. More on this in the chapter [Run Worklow](Workflow.md#run-workflow).
 We recommend starting with the attached [file](files/install_test_model.simultan) to learn how to use the plugin. It also ensures synchronization and reduces the chance of errors.
 
 ---
@@ -55,3 +55,5 @@ Some components of a data model
 ### Intersection of Taxonomies and Components
 
 Each component in the data model should be linked to a taxonomy. This is the case if a taxonomy name is linked in the `List` column. However, if this field **remains empty**, it means that this component is **inactive** and is ignored by the data model.
+
+Furthermore, it is essential to note that not only the taxonomies themselves but also the overall data structure and availability of corresponding components are critical for correct system behavior. For example, measurement data cannot be downloaded or processed if no corresponding components exist for these data types. Missing or inactive components therefore directly affect which data will be retrieved and integrated into the model, highlighting the importance of a complete and well-maintained component definition.
