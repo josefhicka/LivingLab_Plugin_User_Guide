@@ -54,6 +54,6 @@ Some components of a data model
 
 ### Intersection of Taxonomies and Components
 
-Each component in the Plugin should be linked to a taxonomy. This is the case if a taxonomy name is linked in the `List` column. However, if this field **remains empty**, it means that this component is **inactive** and is ignored by the data model.
+Each component in the Plugin should be linked to a taxonomy. This is the case if a taxonomy name is linked in the `List` column. However, if this field **remains empty**, it means that this component is **inactive** and is ignored by the Plugin.
 
 Furthermore, it is essential to note that not only the taxonomies themselves but also the overall data structure and availability of corresponding components are critical for correct system behavior. For example, measurement data cannot be downloaded or processed if no corresponding components exist for these data types. Missing or inactive components therefore directly affect which data will be retrieved and integrated into the model, highlighting the importance of a complete and well-maintained component definition.
